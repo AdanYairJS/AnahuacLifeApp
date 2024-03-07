@@ -92,7 +92,7 @@ function MyTabs() {
                     tabBarIcon: ({ color, size }) => (
                         <DirectoryIcon style={{color: color, width: size, height: size}} />
                     ),
-                    tabBarBadge: 'Mike gay',
+                    tabBarBadge: 'Adan cejudo',
                     tabBarBadgeStyle: {
                         backgroundColor: 'black',
                     },
