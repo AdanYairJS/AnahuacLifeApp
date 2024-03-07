@@ -33,4 +33,6 @@ git restore --staged nombre_archivo.txt: este comando sirve para echar para atr√
 
 git mv nombre_archivo.txt nuevo_nombre.txt: renombrar un archivo (se recomienda hacerlo desde bash)
 
-git pull: si alguien modifica el repositorio en la nube antes de subir mis cambios, tengo que ejecutar este comando antes de git push
+git pull: (contiene: git fetch, git merge origin/master) si alguien modifica el repositorio en la nube antes de subir mis cambios, tengo que ejecutar este comando antes de git push (de rama main en nube a main local)
+
+git merge main: trae los cambios del main a la rama local
