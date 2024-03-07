@@ -1,0 +1,6 @@
+Adán: Agregué todos los componentes de las secciones Mapa, Eventos, Directorio y Cuckoo
+    para que funcionen dentro del nuevo sistema de navegación de la aplicación
+    (dejé una notificación que dice "Mike gay", que Mike la busque y la quite, para que lea tantito código el desgraciado).
+
+
+
