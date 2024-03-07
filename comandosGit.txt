@@ -2,7 +2,7 @@ Computador -> Stage -> Commit -> Server
 
 ------ COMANDOS PARA GUARDAR ----------
 
-git add prueba.txt: manda los archivos a la fase de preparación (escribir cada que se crea o se modifica un archivo, una vez por archivo)
+git add nombre_archivo.txt: manda los archivos a la fase de preparación (escribir cada que se crea o se modifica un archivo, una vez por archivo)
 
 git status: resumen de todos los archivos creados o modificados (cosas en verde = guardadas, cosas en rojo = no guardadas)
 git status -s: lo mismo pero más resumido
@@ -17,10 +17,12 @@ git push -u origin main: sube los cambios a la nube
 
 ------ COMANDOS PARA RESTAURAR ----------
 
-git rm prueba.txt: equivale a borrar un archivo y hacer el git add al mismo tiempo
+git rm nombre_archivo.txt: equivale a borrar un archivo y hacer el git add al mismo tiempo
 
-git restore --staged prueba.txt: este comando sirve para echar para atrás un cambio que haya sido añadido con el comando git add (todos los cambios en verde pasan a rojo)
+git restore --staged nombre_archivo.txt: este comando sirve para echar para atrás un cambio que haya sido añadido con el comando git add (todos los cambios en verde pasan a rojo)
 
 ------- MÁS COMANDOS --------------------
 
-git mv prueba.txt nuevo_nombre.txt
+git mv nombre_archivo.txt nuevo_nombre.txt
+
+git pull: si alguien modifica el repositorio en la nube antes de subir mis cambios, tengo que ejecutar este comando antes de git push
