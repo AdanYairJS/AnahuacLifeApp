@@ -1,0 +1,26 @@
+Computador -> Stage -> Commit -> Server
+
+------ COMANDOS PARA GUARDAR ----------
+
+git add prueba.txt: manda los archivos a la fase de preparación (escribir cada que se crea o se modifica un archivo, una vez por archivo)
+
+git status: resumen de todos los archivos creados o modificados (cosas en verde = guardadas, cosas en rojo = no guardadas)
+git status -s: lo mismo pero más resumido
+
+git commit -m "descripcion": guarda los cambios localmente
+
+git checkout main: cambiar de rama (a main)
+
+git merge adanlocal: todos los cambios se añaden desde adanlocal a main
+
+git push -u origin main: sube los cambios a la nube
+
+------ COMANDOS PARA RESTAURAR ----------
+
+git rm prueba.txt: equivale a borrar un archivo y hacer el git add al mismo tiempo
+
+git restore --staged prueba.txt: este comando sirve para echar para atrás un cambio que haya sido añadido con el comando git add (todos los cambios en verde pasan a rojo)
+
+------- MÁS COMANDOS --------------------
+
+git mv prueba.txt nuevo_nombre.txt
