@@ -1,17 +1,25 @@
-Computador -> Stage -> Commit -> Server
+------ CLONAR REPOSITORIO -------------
 
------- COMANDOS PARA GUARDAR ----------
+git clone https://github.com/AdanYairJS/AnahuacLifeApp.git 
+
+------- CREAR RAMA --------------------
+
+git checkout -b nombre_rama: crea una rama en caso de que no exista
+
+git branch: ver ramas
+
+------ COMANDOS PARA GUARDAR ---------- (Computador -> Stage -> Commit -> Server)
 
 git add nombre_archivo.txt: manda los archivos a la fase de preparación (escribir cada que se crea o se modifica un archivo, una vez por archivo)
 
 git status: resumen de todos los archivos creados o modificados (cosas en verde = guardadas, cosas en rojo = no guardadas)
 git status -s: lo mismo pero más resumido
 
-git commit -m "descripcion": guarda los cambios localmente
+git commit -m "descripcion": guarda los cambios localmente (en la descripción detalla los cambios realizados a cada archivo)
 
 git checkout main: cambiar de rama (a main)
 
-git merge adanlocal: todos los cambios se añaden desde adanlocal a main
+git merge nombre_rama: todos los cambios se añaden desde adanlocal a main
 
 git push -u origin main: sube los cambios a la nube
 
@@ -23,6 +31,6 @@ git restore --staged nombre_archivo.txt: este comando sirve para echar para atr�
 
 ------- MÁS COMANDOS --------------------
 
-git mv nombre_archivo.txt nuevo_nombre.txt
+git mv nombre_archivo.txt nuevo_nombre.txt: renombrar un archivo (se recomienda hacerlo desde bash)
 
 git pull: si alguien modifica el repositorio en la nube antes de subir mis cambios, tengo que ejecutar este comando antes de git push
