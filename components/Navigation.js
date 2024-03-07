@@ -91,7 +91,11 @@ function MyTabs() {
                     tabBarLabel: 'Directorio',
                     tabBarIcon: ({ color, size }) => (
                         <DirectoryIcon style={{color: color, width: size, height: size}} />
-                    )
+                    ),
+                    tabBarBadge: 'Mike gay',
+                    tabBarBadgeStyle: {
+                        backgroundColor: 'black',
+                    },
                 }}
             />
             <Tab.Screen 
@@ -101,7 +105,8 @@ function MyTabs() {
                     tabBarLabel: 'Mapa',
                     tabBarIcon: ({ color, size }) => (
                         <MapIcon style={{color: color, width: size, height: size}} />
-                    )
+                    ),
+                    headerShown: false
                 }}
             />
             <Tab.Screen 
