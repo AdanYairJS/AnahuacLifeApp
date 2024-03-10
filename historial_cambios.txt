@@ -2,5 +2,10 @@ Adán: Agregué todos los componentes de las secciones Mapa, Eventos, Directorio
     para que funcionen dentro del nuevo sistema de navegación de la aplicación
     (dejé una notificación que dice "Mike gay", que Mike la busque y la quite, para que lea tantito código el desgraciado).
 
+Adán: Añadí la fuente "Lexend" al proyecto desde App.js, puede utilizarse en cualquier componente del proyecto mediante el
+    estilo fontFamily. 
+    Añadí el componente EventSection para las tarjetas deslizables de eventos.
+    Cambié el ícono de eventos por el que usábamos anteriormente para el horario.
+    
 
 

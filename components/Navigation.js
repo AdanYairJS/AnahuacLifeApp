@@ -51,6 +51,7 @@ function MyTabs() {
                 tabBarActiveTintColor: '#FFFFFF',
                 tabBarInactiveTintColor: '#FFFFFF',
                 tabBarLabelStyle: {
+                    fontFamily: 'lexend-light',
                     fontSize: 11,
                     marginBottom: 5,
                 },
@@ -91,11 +92,7 @@ function MyTabs() {
                     tabBarLabel: 'Directorio',
                     tabBarIcon: ({ color, size }) => (
                         <DirectoryIcon style={{color: color, width: size, height: size}} />
-                    ),
-                    tabBarBadge: 'Adan cejudo',
-                    tabBarBadgeStyle: {
-                        backgroundColor: 'black',
-                    },
+                    )
                 }}
             />
             <Tab.Screen 
