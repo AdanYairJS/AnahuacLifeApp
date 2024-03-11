@@ -2,16 +2,23 @@ import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
-import { HomeIcon, DirectoryIcon, MapIcon, FoodIcon, EventsIcon } from './CustomIcons';
+//import { HomeIcon, DirectoryIcon, MapIcon, FoodIcon, EventsIcon } from './CustomIcons';
+import HomeIcon from '../images/icons/home_icon.svg';
+import DirectoryIcon from '../images/icons/directorio_icon.svg';
+import MapIcon from '../images/icons/mapa_icon.svg';
+import FoodIcon from '../images/icons/comida_icon.svg';
+import EventsIcon from '../images/icons/eventos_icon.svg';
 
 //screens
 import HomeScreen from './screens/HomeScreen';
 import EventsScreen from './screens/EventsScreen';
 import DirectoryScreen from './screens/DirectoryScreen';
 import MapScreen from './screens/MapScreen';
-import FoodScreen from './screens/FoodScreen';
-import GroupsStackScreen from './screens/events_components/group_screens/GroupsStackScreen';
+import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
+import DetailedEvent from './screens/events_components/DetailedEvent.js';
 import CuckooScreen from "./screens/CuckooScreen";
+
+var tamano = 35;
 
 const EventsStackNavigator = createNativeStackNavigator();
 
@@ -26,7 +33,7 @@ function MyStack() {
                 options={{
                     tabBarLabel: 'Eventos',
                     tabBarIcon: ({ color, size }) => (
-                        <EventsIcon style={{color: color, width: size, height: size}} />
+                        <EventsIcon  width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
                     ),
                     headerShown: false
                 }}
@@ -36,6 +43,15 @@ function MyStack() {
                 component={GroupsStackScreen}
                 options={{
                     headerBackTitle: false,
+                    headerShown: false,
+                }}
+            />
+            <EventsStackNavigator.Screen
+                name = "DetallesEvento"
+                component={DetailedEvent}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
                 }}
             />
         </EventsStackNavigator.Navigator>
@@ -67,9 +83,9 @@ function MyTabs() {
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconComponent;
 
-                    if (focused) {
-                        color = 'white'; // Cambiar el color del ícono si la pestaña está activa
-                    }
+                    // if (focused) {
+                    //     color = '#000000'; // Cambiar el color del ícono si la pestaña está activa
+                    // }
 
                     return iconComponent;
                 },
@@ -81,8 +97,9 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Inicio',
                     tabBarIcon: ({ color, size }) => (
-                        <HomeIcon style={{color: color, width: size, height: size}} />
-                    )
+                        <HomeIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
+                    ),
+                    headerShown: false
                 }}
             />
             <Tab.Screen 
@@ -91,7 +108,7 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Directorio',
                     tabBarIcon: ({ color, size }) => (
-                        <DirectoryIcon style={{color: color, width: size, height: size}} />
+                        <DirectoryIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
                     )
                 }}
             />
@@ -101,7 +118,7 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Mapa',
                     tabBarIcon: ({ color, size }) => (
-                        <MapIcon style={{color: color, width: size, height: size}} />
+                        <MapIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
                     ),
                     headerShown: false
                 }}
@@ -112,7 +129,7 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Comida',
                     tabBarIcon: ({ color, size }) => (
-                        <FoodIcon style={{color: color, width: size, height: size}} />
+                        <FoodIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
                     ),
                     tabBarBadge: 1,
                     tabBarBadgeStyle: {
@@ -127,7 +144,7 @@ function MyTabs() {
                 options={{
                     tabBarLabel: 'Eventos',
                     tabBarIcon: ({ color, size }) => (
-                        <EventsIcon style={{color: color, width: size, height: size}} />
+                        <EventsIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
                     ),
                     headerShown: false,
                     tabBarBadge: 13,

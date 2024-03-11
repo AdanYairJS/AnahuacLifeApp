@@ -3,23 +3,19 @@ import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 //import Svg, { Filter, Image as SvgImage, Defs } from 'react-native-svg'; //npm install react-native-svg
 
-import adefaImage from '../../../images/eventos/grupos/adefa.png';
-import fesalImage from '../../../images/eventos/grupos/fesal.png';
-import asuaImage from '../../../images/eventos/grupos/asua.png';
-import pastoralImage from '../../../images/eventos/grupos/pastoral.png';
-import espacioculturalImage from '../../../images/eventos/grupos/espaciocultural.png';
-import leonesImage from '../../../images/eventos/grupos/leones.png';
+import verticeImage from '../../../images/eventos/grupos/vertice.png';
+import accionImage from '../../../images/eventos/grupos/accion.png';
+import culmenImage from '../../../images/eventos/grupos/culmen.png';
+import imefImage from '../../../images/eventos/grupos/imef.png';
 
-const GroupsSection = ({  }) => {
+const LeadershipPrograms = ({  }) => {
   const navigation = useNavigation();
 
   const secciones = [
-    { nombre: 'adefa', imagen: adefaImage },
-    { nombre: 'asua', imagen: asuaImage },
-    { nombre: 'fesal', imagen: fesalImage },
-    { nombre: 'pastoral', imagen: pastoralImage },
-    { nombre: 'leones', imagen: leonesImage },
-    { nombre: 'espaciocultural', imagen: espacioculturalImage },
+    { nombre: 'vertice', imagen: verticeImage },
+    { nombre: 'accion', imagen: accionImage },
+    { nombre: 'culmen', imagen: culmenImage },
+    { nombre: 'imef', imagen: imefImage },
   ];
 
   return (
@@ -38,12 +34,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    //maxWidth: 350,
+    alignSelf: 'center',
     marginBottom: 30,
   },
   icono: {
     width: 100,
     height: 100,
     margin: 15,
+    //margin: 25,
     borderRadius: 50,
     borderWidth: 2,
     borderColor: '#FD5900',
@@ -58,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GroupsSection;
+export default LeadershipPrograms;
