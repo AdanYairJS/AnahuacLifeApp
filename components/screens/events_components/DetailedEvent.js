@@ -1,10 +1,17 @@
+// Banner del evento
+// Aréas involucradas (logos)
+// Descripción del evento
+// Fecha del evento
+// Hora del evento
+// Lugar del evento
+// Botón de registro
 import React from 'react';
 import { Image, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const HomeScreen = () => {
+const DetailedEvent = () => {
   const navigation = useNavigation();
 
   return (
@@ -24,7 +31,7 @@ const HomeScreen = () => {
       {/* Banner de la actividad */}
       <View style={styles.bannerContainer}>
         <Image
-            source={require('../../images/eventos/evento2.png')}
+            source={require('../../../images/eventos/evento2.png')}
             style={styles.bannerImage}
         />
       </View>
@@ -32,15 +39,15 @@ const HomeScreen = () => {
       {/* Logos de las áreas involucradas */}
       <View style={styles.areasContainer}>
         <Image
-          source={require('../../images/eventos/grupos/fesal.png')}
+          source={require('../../../images/eventos/grupos/fesal.png')}
           style={styles.logo}
         />
         <Image
-          source={require('../../images/eventos/grupos/vertice.png')}
+          source={require('../../../images/eventos/grupos/vertice.png')}
           style={{width: 50, height:50, resizeMode: 'contain'}}
         />
         <Image
-          source={require('../../images/eventos/grupos/adefa.png')}
+          source={require('../../../images/eventos/grupos/adefa.png')}
           style={styles.logo}
         />
       </View>
@@ -177,4 +184,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default DetailedEvent;
