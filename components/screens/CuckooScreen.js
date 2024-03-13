@@ -69,7 +69,7 @@ export default function CuckooScreen({ route }) {
                   ImageComponentStyle={{borderRadius: 15, width: '90%', marginTop: 5}}
                   // sliderBoxHeight={altoVentana*.30}
           />
-          <Text style={styles.titulo}>MENÚ</Text>
+          <Text style={styles.titulo}>MENÚ</Text>  
           <View>
             {/* <CuckooMenu id_menu='CuckooScreen'/> */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.botonera}>

@@ -11,4 +11,8 @@ Adán: Instalé la dependencia react-native-svg-transformer, para que funcione c
     Modifiqué la pestaña stack de los grupos universitarios (de momento todo el vértice), cambié el formato y agregué las EventCards (Que ahora es un componente independiente).
     Separé los grupos universitarios como Mike indicó. Cree el componente DetailedEvent.js para especificar los eventos.
 
-Adán: Voy a intentar sobreesribir la mamada del pinche Mike con lo mío, para poder chambear.
+Adán: Voy a intentar sobreesribir la mamada del pinche Mike con lo mío, para poder chambear. (sí se pudo)
+
+Adán: Comencé a crear la animación del menú (De momento está incompleta, únicamente se hace la animación al cargar la aplicación, no cada que se cambia de tab)
+    Hice cambios estéticos a la pestaña de eventos y la navegación Stack funciona correctamente.
+    Subí los componentes creados por Mike: HorarioScreen y componentes de la carpeta, para que pueda modificarlos localmente.

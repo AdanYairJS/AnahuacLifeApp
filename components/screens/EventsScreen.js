@@ -42,25 +42,25 @@ const EventsScreen = ({  }) => {
                 {/* <ExpandableContainer title="COMUNIDAD UNIVERSITARIA" imageSource={require('../../images/eventos/contenedorcomunidad_eventos.png')} />
                 <ExpandableContainer title="GRUPOS DE LIDERAZGO" imageSource={require('../../images/eventos/contenedorcomunidad_eventos.png')} /> */}
                 <View style={styles.contenedor_titulo}>
-                    <Text style={styles.titulo}>Comunidad Universitaria</Text>
+                    <Text style={styles.titulo}>COMUNIDAD UNIVERSITARIA</Text>
                 </View>
                 <EventSection/>
                 {/* <View style={styles.divider} />  */}
                 <View style={styles.contenedor_titulo}>
-                    <Text style={styles.titulo}>Grupos de Liderazgo</Text>
+                    <Text style={styles.titulo}>GRUPOS LIDERAZGO</Text>
                 </View>
                 <EventSection/>
                 <View style={styles.contenedor_titulo}>
-                    <Text style={styles.titulo}>Actividades con Puntos Nova</Text>
+                    <Text style={styles.titulo}>ACTIVIDADES PUNTOS NOVA</Text>
                 </View>
                 <EventSection/>
                 <View style={styles.divider}/>    
-                <View style={styles.contenedor_titulo}>
-                    <Text style={styles.titulo}>Grupos Universitarios</Text>
+                <View style={styles.contenedor_tituloG}>
+                    <Text style={styles.tituloG}>GRUPOS UNIVERSITARIOS</Text>
                 </View>
                 <GroupsSection/>
-                <View style={styles.contenedor_titulo}>
-                    <Text style={styles.titulo}>Programas de Liderazgo</Text>
+                <View style={styles.contenedor_tituloG}>
+                    <Text style={styles.tituloG}>PROGRAMAS DE LIDERAZGO</Text>
                 </View>
                 <LeadershipPrograms/>
                 {/* <View style={styles.divider}/> */}
@@ -83,19 +83,35 @@ const styles = StyleSheet.create({
         shadowColor: '#000000',
     },
     contenedor_titulo: {
-        marginTop: 25,
-        alignItems: 'center',
+        marginTop: 45,
+        alignItems: 'left',
         margin: 15,
-        marginBottom: 25,
+        marginBottom: 5,
+        marginLeft: 25,        
     },
     titulo: {
-        textAlign: 'center',
-        fontFamily: 'lexend-regular',
-        fontSize: 25,
+        textAlign: 'left',
+        fontFamily: 'lexend-extrabold',
+        fontSize: 20,
         color: '#FD5900',
-        textShadowColor: 'rgba(0, 0, 0, 0.4)', 
-        textShadowOffset: { width: 0.05, height: 0.05 }, 
-        textShadowRadius: 1, 
+        // textShadowColor: 'rgba(0, 0, 0, 0.4)', 
+        // textShadowOffset: { width: 0.05, height: 0.05 }, 
+        // textShadowRadius: 1, 
+    },
+    contenedor_tituloG: {
+        marginTop: 30,
+        alignItems: 'center',
+        margin: 15,
+        marginBottom: 30,
+    },
+    tituloG: {
+        textAlign: 'center',
+        fontFamily: 'lexend-extrabold',
+        fontSize: 20,
+        color: '#FD5900',
+        // textShadowColor: 'rgba(0, 0, 0, 0.4)', 
+        // textShadowOffset: { width: 0.05, height: 0.05 }, 
+        // textShadowRadius: 1, 
     }  
 });
 

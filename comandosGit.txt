@@ -35,6 +35,6 @@ git mv nombre_archivo.txt nuevo_nombre.txt: renombrar un archivo (se recomienda 
 
 git pull: (contiene: git fetch, git merge origin/master) si alguien modifica el repositorio en la nube antes de subir mis cambios, tengo que ejecutar este comando antes de git push (de rama main en nube a main local)
 
-git merge main: trae los cambios del main a la rama local
+git pull origin main: trae los cambios del main a la rama local
 
 git log:  muestra todos los commits hechos desde la creación
