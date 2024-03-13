@@ -50,11 +50,13 @@ const styles = StyleSheet.create({
     elevation: 4,
     shadowColor: '#000000',
     overflow: 'hidden',
+    // backgroundColor: 'White',
   },
   imagen: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
+    backgroundColor: 'white',
   },
 });
 
