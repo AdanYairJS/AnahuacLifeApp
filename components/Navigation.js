@@ -9,8 +9,6 @@ import DirectoryIcon from '../images/icons/directorio_icon.svg';
 import MapIcon from '../images/icons/mapa_icon.svg';
 import FoodIcon from '../images/icons/comida_icon.svg';
 import EventsIcon from '../images/icons/eventos_icon.svg';
-// import { HomeIcon, DirectoryIcon, MapIcon, FoodIcon, EventsIcon } from './CustomIcons';
-import { Image } from 'react-native';
 
 //screens
 import HomeScreen from './screens/HomeScreen';
@@ -18,9 +16,6 @@ import EventsScreen from './screens/EventsScreen';
 import DirectoryScreen from './screens/DirectoryScreen';
 import MapScreen from './screens/MapScreen';
 import CuckooScreen from "./screens/CuckooScreen";
-import CuckooSeccion from "./screens/cuckoo_components/CuckooSeccion";
-import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
-import CuckooItem from "./screens/cuckoo_components/CuckooItem";
 
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
@@ -52,6 +47,15 @@ function MyStack() {
                 component={GroupsStackScreen}
                 options={{
                     headerBackTitle: false,
+                    headerShown: false,
+                }}
+            />
+            <EventsStackNavigator.Screen
+                name = "DetallesEvento"
+                component={DetailedEvent}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
                 }}
             />
         </EventsStackNavigator.Navigator>
