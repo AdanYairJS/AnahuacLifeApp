@@ -16,3 +16,6 @@ Adán: Voy a intentar sobreesribir la mamada del pinche Mike con lo mío, para p
 Adán: Comencé a crear la animación del menú (De momento está incompleta, únicamente se hace la animación al cargar la aplicación, no cada que se cambia de tab)
     Hice cambios estéticos a la pestaña de eventos y la navegación Stack funciona correctamente.
     Subí los componentes creados por Mike: HorarioScreen y componentes de la carpeta, para que pueda modificarlos localmente.
+
+Adán: Agregué todos los componentes, relacionados con Cuckoo, creados por Carlos, también las imágenes necesarias para la sección de Cuckoo.
+    Integré las líneas de código necesarias en Navigation.js para permitir que la sección Cuckoo funcione

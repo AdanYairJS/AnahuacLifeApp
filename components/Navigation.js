@@ -20,7 +20,10 @@ import CuckooScreen from "./screens/CuckooScreen";
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
 import DetailedEvent from './screens/events_components/DetailedEvent.js';
+import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
+import CuckooItem from "./screens/cuckoo_components/CuckooItem";
 
+//stack específica para eventos
 const EventsStackNavigator = createNativeStackNavigator();
 
 function MyStack() {
@@ -58,6 +61,53 @@ function MyStack() {
         </EventsStackNavigator.Navigator>
     )
 }
+
+//stack espec
+const CuckooStackNavigator = createNativeStackNavigator();
+
+function CuckooStack() {
+    const color_1 = '#005f28', color_2 = '005f28';
+    return (
+        <CuckooStackNavigator.Navigator
+            initialRouteName="CuckooScreen"
+        >
+            <CuckooStackNavigator.Screen
+                name = "CuckooScreen"
+                component={CuckooScreen}
+                initialParams={{color_1:'#13aed1',color_2:'#014955'}}
+                options={{
+                    header: () => <CuckooHeader ruta_imagen = {require('../images/cuckoo/logo.png')} color_fondo='#014955'/>
+                }}
+                />
+            {/* <CuckooStackNavigator.Screen
+                name = "CuckooSeccion"
+                component={CuckooSeccion}
+                // initialParams={{color_1:'#d8f26e',color_2:'#005f28'}}
+                // initialParams={{color_1:'#d8f26e',color_2:'#1efed5'}}
+                // initialParams={{color_1:'#53b1c7',color_2:'#005f28'}}
+                // initialParams={{color_1:'#5faf71',color_2:'#005f28'}}
+                // initialParams={{color_1:'#92dbac',color_2:'#005f28'}}
+                //Esta es la buena
+                //initialParams={{color_1:'#5faf71',color_2:'#003500'}}
+                initialParams={{color_1:'#13aed1',color_2:'#014955'}}
+                options={{
+                    header: () => <CuckooHeader ruta_imagen = {require('../images/cuckoo/logo.png')} color_fondo='#014955'/>
+                    //Logo Dely Full
+                    // header: () => <CuckooHeader ruta_imagen = {require('../images/cuckoo/Logo Dely.png')} color_fondo='#005f28'/>
+                }}
+            /> */}
+            <CuckooStackNavigator.Screen
+                name = "CuckooItem"
+                component={CuckooItem}
+                initialParams={{color_1:'#13aed1',color_2:'#014955'}}
+                options={{
+                    header: () => <CuckooHeader ruta_imagen = {require('../images/cuckoo/logo.png')} color_fondo='#014955'/>
+                }}
+            />
+        </CuckooStackNavigator.Navigator>
+    )
+}
+
 
 const Tab = createBottomTabNavigator();
 
@@ -177,7 +227,7 @@ function MyTabs() {
             />
             <Tab.Screen 
                 name="Comida" 
-                component={CuckooScreen} 
+                component={CuckooStack} 
                 options={{
                     tabBarLabel: 'Comida',
                     tabBarBadge: 1,
