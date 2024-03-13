@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Image, Touchable } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
 import EventCard from './EventCard';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const EventSection = () => {
   const events = [

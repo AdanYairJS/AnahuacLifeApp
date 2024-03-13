@@ -1,83 +1,53 @@
-import React from "react";
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const HorarioScreen = () => {
-  // Función para generar las horas del horario
-  const generarHoras = () => {
-    const horas = [];
-    for (let i = 7; i <= 23; i++) {
-      const hora = i < 10 ? `0${i}` : `${i}`;
-      horas.push(<Text key={hora} style={styles.hora}>{hora}:00</Text>);
-      horas.push(<Text key={`${hora}-30`} style={styles.hora}>{hora}:30</Text>);
-    }
-    return horas;
-  };
+  // Generar un arreglo de 17 elementos para representar las filas
+  const rows = Array.from({ length: 17 }, (_, index) => index + 1);
 
-  // Función para generar las celdas del horario
-  const generarCeldas = () => {
-    const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-    const celdas = diasSemana.map(dia => (
-      <View key={dia} style={styles.columna}>
-        <Text style={styles.dia}>{dia}</Text>
-        <View style={styles.horario}>
-          {generarHoras()}
-        </View>
-      </View>
-    ));
-    return celdas;
-  };
+  // Texto para las columnas
+  const days = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+  const currentMonthYear = "Marzo 2024"; // Texto para el mes y año actual
 
   return (
     <View style={styles.container}>
-      <View style={styles.horarioHeader}>
-        <Text style={styles.dia}>Hora</Text>
-        <View style={styles.diasHeader}>
-          <Text style={styles.dia}>Lunes</Text>
-          <Text style={styles.dia}>Martes</Text>
-          <Text style={styles.dia}>Miércoles</Text>
-          <Text style={styles.dia}>Jueves</Text>
-          <Text style={styles.dia}>Viernes</Text>
-          <Text style={styles.dia}>Sábado</Text>
+      {rows.map((row, rowIndex) => (
+        <View key={row} style={styles.row}>
+          {/* Generar una celda por cada columna */}
+          {days.map((day, columnIndex) => (
+            <View key={columnIndex} style={styles.cell}>
+              {/* Agregar el texto en la primera fila y primera columna */}
+              {rowIndex === 0 && columnIndex === 0 ? (
+                <Text>{currentMonthYear}</Text>
+              ) : (
+                <Text>{row === 1 && columnIndex >= 1 && columnIndex <= 6 ? day : ''}</Text>
+              )}
+            </View>
+          ))}
         </View>
-      </View>
-      <View style={styles.horarioContainer}>
-        {generarCeldas()}
-      </View>
+      ))}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10,
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
-    paddingTop: 20,
   },
-  horarioHeader: {
+  row: {
     flexDirection: 'row',
-    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgray',
   },
-  diasHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  columna: {
+  cell: {
     flex: 1,
-  },
-  horario: {
     borderWidth: 1,
     borderColor: 'lightgray',
-    padding: 5,
-  },
-  hora: {
-    fontSize: 12,
-    marginBottom: 5,
-  },
-  dia: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 5,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

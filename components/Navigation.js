@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { Animated, Easing } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
-//import { HomeIcon, DirectoryIcon, MapIcon, FoodIcon, EventsIcon } from './CustomIcons';
+import { StatusBar } from 'react-native';
 import HomeIcon from '../images/icons/home_icon.svg';
 import DirectoryIcon from '../images/icons/directorio_icon.svg';
 import MapIcon from '../images/icons/mapa_icon.svg';
@@ -14,11 +15,11 @@ import HomeScreen from './screens/HomeScreen';
 import EventsScreen from './screens/EventsScreen';
 import DirectoryScreen from './screens/DirectoryScreen';
 import MapScreen from './screens/MapScreen';
-import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
-import DetailedEvent from './screens/events_components/DetailedEvent.js';
 import CuckooScreen from "./screens/CuckooScreen";
 
-var tamano = 35;
+//subscreens
+import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
+import DetailedEvent from './screens/events_components/DetailedEvent.js';
 
 const EventsStackNavigator = createNativeStackNavigator();
 
@@ -61,10 +62,77 @@ function MyStack() {
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
+    const [focusedIndex, setFocusedIndex] = useState(0);
+    const circleSize = useRef(new Animated.Value(0)).current;
+
+    const animateCircle = (toValue) => {
+        Animated.timing(circleSize, {
+            toValue,
+            duration: 300,
+            easing: Easing.linear,
+            useNativeDriver: false,
+        }).start();
+    };
+
+    useEffect(() => {
+        animateCircle(0); // Restaurar el círculo al tamaño inicial cuando el componente se monta
+    }, []);
+
+    const renderTabBarIcon = (route, focused, color, size) => {
+        size=30
+        if (focused) {
+            animateCircle(size + 15); // Iniciar la animación solo cuando la pestaña está activa
+        }
+
+        return (
+            <Animated.View
+                style={{
+                    position: 'relative',
+                    width: size + 15,
+                    height: size + 15,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                {focused && ( // Solo mostrar el círculo cuando la pestaña está activa
+                    <Animated.View
+                        style={{
+                            width: circleSize,
+                            height: circleSize,
+                            backgroundColor: '#D44709', // Color del círculo
+                            borderRadius: circleSize.interpolate({
+                                inputRange: [0, size + 15],
+                                outputRange: [0, (size + 15) / 2], // Para hacerlo circular
+                            }),
+                            position: 'absolute',
+                            bottom: 0,
+                            alignSelf: 'center',
+                        }}
+                    />
+                )}
+                {route.name === 'Home' && (
+                    <HomeIcon width={size} height={size} style={{ color }} />
+                )}
+                {route.name === 'Directorio' && (
+                    <DirectoryIcon width={size} height={size} style={{ color }} />
+                )}
+                {route.name === 'Mapa' && (
+                    <MapIcon width={size} height={size} style={{ color }} />
+                )}
+                {route.name === 'Comida' && (
+                    <FoodIcon width={size} height={size} style={{ color }} />
+                )}
+                {route.name === 'Eventos' && (
+                    <EventsIcon width={size} height={size} style={{ color }} />
+                )}
+            </Animated.View>
+        );
+    };
+
     return(
         <Tab.Navigator
-            screenOptions={{
-                tabBarActiveTintColor: '#FFFFFF',
+            screenOptions={({ route }) => ({
+                tabBarActiveTintColor: '#822C07',
                 tabBarInactiveTintColor: '#FFFFFF',
                 tabBarLabelStyle: {
                     fontFamily: 'lexend-light',
@@ -72,34 +140,24 @@ function MyTabs() {
                     marginBottom: 5,
                 },
                 tabBarStyle: {
-                    backgroundColor: '#FD5900', // Color de fondo naranja
-                    height: 60, // Altura aumentada
-                    borderTopWidth: 0, // Oculta el borde superior
+                    backgroundColor: '#FD5900', // Color de fondo
+                    height: 70, // Altura del menú
+                    borderTopWidth: 0, //Borde superior
                     display: 'flex',
                 },
                 tabBarIconStyle: {
-                    marginTop: 5, // Ajusta la distancia entre el borde superior de los íconos y el fin de la barra de menú
+                    marginTop: 7, // Distancia entre los íconos y el  borde superior de la barra de menú
+                    alignSelf: 'center',
                 },
-                tabBarIcon: ({ focused, color, size }) => {
-                    let iconComponent;
-
-                    // if (focused) {
-                    //     color = '#000000'; // Cambiar el color del ícono si la pestaña está activa
-                    // }
-
-                    return iconComponent;
-                },
-            }}
+                tabBarIcon: ({ focused, color, size }) => renderTabBarIcon(route, focused, color, size),
+            })}
         >
             <Tab.Screen 
                 name="Home" 
                 component={HomeScreen} 
                 options={{
                     tabBarLabel: 'Inicio',
-                    tabBarIcon: ({ color, size }) => (
-                        <HomeIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
-                    ),
-                    headerShown: false
+                    headerShown: false,
                 }}
             />
             <Tab.Screen 
@@ -107,9 +165,6 @@ function MyTabs() {
                 component={DirectoryScreen} 
                 options={{
                     tabBarLabel: 'Directorio',
-                    tabBarIcon: ({ color, size }) => (
-                        <DirectoryIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
-                    )
                 }}
             />
             <Tab.Screen 
@@ -117,9 +172,6 @@ function MyTabs() {
                 component={MapScreen} 
                 options={{
                     tabBarLabel: 'Mapa',
-                    tabBarIcon: ({ color, size }) => (
-                        <MapIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
-                    ),
                     headerShown: false
                 }}
             />
@@ -128,9 +180,6 @@ function MyTabs() {
                 component={CuckooScreen} 
                 options={{
                     tabBarLabel: 'Comida',
-                    tabBarIcon: ({ color, size }) => (
-                        <FoodIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
-                    ),
                     tabBarBadge: 1,
                     tabBarBadgeStyle: {
                         backgroundColor: 'black',
@@ -143,9 +192,6 @@ function MyTabs() {
                 component={MyStack} 
                 options={{
                     tabBarLabel: 'Eventos',
-                    tabBarIcon: ({ color, size }) => (
-                        <EventsIcon width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
-                    ),
                     headerShown: false,
                     tabBarBadge: 13,
                     tabBarBadgeStyle: {

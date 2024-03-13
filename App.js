@@ -13,6 +13,7 @@ const fetchFonts = () => {
     'lexend-medium': require('./fonts/Lexend/static/Lexend-Medium.ttf'),
     'lexend-semibold': require('./fonts/Lexend/static/Lexend-SemiBold.ttf'),
     'lexend-bold': require('./fonts/Lexend/static/Lexend-Bold.ttf'),
+    'lexend-extrabold': require('./fonts/Lexend/static/Lexend-ExtraBold.ttf'),
   });
 };
 

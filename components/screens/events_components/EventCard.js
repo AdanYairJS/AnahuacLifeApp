@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const EventCard = ({ name, date, score, images }) => {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       marginRight: 10,
       marginBottom: 10,
-      marginLeft: 15,
+      marginLeft: 10,
       padding: 10,
       shadowColor: '#000',
       shadowOffset: {
