@@ -19,3 +19,5 @@ Adán: Comencé a crear la animación del menú (De momento está incompleta, ú
 
 Adán: Agregué todos los componentes, relacionados con Cuckoo, creados por Carlos, también las imágenes necesarias para la sección de Cuckoo.
     Integré las líneas de código necesarias en Navigation.js para permitir que la sección Cuckoo funcione
+
+Adán: Voy a intentar subir Navigation al main otra vez :c
