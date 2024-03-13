@@ -1,9 +1,12 @@
 // import { StatusBar , StatusBarHeight } from 'expo-status-bar';
+import React, { useState } from 'react';
 import Constants from 'expo-constants';
-import { StyleSheet, Text, View, Image, Dimensions, ScrollView, Platform, StatusBar} from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions, ScrollView, Platform, StatusBar, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
 import { SliderBox } from 'react-native-image-slider-box';
 import CuckooMenu from './cuckoo_components/CuckooMenu';
+import CuckooSubseccion from './cuckoo_components/CuckooSubseccion';
+import CuckooProductos from './cuckoo_components/CuckooProductos'
 
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
@@ -15,22 +18,39 @@ const images = [
   require('../../images/cuckoo/patatalab.png'),
 ]
 
-export default function CuckooScreen() {
+export default function CuckooScreen({ route }) {
   // StatusBar.setBackgroundColor('#fff');
   // if (Platform.OS === 'android') {
   //   StatusBar.setTranslucent(true);
   // }
+  const [sec, setSec] = useState('Desayunos');
+
+  const cambiarSec = (nombre) => 
+  {
+    setSec(nombre);
+  }
+
+  const {color_1, color_2} = route.params;
+  const id_menu = 'Cuckoo';
+  if(id_menu == 'Cuckoo')
+  {
+    secciones = [
+      {nombre: 'Desayunos'},
+      {nombre: 'Antojitos'},
+      {nombre: 'Platillos'},
+    ];
+  }
   return (
     <LinearGradient 
-      colors={['#13aed1','#014955']}
+      colors={[color_1,color_2]}
       style={styles.container}
     >
       {/* <StatusBar backgroundColor='#014955' barStyle='light-content'></StatusBar> */}
       <View style={styles.fondo}>
         <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
-        <View style={styles.barra_superior}>
+        {/* <View style={styles.barra_superior}>
           <Image source={require('../../images/cuckoo/logo.png')} style={styles.imagen_superior}></Image>
-        </View>
+        </View> */}
         <ScrollView>
           <Text style={styles.titulo}>NOVEDADES</Text>
           <SliderBox 
@@ -51,7 +71,15 @@ export default function CuckooScreen() {
           />
           <Text style={styles.titulo}>MENÚ</Text>
           <View>
-            <CuckooMenu/>
+            {/* <CuckooMenu id_menu='CuckooScreen'/> */}
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.botonera}>
+                  {secciones.map((seccion,index) => (
+                    <TouchableOpacity key={index} style={[styles.boton_seccion,{backgroundColor: color_2}]} onPress={() => cambiarSec(seccion.nombre)}>
+                      <Text style={[styles.titulo,{fontSize: 20, fontWeight: 'normal', marginTop: 12, marginBottom: 12}]}>{seccion.nombre}</Text>
+                    </TouchableOpacity>
+                  ))}
+            </ScrollView>
+            <CuckooProductos id_menu={sec}/>
           </View>
         </ScrollView>
         {/* <StatusBar style="auto" /> */}
@@ -111,7 +139,22 @@ const styles = StyleSheet.create({
     // textShadowColor: 'rgba(0, 0, 0, 0.4)', 
     // textShadowOffset: { width: 0.05, height: 0.05 }, 
     // textShadowRadius: 1,
-    marginTop: altoVentana*0.015,
-    marginBottom: altoVentana*0.015,
+    marginTop: altoVentana*0.05,
+    marginBottom: altoVentana*0.03,
+  },
+  botonera: 
+  {
+    marginBottom: 30,
+  },
+  boton_seccion: {
+    // backgroundColor: color_1,
+    borderRadius: 25,
+    paddingLeft: 15,
+    paddingRight: 15,
+    marginLeft: 15,
+    marginRight: -10,
+    // borderWidth: 2,
+    // borderColor: '#FFF',
+    
   }
 });
