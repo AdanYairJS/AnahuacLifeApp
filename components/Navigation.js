@@ -25,9 +25,11 @@ import CuckooItem from "./screens/cuckoo_components/CuckooItem";
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
 import DetailedEvent from './screens/events_components/DetailedEvent.js';
+import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
+import CuckooItem from "./screens/cuckoo_components/CuckooItem";
 
+//stack específica para eventos
 const EventsStackNavigator = createNativeStackNavigator();
-const CuckooStackNavigator = createNativeStackNavigator();
 
 function MyStack() {
     return(
@@ -56,14 +58,8 @@ function MyStack() {
     )
 }
 
-function LogoHeader() {
-    return (
-        <Image
-            style={{ width: 400, height: 50,}}
-            source={require('../images/cuckoo/logo.png')}
-        />
-    )
-}
+//stack espec
+const CuckooStackNavigator = createNativeStackNavigator();
 
 function CuckooStack() {
     const color_1 = '#005f28', color_2 = '005f28';
@@ -107,6 +103,7 @@ function CuckooStack() {
         </CuckooStackNavigator.Navigator>
     )
 }
+
 
 const Tab = createBottomTabNavigator();
 
