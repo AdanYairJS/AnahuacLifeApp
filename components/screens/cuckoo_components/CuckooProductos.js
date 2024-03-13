@@ -393,7 +393,8 @@ const styles = StyleSheet.create({
   titulo_seccion: {
     width: '100%',
     fontSize: 20,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: 'lexend-extrabold',
     color: '#FFF',
     textAlign: 'left',
     marginLeft: 40,

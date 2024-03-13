@@ -134,8 +134,9 @@ const styles = StyleSheet.create({
   titulo: {
     alignSelf: 'center',
     fontSize: 30,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     color: '#FFF',
+    fontFamily: 'lexend-extrabold',
     // textShadowColor: 'rgba(0, 0, 0, 0.4)', 
     // textShadowOffset: { width: 0.05, height: 0.05 }, 
     // textShadowRadius: 1,

@@ -8,7 +8,7 @@ import DirectoryIcon from '../images/icons/directorio_icon.svg';
 import MapIcon from '../images/icons/mapa_icon.svg';
 import FoodIcon from '../images/icons/comida_icon.svg';
 import EventsIcon from '../images/icons/eventos_icon.svg';
-import { HomeIcon, DirectoryIcon, MapIcon, FoodIcon, EventsIcon } from './CustomIcons';
+// import { HomeIcon, DirectoryIcon, MapIcon, FoodIcon, EventsIcon } from './CustomIcons';
 import { Image } from 'react-native';
 
 //screens
