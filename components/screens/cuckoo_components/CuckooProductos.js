@@ -271,11 +271,11 @@ const CuckooMenu = ({id_menu}) => {
       {nombre: 'Alambres' , imagen: require('../../../images/cuckoo/p_alambre_pollo.png'), texto: 'Alambre de pollo', precio: 65},
     ];
     queso_fundido = [
-      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_pastor.jpeg'), texto: 'Orden de queso fundido (pastor)', precio: 60},
-      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_chorizo.jpg'), texto: 'Orden de queso fundido (chorizo)', precio: 60},
-      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_cecina.jpg'), texto: 'Orden de queso fundido (cecina)', precio: 60},
-      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_bistec.jpg'), texto: 'Orden de queso fundido (bistec)', precio: 60},
-      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_champinones.jpg'), texto: 'Orden de queso fundido (champiñones)', precio: 60},
+      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_pastor.jpeg'), texto: 'Queso fundido (pastor)', precio: 60},
+      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_chorizo.jpg'), texto: 'Queso fundido (chorizo)', precio: 60},
+      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_cecina.jpg'), texto: 'Queso fundido (cecina)', precio: 60},
+      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_bistec.jpg'), texto: 'Queso fundido (bistec)', precio: 60},
+      {nombre: 'Queso fundido' , imagen: require('../../../images/cuckoo/p_queso_fundido_champinones.jpg'), texto: 'Queso fundido (champiñones)', precio: 60},
     ];
     milanesas = [
       {nombre: 'Milanesas Cuckoo' , imagen: require('../../../images/cuckoo/p_milanesa_clasica.jpeg'), texto: 'Clásica empanizada', precio: 60},
@@ -340,6 +340,8 @@ const CuckooMenu = ({id_menu}) => {
           <CuckooSubseccion items={pastas}/>
         <Text style={styles.titulo_seccion}>ALAMBRES</Text>
           <CuckooSubseccion items={alambres}/>
+        <Text style={styles.titulo_seccion}>QUESO FUNDIDO</Text>
+          <CuckooSubseccion items={queso_fundido}/>
         <Text style={styles.titulo_seccion}>MILANESAS CUCKOO</Text>
           <CuckooSubseccion items={milanesas}/>
         <Text style={styles.titulo_seccion}>ENSALADAS</Text>

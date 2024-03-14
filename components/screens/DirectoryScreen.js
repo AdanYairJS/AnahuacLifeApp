@@ -3,6 +3,8 @@ import { View, StyleSheet, Text, Animated, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import ExpandableContainerDirectorio from './directory_components/ExpandableContainerDirectorio';
 
+import DirectoryDepartments from './directory_components/DirectoryDepartments';
+
 const DirectoryScreen = () => {
   const [selectedTab, setSelectedTab] = useState('eventos'); // Estado para rastrear la pestaña actual
   const [selectedImage, setSelectedImage] = useState(null);
@@ -71,7 +73,7 @@ const DirectoryScreen = () => {
 
   return (
             <ScrollView>
-              <ExpandableContainerDirectorio title="Operación Académica" subContainers={[
+              {/* <ExpandableContainerDirectorio title="Operación Académica" subContainers={[
                 { title: <Text style={styles.subtitle}>Roberto Geovanni Lopez Curiel</Text>, subContainers: [
                   <Text style={styles.subContainerText}>Solicitud de examen extraordinario</Text>,
                   <Text style={styles.subContainerText}>Exámenes de suficiencia académica</Text>,
@@ -160,8 +162,9 @@ const DirectoryScreen = () => {
                   <Text style={styles.subContainerText}>Prácticas profesionales</Text>,
                   <Text style={styles.subContainerText}>Requisitos y periodos de internacionalización</Text>,
                 ] },
-              ]}/>
-
+              ]}/> */}
+              {/* Comentar la siguiente línea */}
+              <DirectoryDepartments id_menu={'Desayunos'}/>
             </ScrollView> 
   );
 };
@@ -325,3 +328,4 @@ const styles = StyleSheet.create({
 });
 
 export default DirectoryScreen;
+
