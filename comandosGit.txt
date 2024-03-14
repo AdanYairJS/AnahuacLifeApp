@@ -38,3 +38,5 @@ git pull: (contiene: git fetch, git merge origin/master) si alguien modifica el 
 git pull origin main: trae los cambios del main a la rama local
 
 git log:  muestra todos los commits hechos desde la creación
+
+code . : abre visual studio desde git bash
