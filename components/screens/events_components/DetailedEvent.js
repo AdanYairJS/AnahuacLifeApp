@@ -1,10 +1,3 @@
-// Banner del evento
-// Aréas involucradas (logos)
-// Descripción del evento
-// Fecha del evento
-// Hora del evento
-// Lugar del evento
-// Botón de registro
 import React from 'react';
 import { Image, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';

@@ -12,16 +12,16 @@ const LeadershipPrograms = ({  }) => {
   const navigation = useNavigation();
 
   const secciones = [
-    { nombre: 'vertice', imagen: verticeImage },
-    { nombre: 'accion', imagen: accionImage },
-    { nombre: 'culmen', imagen: culmenImage },
-    { nombre: 'imef', imagen: imefImage },
+    { id : 1, nombre: 'vertice', imagen: verticeImage},
+    { id : 2, nombre: 'accion', imagen: accionImage},
+    { id : 3, nombre: 'culmen', imagen: culmenImage},
+    { id : 4, nombre: 'imef', imagen: imefImage},
   ];
 
   return (
     <View style={styles.container}>
       {secciones.map((seccion, index) => (
-        <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice")}>
+        <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice",{id: seccion.id})}>
           <Image source={seccion.imagen} style={styles.imagen} />           
         </TouchableOpacity>
       ))}
