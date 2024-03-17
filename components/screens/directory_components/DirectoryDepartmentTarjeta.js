@@ -9,7 +9,7 @@ const DirectoryWorkerTarjeta = ({ nombre, imagen, texto, trabajadores}) => {
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{trabajadores})}>
       <Image source={imagen} style={styles.image}/>
       <View style={styles.textContainer}>
-        <Text style={styles.activityName}>{texto}</Text>
+        <Text style={styles.activityName}>{texto.toUpperCase()}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#ffffff',
       borderRadius: 10,
       marginRight: 20,
-      marginBottom: 10,
+      marginBottom: 20,
       marginLeft: 20,
     //   padding: 10,
       shadowColor: '#000',
@@ -45,14 +45,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     activityName: {
-      fontSize: 30,
-      fontFamily: 'lexend-bold',
-      fontWeight: 'bold',
-      marginBottom: 5,
+      fontSize: 20,
+      fontFamily: 'lexend-extrabold',
+      // color: '#36454F',
+      // marginBottom: 5,
       textAlign: 'center',
-    //   borderColor: 'red',
-    //   borderWidth: 3,
-    //   textAlignVertical: 'center',
+      
+      // borderColor: 'red',
+      // borderWidth: 3,
+      // textAlignVertical: 'center',
     },
     activityDate: {
       fontFamily: 'lexend-regular',

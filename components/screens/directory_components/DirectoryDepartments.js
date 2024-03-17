@@ -70,7 +70,7 @@ const DirectoryDepartments = ({id_menu}) => {
         navigation.navigate(nombre_seccion,{texto_seccion});
     };
     return (
-        <View style={styles.container}>
+      <View style={styles.container}>
       {departamentos.map((departamento, index) => (        
           <DirectoryDepartmentTarjeta key={index} {...departamento} />        
       ))}
@@ -86,6 +86,8 @@ const styles = StyleSheet.create({
     width: anchoVentana,
     maxWidth: 800,
     alignSelf: 'center',
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   icono: {
     width: '45%',

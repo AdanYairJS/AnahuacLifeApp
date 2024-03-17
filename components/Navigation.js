@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Animated, Easing } from "react-native";
+import { Animated, Easing, Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
@@ -204,6 +204,15 @@ function MyTabs() {
         );
     };
 
+    let mt;
+    if( Platform.OS === 'ios' )
+    {
+        mt = -10;
+    }
+    else
+    {
+        mt = 5;
+    }
     return(
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -212,11 +221,11 @@ function MyTabs() {
                 tabBarLabelStyle: {
                     fontFamily: 'lexend-light',
                     fontSize: 11,
-                    marginBottom: 5,
+                    marginBottom: mt,
                 },
                 tabBarStyle: {
                     backgroundColor: '#FD5900', // Color de fondo
-                    height: 70, // Altura del menú
+                    height: 85, // Altura del menú
                     borderTopWidth: 0, //Borde superior
                     display: 'flex',
                 },

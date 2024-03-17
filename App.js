@@ -34,9 +34,10 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={[styles.container, {paddingTop: Platform.OS === 'android' ? Constants.statusBarHeight : 0}]}>
       <Navigation/>
-    </SafeAreaView>
+    // <SafeAreaView style={[styles.container, {paddingTop: Platform.OS === 'android' ? Constants.statusBarHeight : -Constants.statusBarHeight}]}>
+    //   <Navigation/>
+    // </SafeAreaView>
   );
 }
 

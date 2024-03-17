@@ -72,7 +72,7 @@ const DirectoryScreen = () => {
   });
 
   return (
-            <ScrollView>
+            <ScrollView style={styles.scroll}>
               {/* <ExpandableContainerDirectorio title="Operación Académica" subContainers={[
                 { title: <Text style={styles.subtitle}>Roberto Geovanni Lopez Curiel</Text>, subContainers: [
                   <Text style={styles.subContainerText}>Solicitud de examen extraordinario</Text>,
@@ -172,6 +172,10 @@ const DirectoryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  scroll: {
+    // paddingTop: 80,
+    marginTop: 80,
   },
   scrollView: {
     flex: 1,
