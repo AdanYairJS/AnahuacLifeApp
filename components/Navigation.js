@@ -3,7 +3,6 @@ import { Animated, Easing } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'react-native';
 import HomeIcon from '../images/icons/home_icon.svg';
 import DirectoryIcon from '../images/icons/directorio_icon.svg';
 import MapIcon from '../images/icons/mapa_icon.svg';
