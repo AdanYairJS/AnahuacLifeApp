@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-//import Svg, { Filter, Image as SvgImage, Defs } from 'react-native-svg'; //npm install react-native-svg
 
 import adefaImage from '../../../images/eventos/grupos/adefa.png';
 import fesalImage from '../../../images/eventos/grupos/fesal.png';
@@ -14,18 +13,18 @@ const GroupsSection = ({  }) => {
   const navigation = useNavigation();
 
   const secciones = [
-    { nombre: 'adefa', imagen: adefaImage },
-    { nombre: 'asua', imagen: asuaImage },
-    { nombre: 'fesal', imagen: fesalImage },
-    { nombre: 'pastoral', imagen: pastoralImage },
-    { nombre: 'leones', imagen: leonesImage },
-    { nombre: 'espaciocultural', imagen: espacioculturalImage },
+    { id : 5, nombre: 'adefa', imagen: adefaImage },
+    { id : 6, nombre: 'asua', imagen: asuaImage },
+    { id : 7, nombre: 'fesal', imagen: fesalImage },
+    { id : 8, nombre: 'pastoral', imagen: pastoralImage },
+    { id : 9, nombre: 'leones', imagen: leonesImage },
+    { id : 10, nombre: 'espaciocultural', imagen: espacioculturalImage },
   ];
 
   return (
     <View style={styles.container}>
       {secciones.map((seccion, index) => (
-        <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice")}>
+        <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice",{id: seccion.id})}>
           <Image source={seccion.imagen} style={styles.imagen} />           
         </TouchableOpacity>
       ))}
