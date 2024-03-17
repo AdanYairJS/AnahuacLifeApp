@@ -33,7 +33,7 @@ const HorarioScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 5,
     backgroundColor: '#fff',
   },
   row: {
@@ -45,10 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     borderColor: 'lightgray',
-    padding: 10,
+    padding: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
 
 export default HorarioScreen;
+

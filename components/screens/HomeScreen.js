@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Modal, FlatList, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import HorarioScreen from './home_components/HorarioScreen';
-import PerfilDialog from './home_components/PerfilDialog'; // Importa el componente PerfilDialog
-import ConfiguracionDialog from './home_components/ConfiguracionDialog'; // Importa el componente ConfiguracionDialog
 
 const iconosDisponibles = [
   "user",
@@ -20,17 +18,30 @@ const iconosDisponibles = [
 const HomeScreen = () => {
   const [iconName, setIconName] = useState("user");
   const [modalVisible, setModalVisible] = useState(false);
-  const [perfilVisible, setPerfilVisible] = useState(false); // Estado para controlar la visibilidad del cuadro de diálogo de perfil
-  const [configuracionVisible, setConfiguracionVisible] = useState(false); // Estado para controlar la visibilidad del cuadro de diálogo de configuración
+  const [perfilVisible, setPerfilVisible] = useState(false);
+  const [configuracionVisible, setConfiguracionVisible] = useState(false);
+  const [temaClaroSeleccionado, setTemaClaroSeleccionado] = useState(true); // Estado para controlar si el tema claro está seleccionado
 
   const cambiarIcono = (nuevoIcono) => {
     setIconName(nuevoIcono);
     setModalVisible(false);
   };
 
+  // Función para manejar la selección del tema claro
+  const seleccionarTemaClaro = () => {
+    setTemaClaroSeleccionado(true);
+  };
+
+  // Función para manejar la selección del tema oscuro
+  const seleccionarTemaOscuro = () => {
+    setTemaClaroSeleccionado(false);
+  };
+
   const renderIcono = ({ item }) => (
-    <TouchableOpacity onPress={() => cambiarIcono(item)} style={styles.iconoItem}>
-      <FontAwesome name={item} size={30} color="black" />
+    <TouchableOpacity onPress={() => cambiarIcono(item)} style={styles.iconoItemContainer}>
+      <View style={styles.iconoItem}>
+        <FontAwesome name={item} size={50} color="white" />
+      </View>
     </TouchableOpacity>
   );
 
@@ -41,7 +52,7 @@ const HomeScreen = () => {
           <View style={styles.rectangle}>
             <TouchableOpacity onPress={() => setModalVisible(true)}>
               <View style={styles.circle}>
-                <FontAwesome name={iconName} size={30} color="white" />
+                <FontAwesome name={iconName} size={45} color="white" />
               </View>
             </TouchableOpacity>
             <View style={styles.userInfo}>
@@ -54,32 +65,48 @@ const HomeScreen = () => {
 
         <View style={styles.bottomSection}>
           <View style={styles.horarioContainer}>
-            <HorarioScreen diasSemana={['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']} 
-                           onPerfilPress={() => setPerfilVisible(true)}
-                           onConfiguracionPress={() => setConfiguracionVisible(true)} />
+            <HorarioScreen diasSemana={['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']} />
           </View>
+
+          <View style={styles.space} />
+          
+          <View style={styles.configuracionContainer}>
+            <Text style={styles.configuracionTitle}>Configuración</Text>
+      
+            <View style={styles.optionContainer}>
+              <Text style={styles.optionText}>Tema</Text>
+              <View style={styles.themeButtons}>
+                <TouchableOpacity 
+                  style={[styles.themeButton, temaClaroSeleccionado ? styles.selectedButton : null]} // Aplicar estilos adicionales si el tema claro está seleccionado
+                  onPress={seleccionarTemaClaro} // Manejar la selección del tema claro
+                >
+                  <FontAwesome name="sun-o" size={24} color={temaClaroSeleccionado ? "white" : "black"} /> 
+                  <Text style={[styles.themeButtonText, temaClaroSeleccionado ? styles.selectedText : null]}>Claro</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                  style={[styles.themeButton, !temaClaroSeleccionado ? styles.selectedButton : null]} // Aplicar estilos adicionales si el tema oscuro está seleccionado
+                  onPress={seleccionarTemaOscuro} // Manejar la selección del tema oscuro
+                >
+                  <FontAwesome name="moon-o" size={24} color={!temaClaroSeleccionado ? "white" : "black"} />
+                  <Text style={[styles.themeButtonText, !temaClaroSeleccionado ? styles.selectedText : null]}>Oscuro</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+          <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Cerrar Sesión</Text>
+          </TouchableOpacity>
         </View>
+      </View>
 
         <View style={styles.space} />
-
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => setPerfilVisible(true)}>
-            <Text style={styles.buttonText}>Perfil</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => setConfiguracionVisible(true)}>
-            <Text style={styles.buttonText}>Configuración</Text>
-          </TouchableOpacity>
-        </View>
-
-        <PerfilDialog visible={perfilVisible} onClose={() => setPerfilVisible(false)} />
-        <ConfiguracionDialog visible={configuracionVisible} onClose={() => setConfiguracionVisible(false)} />
 
         <Modal
           animationType="slide"
           transparent={true}
           visible={modalVisible}
-          onRequestClose={() => setModalVisible(false)}
-        >
+          onRequestClose={() => setModalVisible(false)}>
+
           <View style={styles.modalContainer}>
             <FlatList
               data={iconosDisponibles}
@@ -90,7 +117,6 @@ const HomeScreen = () => {
             />
           </View>
         </Modal>
-      </View>
     </ScrollView>
   );
 }
@@ -103,18 +129,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingHorizontal: 20,
     paddingTop: 20,
   },
   topSection: {
-    flex: 1,
     width: '100%',
-    marginBottom: -70,
+    marginBottom: 20,
   },
   bottomSection: {
-    flex: 2,
     width: '100%',
+    marginBottom: 20,
   },
   rectangle: {
     flexDirection: 'row',
@@ -125,9 +150,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   circle: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 70,
+    height: 70,
+    borderRadius: 40,
     backgroundColor: '#FD5900',
     alignItems: 'center',
     justifyContent: 'center',
@@ -140,7 +165,6 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   horarioContainer: {
-    flex: 1,
     backgroundColor: 'lightgray',
   },
   modalContainer: {
@@ -151,24 +175,70 @@ const styles = StyleSheet.create({
   },
   iconoList: {
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 200,
+    paddingHorizontal: 30,
+  },
+  iconoItemContainer: {
+    padding: 25,
   },
   iconoItem: {
-    padding: 10,
+    width: 70,
+    height: 70,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   space: {
     height: 50,
   },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+  configuracionContainer: {
+    marginTop: 20,
+    paddingHorizontal: 20,
+  },
+  configuracionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  optionContainer: {
     marginBottom: 20,
-    width: '100%',
+  },
+  optionText: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  themeButtons: {
+    flexDirection: 'row',
+  },
+  themeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: 20,
+    borderWidth: 1, // Añadir contorno negro
+    borderRadius: 5, // Añadir borde redondeado
+    paddingVertical: 5, // Espaciado vertical
+    paddingHorizontal: 10, // Espaciado horizontal
+  },
+  themeButtonText: {
+    marginLeft: 5,
+  },
+  selectedButton: {
+    backgroundColor: 'black', // Fondo negro si está seleccionado
+  },
+  selectedText: {
+    color: 'white', // Texto blanco si está seleccionado
   },
   button: {
+    maxWidth: 200,
+    alignSelf: 'center',
     backgroundColor: '#FD5900',
-    paddingVertical: 15,
-    paddingHorizontal: 25,
+    margin: 40,
+    padding: 15,
     borderRadius: 10,
+    alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -180,8 +250,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontFamily: 'lexend-medium',
   },
 });
 
