@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Animated, Easing } from "react-native";
+import { Animated, Easing, Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
@@ -22,6 +22,7 @@ import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
 import DetailedEvent from './screens/events_components/DetailedEvent.js';
 import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 import CuckooItem from "./screens/cuckoo_components/CuckooItem";
+import DirectoryWorkers from "./screens/directory_components/DirectoryWorkers.js";
 
 //stack específica para eventos
 const EventsStackNavigator = createNativeStackNavigator();
@@ -63,6 +64,30 @@ function MyStack() {
 }
 
 //stack espec
+const DirectoryStackNavigator = createNativeStackNavigator();
+
+function DirectoryStack() {
+    return(
+        <DirectoryStackNavigator.Navigator
+            initialRouteName="DirectoryScreen"
+        >
+            <DirectoryStackNavigator.Screen
+                name="DirectoryScreen"
+                component={DirectoryScreen}
+                options={{
+                    headerShown: false,
+                }}
+            >
+            </DirectoryStackNavigator.Screen>
+            <DirectoryStackNavigator.Screen
+                name="DirectoryWorkers"
+                component={DirectoryWorkers}
+            >
+            </DirectoryStackNavigator.Screen>
+        </DirectoryStackNavigator.Navigator>
+    )
+}
+
 const CuckooStackNavigator = createNativeStackNavigator();
 
 function CuckooStack() {
@@ -179,6 +204,15 @@ function MyTabs() {
         );
     };
 
+    let mt;
+    if( Platform.OS === 'ios' )
+    {
+        mt = -10;
+    }
+    else
+    {
+        mt = 5;
+    }
     return(
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -187,11 +221,11 @@ function MyTabs() {
                 tabBarLabelStyle: {
                     fontFamily: 'lexend-light',
                     fontSize: 11,
-                    marginBottom: 5,
+                    marginBottom: mt,
                 },
                 tabBarStyle: {
                     backgroundColor: '#FD5900', // Color de fondo
-                    height: 70, // Altura del menú
+                    height: 85, // Altura del menú
                     borderTopWidth: 0, //Borde superior
                     display: 'flex',
                 },
@@ -212,9 +246,10 @@ function MyTabs() {
             />
             <Tab.Screen 
                 name="Directorio" 
-                component={DirectoryScreen} 
+                component={DirectoryStack} 
                 options={{
                     tabBarLabel: 'Directorio',
+                    headerShown: false
                 }}
             />
             <Tab.Screen 
