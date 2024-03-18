@@ -1,13 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Animated, Easing } from "react-native";
+import React from "react";
+import { Animated, Easing, Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
-import HomeIcon from '../images/icons/home_icon.svg';
-import DirectoryIcon from '../images/icons/directorio_icon.svg';
-import MapIcon from '../images/icons/mapa_icon.svg';
-import FoodIcon from '../images/icons/comida_icon.svg';
-import EventsIcon from '../images/icons/eventos_icon.svg';
 
 //screens
 import HomeScreen from './screens/HomeScreen';
@@ -22,223 +17,208 @@ import DetailedEvent from './screens/events_components/DetailedEvent.js';
 import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 import CuckooItem from "./screens/cuckoo_components/CuckooItem";
 
-//stack específica para eventos
+//íconos
+import HomeIcon from '../images/icons/home_icon.svg';
+import DirectoryIcon from '../images/icons/directorio_icon.svg';
+import MapIcon from '../images/icons/mapa_icon.svg';
+import FoodIcon from '../images/icons/comida_icon.svg';
+import EventsIcon from '../images/icons/eventos_icon.svg';
+import HomeIconActive from '../images/icons/home_icon_activo.svg';
+import DirectoryIconActive from '../images/icons/directorio_icon_activo.svg';
+import MapIconActive from '../images/icons/mapa_icon_activo.svg';
+import FoodIconActive from '../images/icons/comida_icon_activo.svg';
+import EventsIconActive from '../images/icons/eventos_icon_activo.svg';
+
+const Tab = createBottomTabNavigator();
 const EventsStackNavigator = createNativeStackNavigator();
+const CuckooStackNavigator = createNativeStackNavigator();
 
 function MyStack() {
-    return(
-        <EventsStackNavigator.Navigator
-            initialRouteName="EventosScreen"
-        >
+    return (
+        <EventsStackNavigator.Navigator initialRouteName="EventosScreen">
             <EventsStackNavigator.Screen
-                name = "EventosScreen"
+                name="EventosScreen"
                 component={EventsScreen}
                 options={{
                     tabBarLabel: 'Eventos',
                     tabBarIcon: ({ color, size }) => (
-                        <EventsIcon  width={tamano} height={tamano} style={{color: color, width: size, height: size}} />
+                        <EventsIcon width={size} height={size} style={{ tintColor: color }} />
                     ),
                     headerShown: false
                 }}
             />
             <EventsStackNavigator.Screen
-                name = "Vertice"
+                name="Vertice"
                 component={GroupsStackScreen}
                 options={{
                     headerBackTitle: false,
                     headerShown: false,
+                    //animationTypeForReplace:'pop',
+                    animation: 'slide_from_right',
+                    transitionSpec: {
+                        open: { animation: 'timing', config: { duration: 500 } }, // Duración para la entrada
+                        close: { animation: 'timing', config: { duration: 500 } }, // Duración para la salida
+                    },
                 }}
             />
             <EventsStackNavigator.Screen
-                name = "DetallesEvento"
+                name="DetallesEvento"
                 component={DetailedEvent}
                 options={{
                     headerBackTitle: false,
                     headerShown: false,
+                    animation: 'slide_from_right',
+                    transitionSpec: {
+                        open: { animation: 'timing', config: { duration: 20 } }, // Duración para la entrada
+                        close: { animation: 'timing', config: { duration: 20 } }, // Duración para la salida
+                    },
                 }}
             />
         </EventsStackNavigator.Navigator>
-    )
-}
-
-//stack espec
-const CuckooStackNavigator = createNativeStackNavigator();
-
-function CuckooStack() {
-    const color_1 = '#005f28', color_2 = '005f28';
-    return (
-        <CuckooStackNavigator.Navigator
-            initialRouteName="CuckooScreen"
-        >
-            <CuckooStackNavigator.Screen
-                name = "CuckooScreen"
-                component={CuckooScreen}
-                initialParams={{color_1:'#13aed1',color_2:'#014955'}}
-                options={{
-                    header: () => <CuckooHeader ruta_imagen = {require('../images/cuckoo/logo.png')} color_fondo='#014955'/>
-                }}
-                />
-            <CuckooStackNavigator.Screen
-                name = "CuckooItem"
-                component={CuckooItem}
-                initialParams={{color_1:'#13aed1',color_2:'#014955'}}
-                options={{
-                    header: () => <CuckooHeader ruta_imagen = {require('../images/cuckoo/logo.png')} color_fondo='#014955'/>
-                }}
-            />
-        </CuckooStackNavigator.Navigator>
-    )
-}
-
-
-const Tab = createBottomTabNavigator();
-
-function MyTabs() {
-    const [focusedIndex, setFocusedIndex] = useState(0);
-    const circleSize = useRef(new Animated.Value(0)).current;
-
-    const animateCircle = (toValue) => {
-        Animated.timing(circleSize, {
-            toValue,
-            duration: 300,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start();
-    };
-
-    useEffect(() => {
-        animateCircle(0); // Restaurar el círculo al tamaño inicial cuando el componente se monta
-    }, []);
-
-    const renderTabBarIcon = (route, focused, color, size) => {
-        size=30
-        if (focused) {
-            animateCircle(size + 15); // Iniciar la animación solo cuando la pestaña está activa
-        }
-
-        return (
-            <Animated.View
-                style={{
-                    position: 'relative',
-                    width: size + 15,
-                    height: size + 15,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-            >
-                {focused && ( // Solo mostrar el círculo cuando la pestaña está activa
-                    <Animated.View
-                        style={{
-                            width: circleSize,
-                            height: circleSize,
-                            backgroundColor: '#D44709', // Color del círculo
-                            borderRadius: circleSize.interpolate({
-                                inputRange: [0, size + 15],
-                                outputRange: [0, (size + 15) / 2], // Para hacerlo circular
-                            }),
-                            position: 'absolute',
-                            bottom: 0,
-                            alignSelf: 'center',
-                        }}
-                    />
-                )}
-                {route.name === 'Home' && (
-                    <HomeIcon width={size} height={size} style={{ color }} />
-                )}
-                {route.name === 'Directorio' && (
-                    <DirectoryIcon width={size} height={size} style={{ color }} />
-                )}
-                {route.name === 'Mapa' && (
-                    <MapIcon width={size} height={size} style={{ color }} />
-                )}
-                {route.name === 'Comida' && (
-                    <FoodIcon width={size} height={size} style={{ color }} />
-                )}
-                {route.name === 'Eventos' && (
-                    <EventsIcon width={size} height={size} style={{ color }} />
-                )}
-            </Animated.View>
-        );
-    };
-
-    return(
-        <Tab.Navigator
-            screenOptions={({ route }) => ({
-                tabBarActiveTintColor: '#822C07',
-                tabBarInactiveTintColor: '#FFFFFF',
-                tabBarLabelStyle: {
-                    fontFamily: 'lexend-light',
-                    fontSize: 11,
-                    marginBottom: 5,
-                },
-                tabBarStyle: {
-                    backgroundColor: '#FD5900', // Color de fondo
-                    height: 70, // Altura del menú
-                    borderTopWidth: 0, //Borde superior
-                    display: 'flex',
-                },
-                tabBarIconStyle: {
-                    marginTop: 7, // Distancia entre los íconos y el  borde superior de la barra de menú
-                    alignSelf: 'center',
-                },
-                tabBarIcon: ({ focused, color, size }) => renderTabBarIcon(route, focused, color, size),
-            })}
-        >
-            <Tab.Screen 
-                name="Home" 
-                component={HomeScreen} 
-                options={{
-                    tabBarLabel: 'Inicio',
-                    headerShown: false,
-                }}
-            />
-            <Tab.Screen 
-                name="Directorio" 
-                component={DirectoryScreen} 
-                options={{
-                    tabBarLabel: 'Directorio',
-                }}
-            />
-            <Tab.Screen 
-                name="Mapa" 
-                component={MapScreen} 
-                options={{
-                    tabBarLabel: 'Mapa',
-                    headerShown: false
-                }}
-            />
-            <Tab.Screen 
-                name="Comida" 
-                component={CuckooStack} 
-                options={{
-                    tabBarLabel: 'Comida',
-                    tabBarBadge: 1,
-                    tabBarBadgeStyle: {
-                        backgroundColor: 'black',
-                    },
-                    headerShown: false
-                }}
-            />
-            <Tab.Screen 
-                name="Eventos" 
-                component={MyStack} 
-                options={{
-                    tabBarLabel: 'Eventos',
-                    headerShown: false,
-                    tabBarBadge: 13,
-                    tabBarBadgeStyle: {
-                        backgroundColor: 'black',
-                    }
-                }}                
-            />
-        </Tab.Navigator>
     );
 }
 
-export default function Navigation(){
-    return(
+function CuckooStack() {
+    return (
+        <CuckooStackNavigator.Navigator initialRouteName="CuckooScreen">
+            <CuckooStackNavigator.Screen
+                name="CuckooScreen"
+                component={CuckooScreen}
+                initialParams={{ color_1: '#13aed1', color_2: '#014955' }}
+                options={{
+                    header: () => <CuckooHeader ruta_imagen={require('../images/cuckoo/logo.png')} color_fondo='#014955' />
+                }}
+            />
+            <CuckooStackNavigator.Screen
+                name="CuckooItem"
+                component={CuckooItem}
+                initialParams={{ color_1: '#13aed1', color_2: '#014955' }}
+                options={{
+                    header: () => <CuckooHeader ruta_imagen={require('../images/cuckoo/logo.png')} color_fondo='#014955' />
+                }}
+            />
+        </CuckooStackNavigator.Navigator>
+    );
+}
+
+export default function Navigation() {
+    return (
         <NavigationContainer>
-            <MyTabs/>
+            <Tab.Navigator
+                screenOptions={({ route }) => ({
+                    tabBarActiveTintColor: '#FD5900',
+                    tabBarInactiveTintColor: '#B5B7BB',
+                    tabBarLabelStyle: {
+                        fontFamily: 'lexend-light',
+                        fontSize: 10,
+                        marginBottom: Platform.OS === 'ios' ? 0 : 10,
+                        marginTop: Platform.OS === 'ios' ? 8 : 0,
+                    },
+                    // tabBarLabelStyle: ({ focused }) => ({
+                    //     fontFamily: 'lexend-light',
+                    //     fontSize: focused ? 14 : 11,
+                    //     marginBottom: Platform.OS === 'ios' ? 0 : 5,
+                    //     marginTop: Platform.OS === 'ios' ? 5 : 0,
+                    // }),
+                    tabBarStyle: {
+                        backgroundColor: '#FFFFFF', // Color de fondo
+                        height: 60, // Altura del menú
+                        borderTopWidth: 0, //Borde superior
+                        display: 'flex',
+                        ...Platform.select({
+                            ios: {
+                                shadowColor: 'black',
+                                shadowOffset: { width: 0, height: 3 },
+                                shadowOpacity: 0.1,
+                                shadowRadius: 4,
+                            },
+                            android: {
+                                elevation: 8,
+                            },
+                        }),
+                    },
+                    tabBarIconStyle: {
+                        marginTop: 6, // Distancia entre los íconos y el  borde superior de la barra de menú
+                        alignSelf: 'center',
+                    },
+                    tabBarIcon: ({ focused, color, size }) => {
+                        const iconSize = 30;
+                        const iconSizef = 34;
+                        ;
+                        let icon;
+
+                        switch (route.name) {
+                            case 'Home':
+                                icon = focused ? <HomeIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <HomeIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                break;
+                            case 'Directorio':
+                                icon = focused ? <DirectoryIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <DirectoryIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                break;
+                            case 'Mapa':
+                                icon = focused ? <MapIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <MapIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                break;
+                            case 'Comida':
+                                icon = focused ? <FoodIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <FoodIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                break;
+                            case 'Eventos':
+                                icon = focused ? <EventsIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <EventsIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        return icon;
+                    },
+                })}
+            >
+                <Tab.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={{
+                        tabBarLabel: 'Inicio',
+                        headerShown: false,
+                    }}
+                />
+                <Tab.Screen
+                    name="Directorio"
+                    component={DirectoryScreen}
+                    options={{
+                        tabBarLabel: 'Directorio',
+                    }}
+                />
+                <Tab.Screen
+                    name="Mapa"
+                    component={MapScreen}
+                    options={{
+                        tabBarLabel: 'Mapa',
+                        headerShown: false
+                    }}
+                />
+                <Tab.Screen
+                    name="Comida"
+                    component={CuckooStack}
+                    options={{
+                        tabBarLabel: 'Comida',
+                        tabBarBadge: 1,
+                        tabBarBadgeStyle: {
+                            backgroundColor: 'black',
+                        },
+                        headerShown: false
+                    }}
+                />
+                <Tab.Screen
+                    name="Eventos"
+                    component={MyStack}
+                    options={{
+                        tabBarLabel: 'Eventos',
+                        headerShown: false,
+                        tabBarBadge: 13,
+                        tabBarBadgeStyle: {
+                            backgroundColor: 'black',
+                        }
+                    }}
+                />
+            </Tab.Navigator>
         </NavigationContainer>
     );
 }
