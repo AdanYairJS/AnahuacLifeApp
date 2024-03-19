@@ -59,7 +59,7 @@ const GroupsStackScreen = ({route}) => {
           <Text style={styles.description}>{texto}</Text>
         </View>
         <View style={styles.instagramContainer}>
-          <TouchableOpacity style={styles.instagramContainer} onPress={() => Linking.openURL({rutaI})}>
+          <TouchableOpacity style={styles.instagramContainer} onPress={() => Linking.openURL(rutaI)}>
             <InstagramIcon width={30} height={30} />
             <Text style={styles.instagramText}>{instagram}</Text>
           </TouchableOpacity>  

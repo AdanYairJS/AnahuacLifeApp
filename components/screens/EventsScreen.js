@@ -27,7 +27,8 @@ const EventsScreen = ({  }) => {
                     <SliderBox         
                     images = {images} 
                     dotStyle = {{height: 8, width: 8, borderRadius: 50}} 
-                    circleLoop autoplay={true} 
+                    circleLoop={true}
+                    autoplay={true} 
                     autoplayInterval={4000}
                     firstItem={0}
                     resizeMode={'cover'}

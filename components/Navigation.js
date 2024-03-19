@@ -2,6 +2,7 @@ import React from "react";
 import { Animated, Easing, Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+//import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 //screens
@@ -16,6 +17,12 @@ import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
 import DetailedEvent from './screens/events_components/DetailedEvent.js';
 import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 import CuckooItem from "./screens/cuckoo_components/CuckooItem";
+import HorarioScreen from "./screens/home_components/HorarioScreen.js";
+import AgendaScreen from "./screens/home_components/AgendaScreen.js";
+import ActivityScreen from "./screens/home_components/preferences/ActivityScreen.js";
+import HelpScreen from "./screens/home_components/preferences/HelpScreen.js";
+import DarkModeScreen from "./screens/home_components/preferences/DarkModeScreen.js";
+import NotificationScreen from "./screens/home_components/preferences/NotificationsScreen.js";
 
 //íconos
 import HomeIcon from '../images/icons/home_icon.svg';
@@ -32,8 +39,85 @@ import EventsIconActive from '../images/icons/eventos_icon_activo.svg';
 const Tab = createBottomTabNavigator();
 const EventsStackNavigator = createNativeStackNavigator();
 const CuckooStackNavigator = createNativeStackNavigator();
+const HomeStackNavigator = createNativeStackNavigator();
 
-function MyStack() {
+function HomeStack() {
+    return (
+        <EventsStackNavigator.Navigator initialRouteName="EventosScreen">
+            <EventsStackNavigator.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{
+                    tabBarLabel: 'Inicio',
+                    tabBarIcon: ({ color, size }) => (
+                        <HomeIcon width={size} height={size} style={{ tintColor: color }} />
+                    ),
+                    headerShown: false,
+                    animationTypeForReplace:'pop',
+                    animation: 'fade',
+                }}
+            />
+            <HomeStackNavigator.Screen
+                name="Horario"
+                component={HorarioScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    animationTypeForReplace:'pop',
+                    animation: 'fade',
+                }}
+            />
+            <HomeStackNavigator.Screen
+                name="Agenda"
+                component={AgendaScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    animationTypeForReplace:'pop',
+                    animation: 'fade',
+                }}
+            />
+            <HomeStackNavigator.Screen
+                name="Actividad"
+                component={ActivityScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    animation: 'slide_from_right',
+                }}
+            />
+            <HomeStackNavigator.Screen
+                name="Notificaciones"
+                component={NotificationScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    animation: 'slide_from_right',
+                }}
+            />
+            <HomeStackNavigator.Screen
+                name="ModoOscuro"
+                component={DarkModeScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    animation: 'slide_from_right',
+                }}
+            />
+            <HomeStackNavigator.Screen
+                name="Ayuda"
+                component={HelpScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    animation: 'slide_from_right',
+                }}
+            />
+        </EventsStackNavigator.Navigator>
+    );
+}
+
+function EventosStack() {
     return (
         <EventsStackNavigator.Navigator initialRouteName="EventosScreen">
             <EventsStackNavigator.Screen
@@ -173,7 +257,7 @@ export default function Navigation() {
             >
                 <Tab.Screen
                     name="Home"
-                    component={HomeScreen}
+                    component={HomeStack}
                     options={{
                         tabBarLabel: 'Inicio',
                         headerShown: false,
@@ -208,7 +292,7 @@ export default function Navigation() {
                 />
                 <Tab.Screen
                     name="Eventos"
-                    component={MyStack}
+                    component={EventosStack}
                     options={{
                         tabBarLabel: 'Eventos',
                         headerShown: false,

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const anchoVentana = Dimensions.get('window').width;
 
-const HorarioScreen = () => {
+const AgendaScreen = () => {
   const navigation = useNavigation();
 
   return (
@@ -15,17 +15,17 @@ const HorarioScreen = () => {
         <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("HomeScreen")}> 
           <Text style={styles.tab_name}> Perfil</Text>      
         </TouchableOpacity>
+        <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("Horario")}> 
+          <Text style={styles.tab_name}> Horario</Text>
+        </TouchableOpacity>
         <View style={styles.tab}> 
-          <Text style={styles.tab_name_active}> Horario</Text>
+          <Text style={styles.tab_name_active}> Agenda</Text>
           <View style={styles.line} />
         </View>
-        <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("Agenda")}> 
-          <Text style={styles.tab_name}> Agenda</Text>
-        </TouchableOpacity>
       </View>
 
       <ScrollView style={styles.container}>    
-          <Text style={styles.titulo}>HORARIO</Text>
+          <Text style={styles.titulo}>AGENDA</Text>
       </ScrollView>
     </View>
   );
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   } 
 });
 
-export default HorarioScreen;
+export default AgendaScreen;

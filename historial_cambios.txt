@@ -23,3 +23,6 @@ Adán: Agregué todos los componentes, relacionados con Cuckoo, creados por Carl
 Adán: Voy a intentar subir Navigation al main otra vez
 
 Adán: Actualicé el color de la barra de menú y los íconos, cambios en Navigation.js
+
+Adán: Cambié la pestaña Home, agregué los subcomponentes (tres pantallas principales en Home, 4 stacks de preferencias), realicé los cambios
+    necesarios en Navigation.js. 

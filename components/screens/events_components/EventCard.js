@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
     cardContainer: {
       backgroundColor: '#ffffff',
       borderRadius: 10,
-      marginRight: 10,
+      marginRight: 5,
       marginBottom: 10,
-      marginLeft: 10,
+      marginLeft: 12,
       padding: 10,
       shadowColor: '#000',
       shadowOffset: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       },
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
-      elevation: 5,
+      elevation: 4,
       width: 250,
       height: 200,
       justifyContent: 'space-between',

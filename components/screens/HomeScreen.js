@@ -1,258 +1,149 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Modal, FlatList, ScrollView } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import HorarioScreen from './home_components/HorarioScreen';
+import React from 'react';
+import { View, TouchableOpacity, Dimensions, ScrollView, Text, StyleSheet, Image, StatusBar } from 'react-native';
+import PreferenceCard from './home_components/PreferenceCard';
+import Constants from 'expo-constants';
+import { useNavigation } from '@react-navigation/native';
 
-const iconosDisponibles = [
-  "user",
-  "building",
-  "heart",
-  "star",
-  "bell",
-  "rocket",
-  "camera",
-  "music",
-  "globe"
-];
+const anchoVentana = Dimensions.get('window').width;
 
 const HomeScreen = () => {
-  const [iconName, setIconName] = useState("user");
-  const [modalVisible, setModalVisible] = useState(false);
-  const [perfilVisible, setPerfilVisible] = useState(false);
-  const [configuracionVisible, setConfiguracionVisible] = useState(false);
-  const [temaClaroSeleccionado, setTemaClaroSeleccionado] = useState(true); // Estado para controlar si el tema claro está seleccionado
-
-  const cambiarIcono = (nuevoIcono) => {
-    setIconName(nuevoIcono);
-    setModalVisible(false);
-  };
-
-  // Función para manejar la selección del tema claro
-  const seleccionarTemaClaro = () => {
-    setTemaClaroSeleccionado(true);
-  };
-
-  // Función para manejar la selección del tema oscuro
-  const seleccionarTemaOscuro = () => {
-    setTemaClaroSeleccionado(false);
-  };
-
-  const renderIcono = ({ item }) => (
-    <TouchableOpacity onPress={() => cambiarIcono(item)} style={styles.iconoItemContainer}>
-      <View style={styles.iconoItem}>
-        <FontAwesome name={item} size={50} color="white" />
-      </View>
-    </TouchableOpacity>
-  );
+  const navigation = useNavigation();
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-      <View style={styles.container}>
-        <View style={styles.topSection}>
-          <View style={styles.rectangle}>
-            <TouchableOpacity onPress={() => setModalVisible(true)}>
-              <View style={styles.circle}>
-                <FontAwesome name={iconName} size={45} color="white" />
-              </View>
-            </TouchableOpacity>
-            <View style={styles.userInfo}>
-              <Text>Nombre del Usuario</Text>
-              <Text>Carrera que estudia</Text>
-              <Text>Periodo actual de estudios</Text>
-            </View>
-          </View>
+    <View style={styles.container}>
+      <StatusBar translucent backgroundColor="#ffffff" barStyle="dark-content" /> 
+      <View style={styles.menu}>
+        <View style={styles.tab}> 
+          <Text style={styles.tab_name_active}> Perfil</Text>      
+          <View style={styles.line} />
         </View>
-
-        <View style={styles.bottomSection}>
-          <View style={styles.horarioContainer}>
-            <HorarioScreen diasSemana={['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']} />
-          </View>
-
-          <View style={styles.space} />
-          
-          <View style={styles.configuracionContainer}>
-            <Text style={styles.configuracionTitle}>Configuración</Text>
-      
-            <View style={styles.optionContainer}>
-              <Text style={styles.optionText}>Tema</Text>
-              <View style={styles.themeButtons}>
-                <TouchableOpacity 
-                  style={[styles.themeButton, temaClaroSeleccionado ? styles.selectedButton : null]} // Aplicar estilos adicionales si el tema claro está seleccionado
-                  onPress={seleccionarTemaClaro} // Manejar la selección del tema claro
-                >
-                  <FontAwesome name="sun-o" size={24} color={temaClaroSeleccionado ? "white" : "black"} /> 
-                  <Text style={[styles.themeButtonText, temaClaroSeleccionado ? styles.selectedText : null]}>Claro</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                  style={[styles.themeButton, !temaClaroSeleccionado ? styles.selectedButton : null]} // Aplicar estilos adicionales si el tema oscuro está seleccionado
-                  onPress={seleccionarTemaOscuro} // Manejar la selección del tema oscuro
-                >
-                  <FontAwesome name="moon-o" size={24} color={!temaClaroSeleccionado ? "white" : "black"} />
-                  <Text style={[styles.themeButtonText, !temaClaroSeleccionado ? styles.selectedText : null]}>Oscuro</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-          <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Cerrar Sesión</Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("Horario")}> 
+          <Text style={styles.tab_name}> Horario</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("Agenda")}> 
+          <Text style={styles.tab_name}> Agenda</Text>
+        </TouchableOpacity>
       </View>
-
-        <View style={styles.space} />
-
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => setModalVisible(false)}>
-
-          <View style={styles.modalContainer}>
-            <FlatList
-              data={iconosDisponibles}
-              renderItem={renderIcono}
-              keyExtractor={(item) => item}
-              numColumns={3}
-              contentContainerStyle={styles.iconoList}
-            />
-          </View>
-        </Modal>
-    </ScrollView>
+      <ScrollView style={styles.container}>    
+        <View style={styles.avatarContainer}>
+          <Image
+            source={require('../../images/home/perfil_defecto.png')} // Cambia la ruta a tu foto de perfil
+            style={styles.avatar}
+          />
+        </View>
+        <View style={styles.informacion}>
+          <Text style={styles.nombre}>Lionel Andrés Messi Cuccittini</Text>
+          <Text style={styles.carrera}>Ingeniería en Tecnologías de Información</Text>
+          <Text style={styles.correo}>messi_thegoat@anahuac.mx</Text>
+        </View>
+        <View style={styles.contenedor_titulo}>
+          <Text style={styles.titulo}>PREFERENCIAS</Text>
+        </View>
+        <PreferenceCard/>
+      </ScrollView>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  scrollViewContainer: {
-    flexGrow: 1,
-  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    paddingTop: 20,
+    backgroundColor: '#F8F8F8',
   },
-  topSection: {
-    width: '100%',
-    marginBottom: 20,
-  },
-  bottomSection: {
-    width: '100%',
-    marginBottom: 20,
-  },
-  rectangle: {
+  menu:{
+    paddingTop: Constants.statusBarHeight,
+    height: 100,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'lightgray',
-    padding: 20,
-    borderRadius: 10,
-    width: '100%',
-  },
-  circle: {
-    width: 70,
-    height: 70,
-    borderRadius: 40,
-    backgroundColor: '#FD5900',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 20,
-  },
-  userInfo: {
-    color: 'black',
-    fontSize: 15,
-    fontWeight: 'bold',
-    flex: 2,
-  },
-  horarioContainer: {
-    backgroundColor: 'lightgray',
-  },
-  modalContainer: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  iconoList: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 200,
-    paddingHorizontal: 30,
-  },
-  iconoItemContainer: {
-    padding: 25,
-  },
-  iconoItem: {
-    width: 70,
-    height: 70,
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  space: {
-    height: 50,
-  },
-  configuracionContainer: {
-    marginTop: 20,
-    paddingHorizontal: 20,
-  },
-  configuracionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  optionContainer: {
-    marginBottom: 20,
-  },
-  optionText: {
-    fontSize: 16,
-    marginBottom: 10,
-  },
-  themeButtons: {
-    flexDirection: 'row',
-  },
-  themeButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: 20,
-    borderWidth: 1, // Añadir contorno negro
-    borderRadius: 5, // Añadir borde redondeado
-    paddingVertical: 5, // Espaciado vertical
-    paddingHorizontal: 10, // Espaciado horizontal
-  },
-  themeButtonText: {
-    marginLeft: 5,
-  },
-  selectedButton: {
-    backgroundColor: 'black', // Fondo negro si está seleccionado
-  },
-  selectedText: {
-    color: 'white', // Texto blanco si está seleccionado
-  },
-  button: {
-    maxWidth: 200,
-    alignSelf: 'center',
-    backgroundColor: '#FD5900',
-    margin: 40,
-    padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-    shadowColor: '#000',
+    backgroundColor: '#fff', // Fondo blanco
+    shadowColor: '#000', // Color de la sombra
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 5, // Elevación para Android
+    position: 'absolute', // Posición absoluta para mantener fijo
+    top: 0, // Coloca el encabezado en la parte superior
+    left: 0,
+    right: 0,
+    zIndex: 1,
   },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
+  tab:{
+    width: anchoVentana/3,
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  tab_name_active: {
+    marginBottom: 12,
+    textAlign: 'center',
+    fontFamily: 'lexend-regular',
+    color: '#FD5900',
+    fontSize: 17,
+  },
+  tab_name: {
+    marginBottom: 15,
+    textAlign: 'center',
+    fontFamily: 'lexend-regular',
+    color: 'gray',
+    fontSize: 17,
+  },
+  line: {
+    height: 3,
+    width: '100%',
+    backgroundColor: '#FD5900',
+    borderRadius: 5,
+  },
+  avatarContainer: {
+    alignSelf: 'center',
+    marginTop: 140,
+    marginBottom: 15,
+    borderRadius: 100,
+    overflow: 'hidden',
+  },
+  avatar: {
+    width: 150,
+    height: 150,
+  },
+  informacion: {
+    alignItems: 'center',
+    marginTop: 15,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  nombre: {
+    textAlign: 'center',
     fontFamily: 'lexend-medium',
+    fontSize: 17,
+    marginBottom: 10,
   },
+  carrera: {
+    textAlign: 'center',
+    fontFamily: 'lexend-regular',
+    fontSize: 15,
+    marginBottom: 10,
+  },
+  correo: {
+    textAlign: 'center',
+    fontFamily: 'lexend-regular',
+    color: 'gray',
+    fontSize: 15,
+    marginBottom: 10,
+  },
+  contenedor_titulo: {
+    marginTop: 30,
+    alignItems: 'center',
+    margin: 15,
+    marginBottom: 30,
+  },
+  titulo: {
+      textAlign: 'center',
+      fontFamily: 'lexend-extrabold',
+      fontSize: 20,
+      color: '#FD5900',
+  } 
 });
 
 export default HomeScreen;
