@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import EmailLink from '../../general_components/EmailLink';
 
 const DirectoryWorkerTarjeta = ({ nombre, correo, imagen }) => {
   const navigation = useNavigation();
@@ -10,7 +11,8 @@ const DirectoryWorkerTarjeta = ({ nombre, correo, imagen }) => {
       <Image source={imagen} style={styles.image}/>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{nombre}</Text>
-        <Text style={styles.mail}>{correo}</Text>
+        <EmailLink email={correo}>{correo}</EmailLink>
+        {/* <Text style={styles.mail}>{correo}</Text> */}
         {/* <Text style={styles.activityScore}>Puntos Nova: {score}</Text> */}
       </View>
       {/* <View style={styles.imageContainer}>

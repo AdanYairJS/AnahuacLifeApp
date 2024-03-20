@@ -175,7 +175,9 @@ const styles = StyleSheet.create({
   },
   scroll: {
     // paddingTop: 80,
-    marginTop: 80,
+    // marginTop: 10,
+    paddingTop: 20,
+    // paddingBottom: 200,
   },
   scrollView: {
     flex: 1,

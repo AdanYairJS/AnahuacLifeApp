@@ -128,7 +128,14 @@ function DirectoryStack() {
                 name="DirectoryScreen"
                 component={DirectoryScreen}
                 options={{
-                    headerShown: false,
+                    // headerShown: false,
+                    title: 'Directorio',
+                    headerTitleStyle: {
+                        fontFamily: 'lexend-medium',
+                        fontSize: 30,
+                        headerTitleAlign: 'center',
+                        // alignSelf: 'center',
+                    }
                 }}
             >
             </DirectoryStackNavigator.Screen>

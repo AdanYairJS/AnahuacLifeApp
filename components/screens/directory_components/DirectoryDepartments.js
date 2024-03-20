@@ -44,6 +44,11 @@ const DirectoryDepartments = ({id_menu}) => {
     caja = [
         {nombre: 'Elizabeth Cruz Zafra', correo: 'elizabeth.cruzz@anahuac.mx', imagen: require('../../../images/directorios/w_elizabeth.jpg')},
     ];
+    t_caja = [
+      'Pago de colegiaturas',
+      'Pago de inscripción',
+      'Pago de constancias',
+    ];
     administracion_escolar = [
         {nombre: 'Carolina López Reyes', correo: 'carolina.lopezre@anahuac.mx', imagen: require('../../../images/directorios/w_carolina.jpg')},
     ];
@@ -55,12 +60,12 @@ const DirectoryDepartments = ({id_menu}) => {
         {nombre: 'Veronica Ivonne López García', correo: 'ivonne.lopezga@anahuac.mx', imagen: require('../../../images/directorios/w_veronica.jpg')},
     ];
     departamentos = [
-      {nombre: 'OperacionAcademica' , imagen: require('../../../images/directorios/d_operacion_academica.jpg'), texto: 'Operación Académica', trabajadores: operacion_academica},
-      {nombre: 'FormacionIntegral' , imagen: require('../../../images/directorios/d_formacion_integral.jpeg'), texto: 'Formación Integral', trabajadores: formacion_integral},
-      {nombre: 'Caja' , imagen: require('../../../images/directorios/d_caja.jpg'), texto: 'Caja', trabajadores: caja},
-      {nombre: 'AdministracionEscolar' , imagen: require('../../../images/directorios/d_administracion_escolar.jpg'), texto: 'Administración Escolar', trabajadores: administracion_escolar},
-      {nombre: 'OrientacionPsicologica' , imagen: require('../../../images/directorios/d_orientacion_psicologica.jpg'), texto: 'Orientación Psicológica', trabajadores: orientacion_psicologica},
-      {nombre: 'Becas' , imagen: require('../../../images/directorios/d_becas.jpg'), texto: 'Becas', trabajadores: becas},
+      {nombre: 'OperacionAcademica' , imagen: require('../../../images/directorios/d_operacion_academica.jpg'), texto: 'Operación Académica', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: operacion_academica},
+      {nombre: 'FormacionIntegral' , imagen: require('../../../images/directorios/d_formacion_integral.jpeg'), texto: 'Formación Integral', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: formacion_integral},
+      {nombre: 'Caja' , imagen: require('../../../images/directorios/d_caja.jpg'), texto: 'Caja', correo: 'caja.uao@anahuac.mx', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2 , tramites: t_caja, trabajadores: caja},
+      {nombre: 'AdministracionEscolar' , imagen: require('../../../images/directorios/d_administracion_escolar.jpg'), texto: 'Administración Escolar', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: administracion_escolar},
+      {nombre: 'OrientacionPsicologica' , imagen: require('../../../images/directorios/d_orientacion_psicologica.jpg'), texto: 'Orientación Psicológica', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: orientacion_psicologica},
+      {nombre: 'Becas' , imagen: require('../../../images/directorios/d_becas.jpg'), texto: 'Becas', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: becas},
     ];
     const handlePress = (seccion) => {
         let nombre_seccion = seccion.nombre;
@@ -88,6 +93,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingLeft: 5,
     paddingRight: 5,
+    paddingBottom: 20,
   },
   icono: {
     width: '45%',

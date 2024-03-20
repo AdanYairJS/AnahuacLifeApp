@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const DirectoryWorkerTarjeta = ({ nombre, imagen, texto, trabajadores}) => {
+const DirectoryWorkerTarjeta = ({ nombre, imagen, texto, correo, tramites, ubicacion, id_ubicacion, trabajadores}) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{texto,trabajadores})}>
+    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{texto,correo,tramites,ubicacion,id_ubicacion,trabajadores})}>
       <Image source={imagen} style={styles.image}/>
       <View style={styles.textContainer}>
         <Text style={styles.activityName}>{texto.toUpperCase()}</Text>
