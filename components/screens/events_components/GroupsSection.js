@@ -13,18 +13,19 @@ const GroupsSection = ({  }) => {
   const navigation = useNavigation();
 
   const secciones = [
-    { id : 5, nombre: 'adefa', imagen: adefaImage },
-    { id : 6, nombre: 'asua', imagen: asuaImage },
-    { id : 7, nombre: 'fesal', imagen: fesalImage },
-    { id : 8, nombre: 'pastoral', imagen: pastoralImage },
-    { id : 9, nombre: 'leones', imagen: leonesImage },
-    { id : 10, nombre: 'espaciocultural', imagen: espacioculturalImage },
+    { id : 5, nombre: 'adefa', texto: 'ADEFA', imagen: require('../../../images/eventos/grupos/adefa.png') },
+    { id : 6, nombre: 'asua', texto: 'ASUA', imagen: asuaImage },
+    { id : 7, nombre: 'fesal', texto: 'FESAL', imagen: fesalImage },
+    { id : 8, nombre: 'pastoral', texto: 'PASTORAL', imagen: pastoralImage },
+    { id : 9, nombre: 'leones', texto: 'LEONES', imagen: leonesImage },
+    { id : 10, nombre: 'espaciocultural', texto: 'Espacio Cultural', imagen: espacioculturalImage },
   ];
 
   return (
     <View style={styles.container}>
       {secciones.map((seccion, index) => (
-        <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice",{id: seccion.id})}>
+        console.log(seccion.imagen),
+        <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice",{texto:seccion.texto , id: seccion.id, imagen: seccion.imagen})}>
           <Image source={seccion.imagen} style={styles.imagen} />           
         </TouchableOpacity>
       ))}

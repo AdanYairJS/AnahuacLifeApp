@@ -7,7 +7,6 @@ const HelpScreen = ( ) => {
   return (
     <View style={styles.container}>
         <StatusBar translucent backgroundColor="#ffffff" barStyle="dark-content" /> 
-        <Header text="Ayuda" backTo="HomeScreen" />
     </View>
   );
 };

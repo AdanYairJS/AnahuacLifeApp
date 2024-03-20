@@ -46,7 +46,7 @@ const GroupsStackScreen = ({route}) => {
             style={styles.container}
     >
       <View style={styles.container}>
-        <View style={styles.header}>
+        {/* <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.navigate("EventosScreen")}>
             <ArrowIcon name="left" size={24} color="black" />
           </TouchableOpacity>
@@ -54,7 +54,7 @@ const GroupsStackScreen = ({route}) => {
             <Text style={styles.groupName}>{nombre}</Text>
             <Image source={imagen} style={styles.logo} />
           </View>
-        </View>
+        </View> */}
         <View style={styles.descriptionContainer}>
           <Text style={styles.description}>{texto}</Text>
         </View>

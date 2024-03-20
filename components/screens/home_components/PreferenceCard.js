@@ -14,22 +14,22 @@ const PreferenceCard = () => {
     return (
         <View style={styles.cardContainer}>
           <View style={styles.preferencesContainer}>
-            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Actividad")}>
+            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Actividad",{texto:"Tu Actividad"})}>
               <Activity width={30} height={30} style={styles.iconos}/>
               <Text style={styles.preferencia}>Tu actividad</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Notificaciones")}>
+            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Notificaciones",{texto:"Notificaciones"})}>
               <Notifications width={30} height={30} style={styles.iconos}/>
               <Text style={styles.preferencia}>Notificaciones</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("ModoOscuro")}>
+            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("ModoOscuro",{texto:"Modo Oscuro"})}>
               <DarkMode width={30} height={30} style={styles.iconos}/>
               <Text style={styles.preferencia}>Modo oscuro</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Ayuda")}>
+            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Ayuda",{texto:"Ayuda"})}>
               <Help width={30} height={30} style={styles.iconos}/>
               <Text style={styles.preferencia}>Ayuda</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>

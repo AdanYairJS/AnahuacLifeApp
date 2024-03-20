@@ -16,7 +16,6 @@ import CuckooScreen from "./screens/CuckooScreen";
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
 import DetailedEvent from './screens/events_components/DetailedEvent.js';
-import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 import CuckooItem from "./screens/cuckoo_components/CuckooItem";
 import HorarioScreen from "./screens/home_components/HorarioScreen.js";
 import AgendaScreen from "./screens/home_components/AgendaScreen.js";
@@ -36,6 +35,10 @@ import DirectoryIconActive from '../images/icons/directorio_icon_activo.svg';
 import MapIconActive from '../images/icons/mapa_icon_activo.svg';
 import FoodIconActive from '../images/icons/comida_icon_activo.svg';
 import EventsIconActive from '../images/icons/eventos_icon_activo.svg';
+
+//headers
+import Header from "./general_components/Header.js";
+import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 
 const Tab = createBottomTabNavigator();
 const EventsStackNavigator = createNativeStackNavigator();
@@ -81,37 +84,33 @@ function HomeStack() {
             <HomeStackNavigator.Screen
                 name="Actividad"
                 component={ActivityScreen}
-                options={{
-                    headerBackTitle: false,
-                    headerShown: false,
+                options={{       
                     animation: 'slide_from_right',
+                    header: ({route}) => <Header text={route.params.texto}/>
                 }}
             />
             <HomeStackNavigator.Screen
                 name="Notificaciones"
                 component={NotificationScreen}
                 options={{
-                    headerBackTitle: false,
-                    headerShown: false,
                     animation: 'slide_from_right',
+                    header: ({route}) => <Header text={route.params.texto}/>
                 }}
             />
             <HomeStackNavigator.Screen
                 name="ModoOscuro"
                 component={DarkModeScreen}
                 options={{
-                    headerBackTitle: false,
-                    headerShown: false,
                     animation: 'slide_from_right',
+                    header: ({route}) => <Header text={route.params.texto}/>
                 }}
             />
             <HomeStackNavigator.Screen
                 name="Ayuda"
                 component={HelpScreen}
                 options={{
-                    headerBackTitle: false,
-                    headerShown: false,
                     animation: 'slide_from_right',
+                    header: ({route}) => <Header text={route.params.texto}/>
                 }}
             />
         </EventsStackNavigator.Navigator>
@@ -123,7 +122,7 @@ const DirectoryStackNavigator = createNativeStackNavigator();
 function DirectoryStack() {
     return(
         <DirectoryStackNavigator.Navigator
-            initialRouteName="DirectoryScreen"
+        initialRouteName="DirectoryScreen"
         >
             <DirectoryStackNavigator.Screen
                 name="DirectoryScreen"
@@ -136,6 +135,10 @@ function DirectoryStack() {
             <DirectoryStackNavigator.Screen
                 name="DirectoryWorkers"
                 component={DirectoryWorkers}
+                options={{
+                    // headerShown: false,
+                    header: ({route}) => <Header text={route.params.texto}/>
+                }}
             >
             </DirectoryStackNavigator.Screen>
         </DirectoryStackNavigator.Navigator>
@@ -152,35 +155,34 @@ function EventosStack() {
                     tabBarLabel: 'Eventos',
                     tabBarIcon: ({ color, size }) => (
                         <EventsIcon width={size} height={size} style={{ tintColor: color }} />
-                    ),
-                    headerShown: false
-                }}
+                        ),
+                        headerShown: false
+                    }}
             />
             <EventsStackNavigator.Screen
                 name="Vertice"
                 component={GroupsStackScreen}
                 options={{
-                    headerBackTitle: false,
-                    headerShown: false,
                     //animationTypeForReplace:'pop',
                     animation: 'slide_from_right',
                     transitionSpec: {
                         open: { animation: 'timing', config: { duration: 500 } }, // Duración para la entrada
                         close: { animation: 'timing', config: { duration: 500 } }, // Duración para la salida
                     },
+                    header: ({route}) => <Header text={route.params.texto} imagen={route.params.imagen}/>,
+                    
                 }}
             />
             <EventsStackNavigator.Screen
                 name="DetallesEvento"
                 component={DetailedEvent}
                 options={{
-                    headerBackTitle: false,
-                    headerShown: false,
                     animation: 'slide_from_right',
                     transitionSpec: {
                         open: { animation: 'timing', config: { duration: 20 } }, // Duración para la entrada
                         close: { animation: 'timing', config: { duration: 20 } }, // Duración para la salida
                     },
+                    header: ({route}) => <Header text="Detalles del evento"/>,
                 }}
             />
         </EventsStackNavigator.Navigator>
@@ -293,6 +295,7 @@ export default function Navigation() {
                     component={DirectoryStack}
                     options={{
                         tabBarLabel: 'Directorio',
+                        headerShown: false,
                     }}
                 />
                 <Tab.Screen

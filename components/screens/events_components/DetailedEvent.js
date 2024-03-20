@@ -12,14 +12,14 @@ const DetailedEvent = () => {
       colors={['#f0f0f0', '#F9F9F9']}
       style={styles.container}
     >
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.navigate("EventosScreen")}>
           <ArrowIcon name="left" size={24} color="black" />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Text style={styles.groupName}>Detalles del Evento</Text>
         </View>
-      </View>
+      </View> */}
 
       {/* Banner de la actividad */}
       <View style={styles.bannerContainer}>

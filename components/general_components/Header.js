@@ -1,20 +1,24 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import Constants from 'expo-constants';
 
-const Header = ({text,backTo}) => {
+
+const Header = ({text,imagen}) => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate(backTo)}>
+        <TouchableOpacity onPress={() => navigation.pop()}>
           <ArrowIcon name="left" size={24} color="black" />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Text style={styles.groupName}>{text}</Text>
         </View>
+        {imagen && <Image source={imagen} style={styles.logo} />}
+       {/* <Image source={imagen} style={styles.logo} /> */}
+        {/* <Image source={require('../../images/eventos/grupos/vertice.png')} style={styles.logo} /> */}
     </View>   
   );
 };
@@ -52,6 +56,10 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 'auto',
         fontFamily: 'lexend-medium',
+    },
+    logo: {
+      width: 60,
+      height: 60,
     },
 });
 

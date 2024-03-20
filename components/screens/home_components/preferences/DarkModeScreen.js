@@ -7,7 +7,6 @@ const DarkModeScreen = ( ) => {
   return (
     <View style={styles.container}>
         <StatusBar translucent backgroundColor="#ffffff" barStyle="dark-content" /> 
-        <Header text="Modo oscuro" backTo="HomeScreen" />
     </View>
   );
 };

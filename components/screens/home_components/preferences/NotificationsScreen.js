@@ -7,7 +7,6 @@ const NotificationScreen = ( ) => {
   return (
     <View style={styles.container}>
         <StatusBar translucent backgroundColor="#ffffff" barStyle="dark-content" /> 
-        <Header text="Notificaciones" backTo="HomeScreen" />
     </View>
   );
 };

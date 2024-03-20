@@ -6,7 +6,7 @@ const DirectoryWorkerTarjeta = ({ nombre, imagen, texto, trabajadores}) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{trabajadores})}>
+    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{texto,trabajadores})}>
       <Image source={imagen} style={styles.image}/>
       <View style={styles.textContainer}>
         <Text style={styles.activityName}>{texto.toUpperCase()}</Text>
