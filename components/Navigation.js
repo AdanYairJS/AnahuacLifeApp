@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import EventsScreen from './screens/EventsScreen';
 import DirectoryScreen from './screens/DirectoryScreen';
+import DirectoryWorkers from "./screens/directory_components/DirectoryWorkers.js";
 import MapScreen from './screens/MapScreen';
 import CuckooScreen from "./screens/CuckooScreen";
 
@@ -115,6 +116,30 @@ function HomeStack() {
             />
         </EventsStackNavigator.Navigator>
     );
+}
+
+const DirectoryStackNavigator = createNativeStackNavigator();
+
+function DirectoryStack() {
+    return(
+        <DirectoryStackNavigator.Navigator
+            initialRouteName="DirectoryScreen"
+        >
+            <DirectoryStackNavigator.Screen
+                name="DirectoryScreen"
+                component={DirectoryScreen}
+                options={{
+                    headerShown: false,
+                }}
+            >
+            </DirectoryStackNavigator.Screen>
+            <DirectoryStackNavigator.Screen
+                name="DirectoryWorkers"
+                component={DirectoryWorkers}
+            >
+            </DirectoryStackNavigator.Screen>
+        </DirectoryStackNavigator.Navigator>
+    )
 }
 
 function EventosStack() {
@@ -265,7 +290,7 @@ export default function Navigation() {
                 />
                 <Tab.Screen
                     name="Directorio"
-                    component={DirectoryScreen}
+                    component={DirectoryStack}
                     options={{
                         tabBarLabel: 'Directorio',
                     }}
