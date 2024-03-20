@@ -16,7 +16,7 @@ const CuckooHeader = ({ruta_imagen , color_fondo}) =>{
 
 const styles = StyleSheet.create({
     barra_superior: {
-        paddingTop: Constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight*1.20,
         height: 120,
         width: anchoVentana,
         backgroundColor: '#014955',

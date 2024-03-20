@@ -24,7 +24,6 @@ const GroupsSection = ({  }) => {
   return (
     <View style={styles.container}>
       {secciones.map((seccion, index) => (
-        console.log(seccion.imagen),
         <TouchableOpacity key={index} style={styles.icono} onPress={() => navigation.navigate("Vertice",{texto:seccion.texto , id: seccion.id, imagen: seccion.imagen})}>
           <Image source={seccion.imagen} style={styles.imagen} />           
         </TouchableOpacity>
