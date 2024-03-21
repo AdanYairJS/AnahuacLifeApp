@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Dimensions, ScrollView, Text, StyleSheet, Image, StatusBar } from 'react-native';
 import PreferenceCard from './home_components/PreferenceCard';
+import InformationCard from './home_components/InformationCard';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
 
@@ -36,10 +37,15 @@ const HomeScreen = () => {
           <Text style={styles.carrera}>Ingeniería en Tecnologías de Información</Text>
           <Text style={styles.correo}>messi_thegoat@anahuac.mx</Text>
         </View>
+        
         <View style={styles.contenedor_titulo}>
-          <Text style={styles.titulo}>PREFERENCIAS</Text>
+          <Text style={styles.titulo}>INFORMACIÓN</Text>
         </View>
-        <PreferenceCard/>
+        <InformationCard/>
+        <View style={styles.contenedor_titulo}>
+          <Text style={styles.titulo}>CONFIGURACIÓN</Text>
+        </View>
+        <PreferenceCard/>       
       </ScrollView>
     </View>
   );
@@ -112,6 +118,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 20,
     marginRight: 20,
+    marginBottom: 10,
   },
   nombre: {
     textAlign: 'center',
@@ -133,10 +140,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   contenedor_titulo: {
-    marginTop: 30,
+    //marginTop: 30,
+    marginTop: 40,
     alignItems: 'center',
     margin: 15,
-    marginBottom: 30,
+    //marginBottom: 30,
+    marginBottom: 20,
   },
   titulo: {
       textAlign: 'center',
