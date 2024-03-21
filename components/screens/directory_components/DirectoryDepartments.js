@@ -36,6 +36,7 @@ const DirectoryDepartments = ({id_menu}) => {
   
   caja = [
     {nombre: 'Carolina Lopez Reyes', 
+    puesto: 'Asistente Dirección de Administración y Finanzas',
     correo: 'carolina.lopezre@anahuac.mx', 
     imagen: require('../../../images/directorios/w_Carolina.jpeg')},
   ];
@@ -48,6 +49,7 @@ const DirectoryDepartments = ({id_menu}) => {
 
   cobranza = [
     {nombre: 'Elizabeth Cruz Zafra',
+    puesto: 'Especialista en Cobranza',
     correo: 'elizabeth.cruzz@anahuac.mx',
     imagen: require('../../../images/directorios/w_elizabeth_cruz.jpeg') },
   ];
@@ -60,9 +62,11 @@ const DirectoryDepartments = ({id_menu}) => {
 
   administracion_escolar = [
     {nombre: 'Amitsadai Camacho Cervantes',
+    puesto: 'Auxiliar de servicios escolares',
     correo: 'amitsadai.camacho@anahuac.mx',
     imagen: require('../../../images/directorios/w_Amitsadai.jpeg')},
     {nombre: 'Arely Amador Gerónimo',
+    puesto: 'Auxiliar Administrativo de Servicios Escolares',
     correo: 'arely.amador@anahuac.mx',
     imagen: require('../../../images/directorios/w_Arely.jpeg')},
   ];
@@ -77,13 +81,16 @@ const DirectoryDepartments = ({id_menu}) => {
 
   operacion_academica = [
     {nombre: 'Dalia Alarcón Gonzalez',
+    puesto: 'Coordinadora de operación académica y normatividad',
     correo: 'dalia.alarcon@anahuac.mx',
     imagen: require('../../../images/directorios/w_Dalia_Alarcon.jpeg')},
     {nombre: 'Roberto Geovanni Lopez Curiel',
+    puesto: 'Operación Académica',
     correo: 'geovanni.curiel@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')
     },
     {nombre: 'Noemi Esmeralda Hernández Alavez',
+    puesto: 'Asistente de la  Dirección de Servicios Institucionales',
     correo: 'noemi.hernandez@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')
     },
@@ -111,9 +118,11 @@ const DirectoryDepartments = ({id_menu}) => {
 
   tutorias = [
     {nombre: 'Luisa Miriam Toledo Ramos',
+    puesto: 'Coordinadora de tutorías y apoyo académico',
     correo: 'luisa.toledo@anahuac.mx',
     imagen: require('../../../images/directorios/w_Miriam_Toledo.jpeg')},
     {nombre: 'Esmeralda Orozco López',
+    puesto: 'Tutora en Coordinación de tutorías',
     correo: 'esmeralda.orozcol@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
   ];
@@ -124,6 +133,7 @@ const DirectoryDepartments = ({id_menu}) => {
 
   soporte = [
     {nombre: 'Edgar Joel Jimenez Carrasco',
+    puesto: 'Auxiliar de Soporte Técnico',
     correo: 'edgarjoel.jimenez@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
   ];
@@ -156,18 +166,23 @@ const DirectoryDepartments = ({id_menu}) => {
 
   form_integral = [
     {nombre: 'Erwin Garcia Acevedo',
+    puesto: 'Coordinador de Compromiso Social',
     correo: 'erwin.garcia@anahuac.mx',
     imagen: require('../../../images/directorios/w_Erwin_Garcia.jpeg')},
     {nombre: 'Jorge Francisco Morales Mejía',
+    puesto: 'Coordinador de Pastoral Universitaria',
     correo: 'jorge.moralesme@anahuac.mx',
     imagen: require('../../../images/directorios/w_Francisco_Morales.jpeg')},
     {nombre: 'José Lorenzo Martinez Valencia',
+    puesto: 'Coordinador de Deportes',
     correo: 'jose.martinezval@anahuac.mx',
     imagen: require('../../../images/directorios/w_Jose_Martinez.jpeg')},
     {nombre: 'Concepción Jazmín Santos Estrada',
+    puesto: 'Coordinación de Arte y Cultura',
     correo: 'concepcion.santoses@anahuac.mx',
     imagen: require('../../../images/directorios/w_Jazmin_Santos.jpeg')},
     {nombre: 'Francisco Javier Marquez Torres',
+    puesto: 'Coordinador de Programas de Liderazgo',
     correo: 'javier.marquezt@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
   ];
@@ -179,6 +194,7 @@ const DirectoryDepartments = ({id_menu}) => {
 
   internacional = [
     {nombre: 'Diego Arroyo Celaya',
+    puesto: 'Coordinador Centro de lenguas e Internacionalización',
     correo: 'diego.arroyo@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
   ];
@@ -192,39 +208,49 @@ const DirectoryDepartments = ({id_menu}) => {
 
   directores = [
     {nombre: 'Martin Garnica Hernandez',
+    puesto: 'Director Escuela de Ingeniería',
     correo: 'martin.garnica@anahuac.mx',
     imagen: require('../../../images/directorios/w_Martin_Garnica.jpeg')},
     {nombre: 'Rodrigo Felguerez Allende',
+    puesto: 'Director Escuela de Psicología',
     correo: 'rodrigo.felguerez@anahuac.mx',
     imagen: require('../../../images/directorios/w_Rodrigo_Felguerez.jpeg')},
     {nombre: 'David Ricardo Mayren Garcia',
+    puesto: 'Director Escuela de Medicina',
     correo: 'david.mayren@anahuac.mx',
     imagen: require('../../../images/directorios/w_Ricardo_Mayren.jpeg')},
     {nombre: 'Hector Humberto Vásquez Quevedo',
+    puesto: 'Director Escuela de Ciencias Jurídicas y Sociales',
     correo: 'hector.vasquez@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
     {nombre: 'Yvette Flor Solano Carrillo',
+    puesto: 'Directora Escuela de Comunicación',
     correo: 'yvette.solanoca@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
     {nombre: 'Maria del Pilar Aguilar Beristain',
+    puesto: 'Directora Escuela de Diseño',
     correo: 'maria.aguilarna@anahuac.mx',
     imagen: require('../../../images/directorios/a_estandar.jpg')},
     {nombre: 'Carlos Alberto Olavarría Zárate',
+    puesto: 'Director Escuela de Economía y Negocios',
     correo: 'carlos.olavarria@anahuac.mx',
     imagen: require('../../../images/directorios/w_Carlos_Olavarria.jpeg')},
     {nombre: 'Marisol Chavez Bautista',
+    puesto: 'Directora Escuela de Turismo y Gastronomía',
     correo: 'marisol.chavez@anahuac.mx',
     imagen: require('../../../images/directorios/w_Marisol_Chavez.jpeg')},
   ];
 
   egresados = [
     {nombre: 'Alina Hernández Nieto',
+    puesto: 'Coordinadora de Vinculación Eventos y Egresados',
     correo: 'alina.hernandez@anahuac.mx',
     imagen: require('../../../images/directorios/w_Alina_Nieto.jpeg')},
   ];
 
   sorteo_anahuac = [
     {nombre: 'Diana Velasco Rodríguez',
+    puesto: 'Enlaces Operativos Sorteo Anáhuac',
     correo: 'diana.velascoro@anahuac.mx',
     imagen: require('../../../images/directorios/w_Diana_Velasco.jpeg')},
   ];

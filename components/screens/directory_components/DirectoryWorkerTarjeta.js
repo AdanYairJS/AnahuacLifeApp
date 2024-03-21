@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import EmailLink from '../../general_components/EmailLink';
 
-const DirectoryWorkerTarjeta = ({ nombre, correo, imagen }) => {
+const DirectoryWorkerTarjeta = ({ nombre, puesto, correo, imagen }) => {
   const navigation = useNavigation();
 
   return (
@@ -11,6 +11,7 @@ const DirectoryWorkerTarjeta = ({ nombre, correo, imagen }) => {
       <Image source={imagen} style={styles.image}/>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{nombre}</Text>
+        <Text style={styles.job}>{puesto}</Text>
         <EmailLink email={correo}>{correo}</EmailLink>
         {/* <Text style={styles.mail}>{correo}</Text> */}
         {/* <Text style={styles.activityScore}>Puntos Nova: {score}</Text> */}
@@ -63,6 +64,11 @@ const styles = StyleSheet.create({
       // fontWeight: 'bold',
       marginBottom: 5,
     //   textAlignVertical: 'center',
+    },
+    job: {
+      fontFamily: 'lexend-regular',
+      fontSize: 13,
+      marginBottom: 5,
     },
     mail: {
       fontFamily: 'lexend-regular',

@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 
-const DirectoryWorkerTarjeta = ({ nombre, imagen, texto, correo, tramites, ubicacion, id_ubicacion, trabajadores}) => {
+const DirectoryWorkerTarjeta = ({ nombre, imagen, puesto, texto, correo, tramites, ubicacion, id_ubicacion, trabajadores}) => {
   const navigation = useNavigation();
 
   return (
