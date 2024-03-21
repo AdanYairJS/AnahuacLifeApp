@@ -38,6 +38,7 @@ import EventsIconActive from '../images/icons/eventos_icon_activo.svg';
 
 //headers
 import Header from "./general_components/Header.js";
+import HeaderPrincipal from "./general_components/HeaderPrincipal.js";
 import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 
 const Tab = createBottomTabNavigator();
@@ -131,13 +132,14 @@ function DirectoryStack() {
                     // headerShown: false,
                     title: 'Directorio',
                     //quitar esta parte
-                
-                    headerTitleStyle: {
-                        fontFamily: 'lexend-medium',
-                        fontSize: 30,
-                        headerTitleAlign: 'center',
-                        // alignSelf: 'center',
-                    }
+                    header: () => <HeaderPrincipal text='Directorio'/>,
+                    
+                    // headerTitleStyle: {
+                    //     fontFamily: 'lexend-medium',
+                    //     fontSize: 30,
+                    //     headerTitleAlign: 'center',
+                    //     // alignSelf: 'center',
+                    // }
                 }}
             >
             </DirectoryStackNavigator.Screen>
@@ -235,61 +237,61 @@ export default function Navigation() {
                         marginTop: Platform.OS === 'ios' ? 8 : 0,
                     },
                     // tabBarLabelStyle: ({ focused }) => ({
-                    //     fontFamily: 'lexend-light',
-                    //     fontSize: focused ? 14 : 11,
-                    //     marginBottom: Platform.OS === 'ios' ? 0 : 5,
-                    //     marginTop: Platform.OS === 'ios' ? 5 : 0,
-                    // }),
-                    tabBarStyle: {
-                        backgroundColor: '#FFFFFF', // Color de fondo
-                        height: Platform.OS === 'ios' ? 75 : 60, // Altura del menú
-                        borderTopWidth: 0, //Borde superior
-                        display: 'flex',
-                        ...Platform.select({
-                            ios: {
-                                shadowColor: 'black',
-                                shadowOffset: { width: 0, height: 3 },
-                                shadowOpacity: 0.1,
-                                shadowRadius: 4,
-                            },
-                            android: {
-                                elevation: 8,
-                            },
-                        }),
-                    },
-                    tabBarIconStyle: {
-                        marginTop: Platform.OS === 'ios' ? 12 : 6, // Distancia entre los íconos y el  borde superior de la barra de menú
-                        alignSelf: 'center',
-                    },
-                    tabBarIcon: ({ focused, color, size }) => {
-                        const iconSize = 30;
-                        const iconSizef = 34;
-                        ;
-                        let icon;
-
-                        switch (route.name) {
-                            case 'Home':
-                                icon = focused ? <HomeIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <HomeIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
-                                break;
-                            case 'Directorio':
-                                icon = focused ? <DirectoryIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <DirectoryIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
-                                break;
-                            case 'Mapa':
-                                icon = focused ? <MapIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <MapIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
-                                break;
-                            case 'Comida':
-                                icon = focused ? <FoodIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <FoodIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
-                                break;
-                            case 'Eventos':
-                                icon = focused ? <EventsIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <EventsIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
-                                break;
-                            default:
-                                break;
-                        }
-
-                        return icon;
-                    },
-                })}
+                        //     fontFamily: 'lexend-light',
+                        //     fontSize: focused ? 14 : 11,
+                        //     marginBottom: Platform.OS === 'ios' ? 0 : 5,
+                        //     marginTop: Platform.OS === 'ios' ? 5 : 0,
+                        // }),
+                        tabBarStyle: {
+                            backgroundColor: '#FFFFFF', // Color de fondo
+                            height: Platform.OS === 'ios' ? 75 : 60, // Altura del menú
+                            borderTopWidth: 0, //Borde superior
+                            display: 'flex',
+                            ...Platform.select({
+                                ios: {
+                                    shadowColor: 'black',
+                                    shadowOffset: { width: 0, height: 3 },
+                                    shadowOpacity: 0.1,
+                                    shadowRadius: 4,
+                                },
+                                android: {
+                                    elevation: 8,
+                                },
+                            }),
+                        },
+                        tabBarIconStyle: {
+                            marginTop: Platform.OS === 'ios' ? 12 : 6, // Distancia entre los íconos y el  borde superior de la barra de menú
+                            alignSelf: 'center',
+                        },
+                        tabBarIcon: ({ focused, color, size }) => {
+                            const iconSize = 30;
+                            const iconSizef = 34;
+                            ;
+                            let icon;
+                            
+                            switch (route.name) {
+                                case 'Home':
+                                    icon = focused ? <HomeIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <HomeIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                    break;
+                                    case 'Directorio':
+                                        icon = focused ? <DirectoryIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <DirectoryIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                        break;
+                                        case 'Mapa':
+                                            icon = focused ? <MapIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <MapIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                            break;
+                                            case 'Comida':
+                                                icon = focused ? <FoodIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <FoodIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                                break;
+                                                case 'Eventos':
+                                                    icon = focused ? <EventsIconActive width={iconSizef} height={iconSizef} style={{ tintColor: color }} /> : <EventsIcon width={iconSize} height={iconSize} style={{ tintColor: color }} />;
+                                                    break;
+                                                    default:
+                                                        break;
+                                                    }
+                                                    
+                                                    return icon;
+                                                },
+                                            })}
             >
                 <Tab.Screen
                     name="Home"

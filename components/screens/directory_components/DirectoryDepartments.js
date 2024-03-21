@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import Constants from 'expo-constants';
 import DirectoryWorkers from './DirectoryWorkers';
 import DirectoryDepartmentTarjeta from './DirectoryDepartmentTarjeta';
 //Imagenes
@@ -24,6 +24,7 @@ import ss_bebidas from '../../../images/cuckoo/ss_bebidas.jpg';
 
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
+
 
 const DirectoryDepartments = ({id_menu}) => {
   const navigation = useNavigation();
@@ -94,6 +95,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     paddingRight: 5,
     paddingBottom: 20,
+    marginTop: Constants.statusBarHeight + 60,
   },
   icono: {
     width: '45%',

@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Linking} from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import InstagramIcon from '../../../images/icons/instagram_icon.svg';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
+import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
 import EventSection from './EventSection';
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F8F8F8',
     flex: 1,
+    // marginTop: Constants.statusBarHeight + 60,
     //padding: 20,
   },
   header: {

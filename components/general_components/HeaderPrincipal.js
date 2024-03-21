@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Image, Platform } from 'react-native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import Constants from 'expo-constants';
@@ -10,29 +10,22 @@ const Header = ({text,imagen}) => {
 
   return (
     <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.pop()}>
-          <ArrowIcon name="left" size={24} color='#FD5900' />
-        </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Text style={styles.groupName}>{text}</Text>
         </View>
-        {imagen && <Image source={imagen} style={styles.logo} />}
-       {/* <Image source={imagen} style={styles.logo} /> */}
-        {/* <Image source={require('../../images/eventos/grupos/vertice.png')} style={styles.logo} /> */}
     </View>   
   );
 };
 
 const styles = StyleSheet.create({
     header: {
-        // marginTop: Constants.statusBarHeight,
         paddingTop: Constants.statusBarHeight + 10,
         paddingBottom: 15,
         // height: 80,
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        paddingVertical: 10,
+        // paddingVertical: 10,
         paddingHorizontal: 20,
         shadowColor: '#000',
         shadowOffset: {
@@ -55,13 +48,11 @@ const styles = StyleSheet.create({
     },
     groupName: {
         fontSize: 24,
-        marginLeft: 20,
         marginRight: 'auto',
         fontFamily: 'lexend-medium',
-    },
-    logo: {
-      width: 60,
-      height: 60,
+        alignSelf: 'center',
+        width: '100%',
+        textAlign: 'center',
     },
 });
 
