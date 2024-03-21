@@ -30,44 +30,350 @@ const DirectoryDepartments = ({id_menu}) => {
   const navigation = useNavigation();
   let departamentos;
 
+  basico = [
+    {nombre: '--', 
+    correo: '--', },
+  ];
   
+  caja = [
+    {nombre: 'Carolina Lopez Reyes', 
+    correo: 'carolina.lopezre@anahuac.mx', 
+    imagen: require('../../../images/directorios/w_Carolina.jpeg')},
+  ];
+  t_caja = [
+    'Pago Inicial',
+    'Pago de Reinscripción',
+    'Pago de Colegiatura',
+    'Facturación'
+  ];
+
+  cobranza = [
+    {nombre: 'Elizabeth Cruz Zafra',
+    correo: 'elizabeth.cruzz@anahuac.mx',
+    imagen: require('../../../images/directorios/w_elizabeth_cruz.jpeg') },
+  ];
+  t_cobranza = [
+    'Descuento por pronto pago',
+    'Costo por Crédito',
+    'Pagos domiciliados',
+    'Blindaje Anáhuac',
+  ];
+
+  administracion_escolar = [
+    {nombre: 'Amitsadai Camacho Cervantes',
+    correo: 'amitsadai.camacho@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Amitsadai.jpeg')},
+    {nombre: 'Arely Amador Gerónimo',
+    correo: 'arely.amador@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Arely.jpeg')},
+  ];
+  t_administracion_escolar = [
+    'Verificación de Retenciones',
+    'Solicitud de Constancias o Historial',
+    'Baja de materia',
+    'Movilidad y Transferencia',
+    'Baja temporal o definitiva',
+    'Cambio de carrera',
+  ];
+
   operacion_academica = [
-      {nombre: 'Roberto Geovani López Curiel', correo: 'geovanni.curiel@anahuac.mx', imagen: require('../../../images/directorios/w_roberto.jpg')},
-      {nombre: 'Dalia Alarcón Gonzalez', correo: 'dalia.alarcon@anahuac.mx', imagen: require('../../../images/directorios/w_dalia.jpg')},
-    ];
-    
-    formacion_integral = [
-        {nombre: 'Lluvia Itaií Ruiz Ramos', correo: 'lluvia.ruiz@anahuac.mx', imagen: require('../../../images/directorios/w_lluvia.jpg')},
-        {nombre: 'Jose Lorenzo Martínez Valencia', correo: 'jose.martinezval@anahuac.mx', imagen: require('../../../images/directorios/w_jose_lorenzo.jpg')},
-        {nombre: 'Concepción Jazmín Santos Estrada', correo: 'concepcion.santoses@anahuac.mx', imagen: require('../../../images/directorios/w_concepcion.jpg')},
-        {nombre: 'Francisco Morales Mejía', correo: 'jorge.moralesme@anahuac.mx', imagen: require('../../../images/directorios/w_jorge_francisco.jpg')},
-    ];
-    caja = [
-        {nombre: 'Elizabeth Cruz Zafra', correo: 'elizabeth.cruzz@anahuac.mx', imagen: require('../../../images/directorios/w_elizabeth.jpg')},
-    ];
-    t_caja = [
-      'Pago de colegiaturas',
-      'Pago de inscripción',
-      'Pago de constancias',
-    ];
-    administracion_escolar = [
-        {nombre: 'Carolina López Reyes', correo: 'carolina.lopezre@anahuac.mx', imagen: require('../../../images/directorios/w_carolina.jpg')},
-    ];
-    orientacion_psicologica = [
-        {nombre: 'Nelly Tanivet López Martínez', correo: 'nelly.lopezm76@anahuac.mx', imagen: require('../../../images/directorios/w_nelly.jpg')},
-        {nombre: 'Luisa Miriam Toledo Ramos', correo: 'luisa.toledo@anahuac.mx', imagen: require('../../../images/directorios/w_luisa.jpg')},
-    ];
-    becas = [
-        {nombre: 'Veronica Ivonne López García', correo: 'ivonne.lopezga@anahuac.mx', imagen: require('../../../images/directorios/w_veronica.jpg')},
-    ];
-    departamentos = [
-      {nombre: 'OperacionAcademica' , imagen: require('../../../images/directorios/d_operacion_academica.jpg'), texto: 'Operación Académica', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: operacion_academica},
-      {nombre: 'FormacionIntegral' , imagen: require('../../../images/directorios/d_formacion_integral.jpeg'), texto: 'Formación Integral', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: formacion_integral},
-      {nombre: 'Caja' , imagen: require('../../../images/directorios/d_caja.jpg'), texto: 'Caja', correo: 'caja.uao@anahuac.mx', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2 , tramites: t_caja, trabajadores: caja},
-      {nombre: 'AdministracionEscolar' , imagen: require('../../../images/directorios/d_administracion_escolar.jpg'), texto: 'Administración Escolar', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: administracion_escolar},
-      {nombre: 'OrientacionPsicologica' , imagen: require('../../../images/directorios/d_orientacion_psicologica.jpg'), texto: 'Orientación Psicológica', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: orientacion_psicologica},
-      {nombre: 'Becas' , imagen: require('../../../images/directorios/d_becas.jpg'), texto: 'Becas', ubicacion: 'Edificio B, planta alta', id_ubicacion: 2, trabajadores: becas},
-    ];
+    {nombre: 'Dalia Alarcón Gonzalez',
+    correo: 'dalia.alarcon@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Dalia_Alarcon.jpeg')},
+    {nombre: 'Roberto Geovanni Lopez Curiel',
+    correo: 'geovanni.curiel@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')
+    },
+    {nombre: 'Noemi Esmeralda Hernández Alavez',
+    correo: 'noemi.hernandez@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')
+    },
+  ];
+  t_operacion_academica = [
+    'Exámenes de suficiencia',
+    'Exámenes extraordinarios',
+    'Examen EGEL - CENEVAL',
+    'MINORS',
+    'Alta y baja de cursos',
+  ];
+
+  or_psicologica = [
+    {nombre: 'Nelly Tanivet Lopez Martinez',
+    correo: 'nelly.lopezm76@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Nelly_Tanivet.jpeg')},
+    {nombre: 'Ariana Solano Zaragoza',
+    correo: 'ariana.solanoz48@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Ariana_Solano.jpeg')},
+  ];
+  t_or_psicologica = [
+    'Cita de orientación psicológica',
+    'Programas de desarrollo',
+  ];
+
+  tutorias = [
+    {nombre: 'Luisa Miriam Toledo Ramos',
+    correo: 'luisa.toledo@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Miriam_Toledo.jpeg')},
+    {nombre: 'Esmeralda Orozco López',
+    correo: 'esmeralda.orozcol@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+  ];
+  t_tutorias = [
+    'Citas de tutoría',
+    'Programas de apoyo académico',
+  ];
+
+  soporte = [
+    {nombre: 'Edgar Joel Jimenez Carrasco',
+    correo: 'edgarjoel.jimenez@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+  ];
+  t_soporte = [
+    'Error de acceso a plataformas o apps',
+    'Sistema de Listas',
+    'Office 365',
+  ];
+
+  becas = [
+    {nombre: 'Veronica Ivonne Lopez Garcia',
+    correo: 'ivonne.lopezga@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Ivonne_Lopez.jpeg')},
+  ];
+  t_becas = [
+    'Nuevas Becas',
+    'Incremento de becas',
+    'Recuperación de becas',
+    'Permanencia de beca',
+    'Requisitos y solicitudes',
+  ];
+
+  biblioteca = [
+  ];
+  t_biblioteca = [
+    'Multas',
+    'Asesorías',
+    'Retenciones',
+  ];
+
+  form_integral = [
+    {nombre: 'Erwin Garcia Acevedo',
+    correo: 'erwin.garcia@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Erwin_Garcia.jpeg')},
+    {nombre: 'Jorge Francisco Morales Mejía',
+    correo: 'jorge.moralesme@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Francisco_Morales.jpeg')},
+    {nombre: 'José Lorenzo Martinez Valencia',
+    correo: 'jose.martinezval@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Jose_Martinez.jpeg')},
+    {nombre: 'Concepción Jazmín Santos Estrada',
+    correo: 'concepcion.santoses@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Jazmin_Santos.jpeg')},
+    {nombre: 'Francisco Javier Marquez Torres',
+    correo: 'javier.marquezt@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+  ];
+  t_form_integral = [
+    'Coordinadores',
+    'Grupos de Liderazgo',
+    'Grupos representativos y clubs',
+  ];
+
+  internacional = [
+    {nombre: 'Diego Arroyo Celaya',
+    correo: 'diego.arroyo@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+  ];
+  t_internacional = [
+    'Intercambios académicos internacionales',
+    'Experiencias interculturales',
+    'Internacionalización en campus',
+    'Prácticas profesionales',
+    'Requisitos y periodos de internacionalización',
+  ];
+
+  directores = [
+    {nombre: 'Martin Garnica Hernandez',
+    correo: 'martin.garnica@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Martin_Garnica.jpeg')},
+    {nombre: 'Rodrigo Felguerez Allende',
+    correo: 'rodrigo.felguerez@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Rodrigo_Felguerez.jpeg')},
+    {nombre: 'David Ricardo Mayren Garcia',
+    correo: 'david.mayren@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Ricardo_Mayren.jpeg')},
+    {nombre: 'Hector Humberto Vásquez Quevedo',
+    correo: 'hector.vasquez@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+    {nombre: 'Yvette Flor Solano Carrillo',
+    correo: 'yvette.solanoca@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+    {nombre: 'Maria del Pilar Aguilar Beristain',
+    correo: 'maria.aguilarna@anahuac.mx',
+    imagen: require('../../../images/directorios/a_estandar.jpg')},
+    {nombre: 'Carlos Alberto Olavarría Zárate',
+    correo: 'carlos.olavarria@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Carlos_Olavarria.jpeg')},
+    {nombre: 'Marisol Chavez Bautista',
+    correo: 'marisol.chavez@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Marisol_Chavez.jpeg')},
+  ];
+
+  egresados = [
+    {nombre: 'Alina Hernández Nieto',
+    correo: 'alina.hernandez@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Alina_Nieto.jpeg')},
+  ];
+
+  sorteo_anahuac = [
+    {nombre: 'Diana Velasco Rodríguez',
+    correo: 'diana.velascoro@anahuac.mx',
+    imagen: require('../../../images/directorios/w_Diana_Velasco.jpeg')},
+  ];
+
+
+  departamentos = [
+    {nombre: 'Caja' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Caja', 
+    correo:'caja.uao@anahuac.mx' , 
+    tramites: t_caja, 
+    ubicacion: 'Edificio B, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: caja},
+
+    {nombre: 'Cobranza' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Cobranza', 
+    correo:'cobranza.uao@anahuac.mx' , 
+    tramites: t_cobranza, 
+    ubicacion: 'Edificio B, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: cobranza},
+
+    {nombre: 'AdministraciónEscolar' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Administración Escolar', 
+    correo:'aescolar.uao@anahuac.mx' , 
+    tramites: t_administracion_escolar, 
+    ubicacion: 'Edificio B, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: administracion_escolar},
+
+    {nombre: 'OperacionAcademica' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Operación Académica', 
+    correo:'operacionacademica.uao@anahuac.mx' , 
+    tramites: t_operacion_academica, 
+    ubicacion: 'Edificio E, planta alta', 
+    id_ubicacion: 5, 
+    trabajadores: operacion_academica},
+
+    {nombre: 'OrientacionPsicologica' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Orientación Psicológica', 
+    correo:'orientacionpsicologica.uao@anahuac.mx' , 
+    tramites: t_or_psicologica, 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: or_psicologica},
+
+    {nombre: 'Tutorias' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Tutorías', 
+    correo:'tutorias.uao@anahuac.mx', 
+    tramites: t_tutorias, 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: tutorias},
+
+    {nombre: 'SoporteTecnico' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Soporte Técnico', 
+    correo:'soporte.uao@anahuac.mx' , 
+    tramites: t_soporte, 
+    ubicacion: 'Edificio B, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: soporte},
+
+    {nombre: 'Becas' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Becas', 
+    tramites: t_becas, 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: becas},
+
+    {nombre: 'Biblioteca' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Biblioteca', 
+    correo:'bibliotecauao@anahuac.mx' , 
+    tramites: t_biblioteca, 
+    ubicacion: 'Edificio C, planta baja', 
+    id_ubicacion: 2,
+    trabajadores: basico},
+
+    {nombre: 'FormacionIntegral' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Formación Integral',
+    tramites: t_form_integral, 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: form_integral},
+
+    {nombre: 'Internacionalizacion' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Internacionalización', 
+    tramites: t_internacional, 
+    ubicacion: 'Edificio G, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: internacional},
+
+    {nombre: 'DirectoresEscuelas' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Directores de Escuela',
+    ubicacion: 'Edificio E, planta alta', 
+    id_ubicacion: 5,
+    trabajadores: directores},
+
+    {nombre: 'EgresadosVinculacion' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Egresados y vinculación',
+    ubicacion: 'Edificio E, planta alta', 
+    id_ubicacion: 5, 
+    trabajadores: egresados},
+
+    {nombre: 'SorteoAnahuac' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Sorteo Anáhuac', 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: sorteo_anahuac},
+
+    {nombre: 'Defensoria' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Defensoría', 
+    correo:'defensoria.uao@anahuac.mx' , 
+    ubicacion: 'Edificio B', 
+    id_ubicacion: 2, 
+    trabajadores: basico},
+
+    {nombre: 'Casa' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'CASA', 
+    correo:'atencionalumnos.uao@anahuac.mx' , 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: basico},
+
+    {nombre: 'ConsultorioMedico' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Consultorio Médico', 
+    correo:'medico1@anahuac.mx' , 
+    ubicacion: 'Edificio C, planta baja', 
+    id_ubicacion: 3, 
+    trabajadores: basico},
+
+  ];
     const handlePress = (seccion) => {
         let nombre_seccion = seccion.nombre;
         let texto_seccion = seccion.texto;
