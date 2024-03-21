@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   contendor_scroll: {
     //margin: 15,
-    marginTop: alto + 80,
+    marginTop: alto + 60,
     paddingTop: 15,
     marginLeft: 5,
     marginRight: -5,
