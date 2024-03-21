@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     groupName: {
+        
         fontSize: 24,
         marginLeft: 20,
         marginRight: 'auto',

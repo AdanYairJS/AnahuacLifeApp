@@ -7,6 +7,7 @@ import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import Activity from '../../../images/home/home_icons/historial.svg';
 import Notifications from '../../../images/home/home_icons/notificaciones.svg';
 import DarkMode from '../../../images/home/home_icons/modo_oscuro.svg';
+import CloseSesion from '../../../images/home/home_icons/cerrar_sesion.svg';
 import Help from '../../../images/home/home_icons/ayuda.svg';
 
 const PreferenceCard = () => {
@@ -23,7 +24,11 @@ const PreferenceCard = () => {
               <DarkMode width={30} height={30} style={styles.iconos}/>
               <Text style={styles.preferencia}>Modo oscuro</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
-            </TouchableOpacity>            
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.subcontainer}>
+              <CloseSesion width={30} height={30} style={styles.iconos}/>
+              <Text style={styles.preferencia}>Cerrar sesión</Text>
+            </TouchableOpacity>          
           </View>          
         </View>
     );
@@ -68,6 +73,7 @@ const styles = StyleSheet.create({
         //alignItems: 'center',
       },
       iconos:{
+        resizeMode: 'cover',
       },
       preferencia:{
         width: 250,
