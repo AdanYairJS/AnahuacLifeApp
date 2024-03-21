@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
       },
       subcontainer: {
-        width: 360,
+        width: '95%',
         flexDirection: 'row',
         display: 'flex',
         justifyContent: 'flex-start',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
       iconos:{
       },
       preferencia:{
-        width: 250,
+        width: '80%',
         display: 'flex',
         textAlign: 'left',
         fontFamily: 'lexend-regular',
