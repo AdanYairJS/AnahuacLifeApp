@@ -130,6 +130,8 @@ function DirectoryStack() {
                 options={{
                     // headerShown: false,
                     title: 'Directorio',
+                    //quitar esta parte
+                
                     headerTitleStyle: {
                         fontFamily: 'lexend-medium',
                         fontSize: 30,
@@ -229,7 +231,7 @@ export default function Navigation() {
                     tabBarLabelStyle: {
                         fontFamily: 'lexend-light',
                         fontSize: 10,
-                        marginBottom: Platform.OS === 'ios' ? 0 : 10,
+                        marginBottom: Platform.OS === 'ios' ? -8 : 10,
                         marginTop: Platform.OS === 'ios' ? 8 : 0,
                     },
                     // tabBarLabelStyle: ({ focused }) => ({
@@ -240,7 +242,7 @@ export default function Navigation() {
                     // }),
                     tabBarStyle: {
                         backgroundColor: '#FFFFFF', // Color de fondo
-                        height: 60, // Altura del menú
+                        height: Platform.OS === 'ios' ? 75 : 60, // Altura del menú
                         borderTopWidth: 0, //Borde superior
                         display: 'flex',
                         ...Platform.select({
@@ -256,7 +258,7 @@ export default function Navigation() {
                         }),
                     },
                     tabBarIconStyle: {
-                        marginTop: 6, // Distancia entre los íconos y el  borde superior de la barra de menú
+                        marginTop: Platform.OS === 'ios' ? 12 : 6, // Distancia entre los íconos y el  borde superior de la barra de menú
                         alignSelf: 'center',
                     },
                     tabBarIcon: ({ focused, color, size }) => {

@@ -9,21 +9,21 @@ import Notifications from '../../../images/home/home_icons/notificaciones.svg';
 import DarkMode from '../../../images/home/home_icons/modo_oscuro.svg';
 import Help from '../../../images/home/home_icons/ayuda.svg';
 
-const PreferenceCard = () => {
+const InformationCard = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.cardContainer}>
           <View style={styles.preferencesContainer}>
-            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Notificaciones",{texto:"Notificaciones"})}>
-              <Notifications width={30} height={30} style={styles.iconos}/>
-              <Text style={styles.preferencia}>Notificaciones</Text>
+            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Actividad",{texto:"Tu Actividad"})}>
+              <Activity width={30} height={30} style={styles.iconos}/>
+              <Text style={styles.preferencia}>Tu actividad</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("ModoOscuro",{texto:"Modo Oscuro"})}>
-              <DarkMode width={30} height={30} style={styles.iconos}/>
-              <Text style={styles.preferencia}>Modo oscuro</Text>
+            <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Ayuda",{texto:"Ayuda"})}>
+              <Help width={30} height={30} style={styles.iconos}/>
+              <Text style={styles.preferencia}>Ayuda</Text>
               <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
-            </TouchableOpacity>            
+            </TouchableOpacity>
           </View>          
         </View>
     );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         borderRadius: 10,
         marginRight: 15,
-        marginBottom: 30,
+        marginBottom: 10,
         marginLeft: 15,
         padding: 10,
         shadowColor: '#000',
@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 4,
-        // width: 360,
-        // height: 300,
         display: 'flex',
         justifyContent: 'space-between',
         alignSelf: 'center',
@@ -62,10 +60,6 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
         marginVertical: 5,
-        // borderColor: 'red',
-        // borderWidth: 2,
-        
-        //alignItems: 'center',
       },
       iconos:{
       },
@@ -81,4 +75,4 @@ const styles = StyleSheet.create({
       },
 });
 
-export default PreferenceCard;
+export default InformationCard;
