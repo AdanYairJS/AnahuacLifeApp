@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     header: {
         paddingTop: Constants.statusBarHeight + 10,
         paddingBottom: 15,
-        // height: 80,
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
