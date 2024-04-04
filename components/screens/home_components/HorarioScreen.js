@@ -2,6 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, Dimensions, ScrollView, Text, StyleSheet, Image, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
+import CustomSwitch from '../../general_components/CustomSwitch';
 
 const anchoVentana = Dimensions.get('window').width;
 
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   },
   menu:{
     paddingTop: Constants.statusBarHeight,
-    height: 100,
+    height: 60 + Constants.statusBarHeight,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff', // Fondo blanco

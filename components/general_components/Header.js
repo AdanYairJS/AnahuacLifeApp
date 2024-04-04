@@ -10,8 +10,8 @@ const Header = ({text,imagen}) => {
 
   return (
     <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.pop()}>
-          <ArrowIcon name="left" size={24} color='#FD5900' />
+        <TouchableOpacity onPress={() => navigation.pop()} style={styles.chevron}>
+          <ArrowIcon name="left" size={26} color='#FD5900' />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Text style={styles.groupName}>{text}</Text>
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         shadowColor: '#000',
         shadowOffset: {
-        width: 0,
-        height: 2,
+          width: 0,
+          height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
     },
-    groupName: {
-        
+    groupName: {  
         fontSize: 24,
         marginLeft: 20,
         marginRight: 'auto',
@@ -63,6 +62,12 @@ const styles = StyleSheet.create({
     logo: {
       width: 60,
       height: 60,
+    },
+    chevron:{
+      //borderWidth: 1,
+      //borderColor: 'green',
+      height: '100%',
+      justifyContent: 'center',
     },
 });
 

@@ -12,15 +12,6 @@ const DetailedEvent = () => {
       colors={['#f0f0f0', '#F9F9F9']}
       style={styles.container}
     >
-      {/* <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate("EventosScreen")}>
-          <ArrowIcon name="left" size={24} color="black" />
-        </TouchableOpacity>
-        <View style={styles.titleContainer}>
-          <Text style={styles.groupName}>Detalles del Evento</Text>
-        </View>
-      </View> */}
-
       {/* Banner de la actividad */}
       <View style={styles.bannerContainer}>
         <Image
@@ -67,6 +58,7 @@ const DetailedEvent = () => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 10,
     backgroundColor: '#F8F8F8',
     flex: 1,
   },

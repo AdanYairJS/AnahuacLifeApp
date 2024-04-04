@@ -9,7 +9,7 @@ const anchoVentana = Dimensions.get('window').width;
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-
+  
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="#ffffff" barStyle="dark-content" /> 
@@ -28,14 +28,14 @@ const HomeScreen = () => {
       <ScrollView style={styles.container}>    
         <View style={styles.avatarContainer}>
           <Image
-            source={require('../../images/home/Cr7_Mun.jpg')} // Cambia la ruta a tu foto de perfil
+            source={require('../../images/home/MessiPerfil.jpeg')} // Cambia la ruta a tu foto de perfil
             style={styles.avatar}
           />
         </View>
         <View style={styles.informacion}>
-          <Text style={styles.nombre}>Cristiano Ronaldo Dos Santos Aveiro</Text>
-          <Text style={styles.carrera}>Ingeniería en Tecnologías de Información</Text>
-          <Text style={styles.correo}>cr7_thegoat@anahuac.mx</Text>
+          <Text style={styles.nombre}>Lionel Andrés Messi Cuccittini</Text>
+          <Text style={styles.carrera}>CAMPEÓN DEL MUNDO</Text>
+          <Text style={styles.correo}>messi_thegoat@anahuac.mx</Text>
         </View>
         
         <View style={styles.contenedor_titulo}>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   menu:{
     paddingTop: Constants.statusBarHeight,
-    height: 100,
+    height: 60 + Constants.statusBarHeight,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff', // Fondo blanco

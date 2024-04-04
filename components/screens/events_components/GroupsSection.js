@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     height: 100,
     margin: 15,
     borderRadius: 50,
-    borderWidth: 1,
+    //borderWidth: 1,
+    //Agregar sombra para aifon
     borderColor: '#FD5900',
     elevation: 4,
     shadowColor: '#000000',

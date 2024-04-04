@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   menu:{
     paddingTop: Constants.statusBarHeight,
-    height: 100,
+    height: 60 + Constants.statusBarHeight,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff', // Fondo blanco

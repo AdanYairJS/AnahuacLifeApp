@@ -2,12 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 //iconos
 import Activity from '../../../images/home/home_icons/historial.svg';
 import Notifications from '../../../images/home/home_icons/notificaciones.svg';
 import DarkMode from '../../../images/home/home_icons/modo_oscuro.svg';
 import Help from '../../../images/home/home_icons/ayuda.svg';
+import CustomSwitch from '../../general_components/CustomSwitch';
 
 const InformationCard = () => {
     const navigation = useNavigation();
@@ -15,14 +17,22 @@ const InformationCard = () => {
         <View style={styles.cardContainer}>
           <View style={styles.preferencesContainer}>
             <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Actividad",{texto:"Tu Actividad"})}>
-              <Activity width={30} height={30} style={styles.iconos}/>
+              <View style={styles.iconos}>
+                <Activity width={30} height={30}/>
+              </View>
               <Text style={styles.preferencia}>Tu actividad</Text>
-              <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
+              <View style={styles.flecha}>
+                <ArrowIcon name="right" size={26} color="#FD5900"/>
+              </View>              
             </TouchableOpacity>
             <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Ayuda",{texto:"Ayuda"})}>
-              <Help width={30} height={30} style={styles.iconos}/>
+              <View style={styles.iconos}>
+                <Help width={30} height={30} style={styles.iconos}/>
+              </View>
               <Text style={styles.preferencia}>Ayuda</Text>
-              <ArrowIcon name="right" size={24} color="#FD5900" style={styles.flecha}/>
+              <View style={styles.flecha}>
+                <ArrowIcon name="right" size={26} color="#FD5900"/>
+              </View>   
             </TouchableOpacity>
           </View>          
         </View>
@@ -31,6 +41,7 @@ const InformationCard = () => {
 
 const styles = StyleSheet.create({
     cardContainer: {
+        width: '90%',
         backgroundColor: '#ffffff',
         borderRadius: 10,
         marginRight: 15,
@@ -50,10 +61,15 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
       },
       preferencesContainer:{
+        // borderWidth: 2,
+        // borderColor: 'red',
         marginVertical: 10,
+        width: '90%',
       },
       subcontainer: {
-        width: '95%',
+        // borderWidth: 2,
+        // borderColor: 'green',
+        width: '100%',
         flexDirection: 'row',
         display: 'flex',
         justifyContent: 'flex-start',
@@ -62,16 +78,29 @@ const styles = StyleSheet.create({
         marginVertical: 5,
       },
       iconos:{
+        width: '10%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // borderWidth: 2,
+        // borderColor: 'red',
       },
       preferencia:{
+        // borderWidth: 2,
+        // borderColor: 'blue',
         width: '80%',
         display: 'flex',
         textAlign: 'left',
         fontFamily: 'lexend-regular',
         fontSize: 17,
         marginLeft: 20,
+        textAlignVertical: 'center',
       },
       flecha:{
+        // borderWidth: 2,
+        // borderColor: 'black',
+        width: '15%',
+        alignItems: 'center',
+        justifyContent: 'center',
       },
 });
 

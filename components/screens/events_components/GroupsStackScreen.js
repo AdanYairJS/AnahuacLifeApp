@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+import { View, ScrollView, Text, Image, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import InstagramIcon from '../../../images/icons/instagram_icon.svg';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import Constants from 'expo-constants';
@@ -46,7 +46,7 @@ const GroupsStackScreen = ({route}) => {
             colors={['#f0f0f0','#F9F9F9']}
             style={styles.container}
     >
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {/* <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.navigate("EventosScreen")}>
             <ArrowIcon name="left" size={24} color="black" />
@@ -70,7 +70,7 @@ const GroupsStackScreen = ({route}) => {
             <Text style={styles.titulo}>Próximos eventos</Text>
         </View> 
         <EventSection/>     
-      </View>
+      </ScrollView>
     </LinearGradient>
   );
 };
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8',
     flex: 1,
     // marginTop: Constants.statusBarHeight + 60,
-    //padding: 20,
+    paddingTop: 65,
   },
   header: {
     height: 80,
@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
   },
   descriptionContainer: {
     padding: 30,
-    marginTop: 90,
     marginBottom: 25,
   },
   description: {

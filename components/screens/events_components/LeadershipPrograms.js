@@ -15,7 +15,7 @@ const LeadershipPrograms = ({  }) => {
     { id : 1, nombre: 'vertice', texto: 'Vértice', imagen: verticeImage},
     { id : 2, nombre: 'accion', texto: 'ACCIÓN', imagen: accionImage},
     { id : 3, nombre: 'culmen', texto: 'Culmen', imagen: culmenImage},
-    { id : 4, nombre: 'imef', texto: 'Imef',imagen: imefImage},
+    { id : 4, nombre: 'imef', texto: 'IMEF',imagen: imefImage},
   ];
 
   return (
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     margin: 15,
     //margin: 25,
     borderRadius: 50,
-    borderWidth: 1,
+    //borderWidth: 1,
+    //Agregar sombra para aifon
     borderColor: '#FD5900',
     elevation: 4,
     shadowColor: '#000000',
