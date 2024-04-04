@@ -70,12 +70,15 @@ const DirectoryWorker = ({navigation , route}) => {
           <Text style={styles.buttonText}>Ver en el mapa</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.encabezado}>MIEMBROS</Text>
-      <View style={styles.miembros}>
-        {trabajadores.map((trabajador, index) => (        
-            <DirectoryWorkerTarjeta key={index} {...trabajador} />        
-        ))}
-      </View>
+      {route.params.trabajadores && <Text style={styles.encabezado}>MIEMBROS</Text>}
+      {route.params.trabajadores &&       
+        <View style={styles.miembros}>
+          {trabajadores.map((trabajador, index) => (        
+              <DirectoryWorkerTarjeta key={index} {...trabajador} />        
+          ))}
+        </View>
+      }
+      {/* <Text style={styles.encabezado}>MIEMBROS</Text> */}
     </ScrollView>
   );
 };

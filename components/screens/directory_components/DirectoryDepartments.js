@@ -258,6 +258,31 @@ const DirectoryDepartments = ({id_menu}) => {
 
 
   departamentos = [
+    {nombre: 'AdministraciónEscolar' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Administración Escolar', 
+    correo:'aescolar.uao@anahuac.mx' , 
+    tramites: t_administracion_escolar, 
+    ubicacion: 'Edificio B, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: administracion_escolar},
+    
+    {nombre: 'Becas' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Becas', 
+    tramites: t_becas, 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: becas},
+    
+    {nombre: 'Biblioteca' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Biblioteca', 
+    correo:'bibliotecauao@anahuac.mx' , 
+    tramites: t_biblioteca, 
+    ubicacion: 'Edificio C, planta baja', 
+    id_ubicacion: 2},
+    
     {nombre: 'Caja' , 
     imagen: require('../../../images/directorios/d_becas.jpg'), 
     texto: 'Caja', 
@@ -267,6 +292,13 @@ const DirectoryDepartments = ({id_menu}) => {
     id_ubicacion: 2, 
     trabajadores: caja},
 
+    {nombre: 'Casa' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'CASA', 
+    correo:'atencionalumnos.uao@anahuac.mx' , 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2},
+    
     {nombre: 'Cobranza' , 
     imagen: require('../../../images/directorios/d_becas.jpg'), 
     texto: 'Cobranza', 
@@ -276,14 +308,49 @@ const DirectoryDepartments = ({id_menu}) => {
     id_ubicacion: 2, 
     trabajadores: cobranza},
 
-    {nombre: 'AdministraciónEscolar' , 
+    {nombre: 'ConsultorioMedico' , 
     imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Administración Escolar', 
-    correo:'aescolar.uao@anahuac.mx' , 
-    tramites: t_administracion_escolar, 
-    ubicacion: 'Edificio B, planta alta', 
+    texto: 'Consultorio Médico', 
+    correo:'medico1@anahuac.mx' , 
+    ubicacion: 'Edificio C, planta baja', 
+    id_ubicacion: 3},
+
+    {nombre: 'Defensoria' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Defensoría', 
+    correo:'defensoria.uao@anahuac.mx' , 
+    ubicacion: 'Edificio B', 
+    id_ubicacion: 2},
+
+    {nombre: 'DirectoresEscuelas' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Directores de Escuela',
+    ubicacion: 'Edificio E, planta alta', 
+    id_ubicacion: 5,
+    trabajadores: directores},
+
+    {nombre: 'EgresadosVinculacion' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Egresados y vinculación',
+    ubicacion: 'Edificio E, planta alta', 
+    id_ubicacion: 5, 
+    trabajadores: egresados},
+
+    {nombre: 'FormacionIntegral' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Formación Integral',
+    tramites: t_form_integral, 
+    ubicacion: 'Edificio B, planta baja', 
     id_ubicacion: 2, 
-    trabajadores: administracion_escolar},
+    trabajadores: form_integral},
+
+    {nombre: 'Internacionalizacion' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Internacionalización', 
+    tramites: t_internacional, 
+    ubicacion: 'Edificio G, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: internacional},
 
     {nombre: 'OperacionAcademica' , 
     imagen: require('../../../images/directorios/d_becas.jpg'), 
@@ -302,6 +369,22 @@ const DirectoryDepartments = ({id_menu}) => {
     ubicacion: 'Edificio B, planta baja', 
     id_ubicacion: 2, 
     trabajadores: or_psicologica},
+    
+    {nombre: 'SoporteTecnico' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Soporte Técnico', 
+    correo:'soporte.uao@anahuac.mx' , 
+    tramites: t_soporte, 
+    ubicacion: 'Edificio B, planta alta', 
+    id_ubicacion: 2, 
+    trabajadores: soporte},
+    
+    {nombre: 'SorteoAnahuac' , 
+    imagen: require('../../../images/directorios/d_becas.jpg'), 
+    texto: 'Sorteo Anáhuac', 
+    ubicacion: 'Edificio B, planta baja', 
+    id_ubicacion: 2, 
+    trabajadores: sorteo_anahuac},
 
     {nombre: 'Tutorias' , 
     imagen: require('../../../images/directorios/d_becas.jpg'), 
@@ -311,103 +394,8 @@ const DirectoryDepartments = ({id_menu}) => {
     ubicacion: 'Edificio B, planta baja', 
     id_ubicacion: 2, 
     trabajadores: tutorias},
-
-    {nombre: 'SoporteTecnico' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Soporte Técnico', 
-    correo:'soporte.uao@anahuac.mx' , 
-    tramites: t_soporte, 
-    ubicacion: 'Edificio B, planta alta', 
-    id_ubicacion: 2, 
-    trabajadores: soporte},
-
-    {nombre: 'Becas' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Becas', 
-    tramites: t_becas, 
-    ubicacion: 'Edificio B, planta baja', 
-    id_ubicacion: 2, 
-    trabajadores: becas},
-
-    {nombre: 'Biblioteca' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Biblioteca', 
-    correo:'bibliotecauao@anahuac.mx' , 
-    tramites: t_biblioteca, 
-    ubicacion: 'Edificio C, planta baja', 
-    id_ubicacion: 2,
-    trabajadores: basico},
-
-    {nombre: 'FormacionIntegral' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Formación Integral',
-    tramites: t_form_integral, 
-    ubicacion: 'Edificio B, planta baja', 
-    id_ubicacion: 2, 
-    trabajadores: form_integral},
-
-    {nombre: 'Internacionalizacion' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Internacionalización', 
-    tramites: t_internacional, 
-    ubicacion: 'Edificio G, planta alta', 
-    id_ubicacion: 2, 
-    trabajadores: internacional},
-
-    {nombre: 'DirectoresEscuelas' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Directores de Escuela',
-    ubicacion: 'Edificio E, planta alta', 
-    id_ubicacion: 5,
-    trabajadores: directores},
-
-    {nombre: 'EgresadosVinculacion' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Egresados y vinculación',
-    ubicacion: 'Edificio E, planta alta', 
-    id_ubicacion: 5, 
-    trabajadores: egresados},
-
-    {nombre: 'SorteoAnahuac' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Sorteo Anáhuac', 
-    ubicacion: 'Edificio B, planta baja', 
-    id_ubicacion: 2, 
-    trabajadores: sorteo_anahuac},
-
-    {nombre: 'Defensoria' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Defensoría', 
-    correo:'defensoria.uao@anahuac.mx' , 
-    ubicacion: 'Edificio B', 
-    id_ubicacion: 2, 
-    trabajadores: basico},
-
-    {nombre: 'Casa' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'CASA', 
-    correo:'atencionalumnos.uao@anahuac.mx' , 
-    ubicacion: 'Edificio B, planta baja', 
-    id_ubicacion: 2, 
-    trabajadores: basico},
-
-    {nombre: 'ConsultorioMedico' , 
-    imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Consultorio Médico', 
-    correo:'medico1@anahuac.mx' , 
-    ubicacion: 'Edificio C, planta baja', 
-    id_ubicacion: 3, 
-    trabajadores: basico},
-
   ];
-    const handlePress = (seccion) => {
-        let nombre_seccion = seccion.nombre;
-        let texto_seccion = seccion.texto;
-        // Aquí puedes navegar a la nueva ventana con el título de la sección
-        // navigation.navigate('NuevaVentana', { titulo: seccion.nombre });
-        navigation.navigate(nombre_seccion,{texto_seccion});
-    };
-    return (
+  return (
       <View style={styles.container}>
       {departamentos.map((departamento, index) => (        
           <DirectoryDepartmentTarjeta key={index} {...departamento} />        
@@ -428,53 +416,6 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     paddingBottom: 20,
     marginTop: Constants.statusBarHeight + 60,
-  },
-  icono: {
-    width: '45%',
-    aspectRatio: 0.75,
-    // width: 100,
-    // height: 100,
-    margin: '2%',
-    // borderRadius: 20,
-    // borderWidth: 2,
-    // borderColor: '#FD5900',
-    elevation: 4,
-    shadowColor: '#000000',
-    // shadowOffset: ,
-    // shadowOpacity: 20,
-    overflow: 'hidden',
-  },
-  imagen: {
-    width: '100%',
-    height: '80%',
-    resizeMode: 'cover',
-    borderRadius: 25,
-  },
-  titulo: {
-    alignSelf: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#FFF',
-    // textShadowColor: 'rgba(0, 0, 0, 0.4)', 
-    // textShadowOffset: { width: 0.05, height: 0.05 }, 
-    // textShadowRadius: 1,
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  titulo_seccion: {
-    width: '100%',
-    fontSize: 20,
-    // fontWeight: 'bold',
-    fontFamily: 'lexend-extrabold',
-    color: '#FFF',
-    textAlign: 'left',
-    marginLeft: 40,
-    marginBottom: 5,
-  },
-  contendor_scroll: {
-    //margin: 15,
-    marginTop: 15,
-    marginBottom: 15,
   },
 });
 
