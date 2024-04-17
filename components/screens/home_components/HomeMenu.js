@@ -1,42 +1,30 @@
-import React from 'react';
+import React,{ useRef, useState } from 'react';
 import { View, TouchableOpacity, Dimensions, ScrollView, Text, StyleSheet, Image, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
-//const navigation = useNavigation();
 
 const anchoVentana = Dimensions.get('window').width;
 
-const AgendaScreen = () => {
+const HomeMenu = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" /> 
       <View style={styles.menu}>
         <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("HomeScreen")}> 
           <Text style={styles.tab_name}> Perfil</Text>      
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("Horario")}> 
-          <Text style={styles.tab_name}> Horario</Text>
-        </TouchableOpacity>
         <View style={styles.tab}> 
-          <Text style={styles.tab_name_active}> Agenda</Text>
+          <Text style={styles.tab_name_active}> Horario</Text>
           <View style={styles.line} />
         </View>
+        <TouchableOpacity style={styles.tab} onPress={() => navigation.navigate("Agenda")}> 
+          <Text style={styles.tab_name}> Agenda</Text>
+        </TouchableOpacity>
       </View>
-
-      <ScrollView style={styles.container}>    
-          <Text style={styles.titulo}>AGENDA</Text>
-      </ScrollView>
-    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8F8F8',
-  },
   menu:{
     paddingTop: Constants.statusBarHeight,
     height: 60 + Constants.statusBarHeight,
@@ -85,20 +73,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FD5900',
     borderRadius: 5,
   },
-  contenedor_titulo: {
-    marginTop: 30,
-    alignItems: 'center',
-    margin: 15,
-    marginBottom: 30,
-  },
-  titulo: {
-      marginTop: 250,
-      textAlign: 'center',
-      fontFamily: 'lexend-extrabold',
-      fontSize: 20,
-      color: '#FD5900',
-  } 
 });
 
-export default AgendaScreen;
-
+export default HomeMenu;

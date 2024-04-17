@@ -21,13 +21,23 @@ const PreferenceCard = () => {
           <View style={styles.preferencesContainer}>
             <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Notificaciones",{texto:"Notificaciones"})}>
               <View style={styles.iconos}>
+                <Notifications width={30} height={30}/>
+              </View>
+              <Text style={styles.preferencia}>Notificaciones</Text>
+              <View style={styles.flecha}>
+                <ArrowIcon name="right" size={26} color="#FD5900"/>
+              </View> 
+            </TouchableOpacity>
+            {/* <TouchableOpacity style={styles.subcontainer} onPress={() => navigation.navigate("Notificaciones",{texto:"Notificaciones"})}>
+              <View style={styles.iconos}>
                 <Notifications width={30} height={30} style={styles.iconos}/>
               </View>
               <Text style={styles.preferencia}>Notificaciones</Text>
               <View style={styles.flecha}>
                 <CustomSwitch/>
               </View> 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
+            <View style={styles.divider}/> 
             <View style={styles.subcontainer}>
               <View style={styles.iconos}>
                 <DarkMode width={30} height={30} style={styles.iconos}/>
@@ -111,6 +121,18 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    divider: {
+      width: '100%',
+      borderBottomWidth: 0,
+      //borderBottomColor: '#FD5900',
+      borderBottomColor: '#000000',
+      //borderBottomColor: '#fdfdfd',
+      //marginTop: 20,
+      //marginBottom: 10,
+      elevation: 1,
+      shadowColor: '#000000',
+      zIndex: 1,
+  },
 });
 
 export default PreferenceCard;

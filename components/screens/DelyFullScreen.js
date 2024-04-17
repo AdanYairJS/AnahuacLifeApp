@@ -4,21 +4,17 @@ import Constants from 'expo-constants';
 import { StyleSheet, Text, View, Image, Dimensions, ScrollView, Platform, StatusBar, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
 import { SliderBox } from 'react-native-image-slider-box';
-import CuckooMenu from './cuckoo_components/CuckooMenu';
-import CuckooSubseccion from './cuckoo_components/CuckooSubseccion';
-import CuckooProductos from './cuckoo_components/CuckooProductos'
+import DelyFullProductos from './delyfull_components/DelyFullProductos';
 
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
 const images = [
-  require('../../images/cuckoo/pina_coco.png'),
-  require('../../images/cuckoo/calabaza.png'),
-  require('../../images/cuckoo/fresa.png'),
-  require('../../images/cuckoo/patatalab.png'),
+  require('../../images/delyfull/hotcakes.png'),
+  require('../../images/delyfull/bebidadelyfull.png'),
 ]
 
-export default function CuckooScreen({ route }) {
+export default function DelyFullScreen({ route }) {
   // StatusBar.setBackgroundColor('#fff');
   // if (Platform.OS === 'android') {
   //   StatusBar.setTranslucent(true);
@@ -75,20 +71,7 @@ export default function CuckooScreen({ route }) {
           />
           <Text style={styles.titulo}>MENÚ</Text>  
           <View>
-            {/* <CuckooMenu id_menu='CuckooScreen'/> */}
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.botonera}>
-                  {secciones.map((seccion,index) => (
-                    <TouchableOpacity 
-                      key={index} 
-                      //style={[styles.boton_seccion,{backgroundColor: color_2}]} 
-                      style={[[styles.boton_seccion,{backgroundColor: color_2}], index === activeIndex && { opacity: 1 }]}
-                      onPress={() => cambiarSec(seccion.nombre,index)}
-                    >
-                      <Text style={[styles.subtitulo]}>{seccion.nombre}</Text>
-                    </TouchableOpacity>
-                  ))}
-            </ScrollView>
-            <CuckooProductos id_menu={sec}/>
+            <DelyFullProductos id_menu={'Platillos'}/>
           </View>
         </ScrollView>
         {/* <StatusBar style="auto" /> */}

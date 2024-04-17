@@ -45,10 +45,15 @@ const styles = StyleSheet.create({
     margin: 15,
     borderRadius: 50,
     //borderWidth: 1,
-    //Agregar sombra para aifon
     borderColor: '#FD5900',
     elevation: 4,
-    shadowColor: '#000000',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
     overflow: 'hidden',
     // backgroundColor: 'White',
   },

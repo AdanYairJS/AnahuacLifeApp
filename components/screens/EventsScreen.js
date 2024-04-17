@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { View, ScrollView, StyleSheet, Text, StatusBar } from 'react-native';
+import { View, ScrollView, TouchableOpacity, StyleSheet, Text, StatusBar } from 'react-native';
 import { SliderBox } from 'react-native-image-slider-box'; //yarn add megamaxs1234/react-native-image-slider-box (te amo megamax1234)
 import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
 import GroupsSection from './events_components/GroupsSection';
 import EventSection from './events_components/EventSection';
 import LeadershipPrograms from './events_components/LeadershipPrograms';
+import Card_Chevron from './home_components/Card_Chevron';
+import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 
 const EventsScreen = ({  }) => {
@@ -39,7 +41,18 @@ const EventsScreen = ({  }) => {
                     sliderBoxHeight={320}                    
                     onCurrentImagePressed={() => navigation.navigate("DetallesEvento")}
                     />
-                </View>            
+                </View> 
+                {/* <Card_Chevron text={"TODOS LOS EVENTOS"}></Card_Chevron>  */}
+                <View style={styles.cardContainer}>
+                    <View style={styles.preferencesContainer}>
+                        <TouchableOpacity style={styles.subcontainer}  onPress={() => navigation.navigate("TodosEventos")}>
+                        <Text style={styles.preferencia}>TODOS LOS EVENTOS</Text>
+                        <View style={styles.flecha}>
+                            <ArrowIcon name="right" size={26} color="#FD5900"/>
+                        </View>              
+                        </TouchableOpacity>
+                    </View>          
+                </View>          
                 {/* <ExpandableContainer title="COMUNIDAD UNIVERSITARIA" imageSource={require('../../images/eventos/contenedorcomunidad_eventos.png')} />
                 <ExpandableContainer title="GRUPOS DE LIDERAZGO" imageSource={require('../../images/eventos/contenedorcomunidad_eventos.png')} /> */}
                 <View style={styles.contenedor_titulo}>
@@ -52,7 +65,7 @@ const EventsScreen = ({  }) => {
                 </View>
                 <EventSection/>
                 <View style={styles.contenedor_titulo}>
-                    <Text style={styles.titulo}>ACTIVIDADES PUNTOS NOVA</Text>
+                    <Text style={styles.titulo}>PUNTOS NOVA</Text>
                 </View>
                 <EventSection/>
                 <View style={styles.divider}/>    
@@ -113,7 +126,73 @@ const styles = StyleSheet.create({
         // textShadowColor: 'rgba(0, 0, 0, 0.4)', 
         // textShadowOffset: { width: 0.05, height: 0.05 }, 
         // textShadowRadius: 1, 
-    }  
+    },
+    cardContainer: {
+        //marginTop: 105,
+        width: '90%',
+        backgroundColor: '#ffffff',
+        borderRadius: 10,
+        marginRight: 15,
+        marginTop: 15,
+        marginLeft: 15,
+        padding: 10,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 4,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignSelf: 'center',
+      },
+      preferencesContainer:{
+        // borderWidth: 2,
+        // borderColor: 'red',
+        //marginVertical: 10,
+        width: '100%',
+      },
+      subcontainer: {
+        // borderWidth: 2,
+        // borderColor: 'green',
+        width: '100%',
+        flexDirection: 'row',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        paddingVertical: 10,
+        //paddingHorizontal: 20,
+        paddingRight: 20,
+        marginVertical: 5,
+      },
+      iconos:{
+        width: '10%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // borderWidth: 2,
+        // borderColor: 'red',
+      },
+      preferencia:{
+        // borderWidth: 2,
+        // borderColor: 'blue',
+        width: '80%',
+        display: 'flex',
+        textAlign: 'left',
+        marginLeft: 20,
+        textAlignVertical: 'center',
+        fontFamily: 'lexend-bold',
+        fontSize: 17,
+        color: '#FD5900',
+      },
+      flecha:{
+        // borderWidth: 2,
+        // borderColor: 'black',
+        width: '15%',
+        alignItems: 'center',
+        justifyContent: 'right',
+        marginRight: 10,
+      }, 
 });
 
 export default EventsScreen;

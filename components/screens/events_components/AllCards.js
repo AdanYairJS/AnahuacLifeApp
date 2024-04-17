@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const EventCard = ({ name, date, score, images }) => {
+const AllCards = ({ name, date, score, images }) => {
   const navigation = useNavigation();
 
   return (
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       marginRight: 5,
       marginBottom: 10,
-      marginLeft: 12,
+      marginLeft: 7,
       padding: 10,
       shadowColor: '#000',
       shadowOffset: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
       elevation: 4,
-      width: 250,
+      width: 190,
       height: 200,
       justifyContent: 'space-between',
     },
@@ -45,18 +45,18 @@ const styles = StyleSheet.create({
       margin: 12,
     },
     activityName: {
-      fontSize: 16,
+      fontSize: 15,
       fontFamily: 'lexend-medium',
       marginBottom: 5,
     },
     activityDate: {
       fontFamily: 'lexend-regular',
-      fontSize: 14,
+      fontSize: 13,
       marginBottom: 5,
     },
     activityScore: {
       fontFamily: 'lexend-light',
-      fontSize: 14,
+      fontSize: 13,
       color: 'gray',
     },
     imageContainer: {
@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
       alignItems: 'flex-end',
     },
     image: {
-      width: 57,
-      height: 57,
+      width: 50,
+      height: 50,
       resizeMode: 'contain',
       marginRight: 5,
       alignSelf: 'flex-end',
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default EventCard;
+  export default AllCards;

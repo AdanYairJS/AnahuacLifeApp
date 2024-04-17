@@ -331,7 +331,7 @@ const DirectoryDepartments = ({id_menu}) => {
 
     {nombre: 'EgresadosVinculacion' , 
     imagen: require('../../../images/directorios/d_becas.jpg'), 
-    texto: 'Egresados y vinculación',
+    texto: 'Egresados y Vinculación',
     ubicacion: 'Edificio E, planta alta', 
     id_ubicacion: 5, 
     trabajadores: egresados},

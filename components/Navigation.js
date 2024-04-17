@@ -12,6 +12,7 @@ import DirectoryScreen from './screens/DirectoryScreen';
 import DirectoryWorkers from "./screens/directory_components/DirectoryWorkers.js";
 import MapScreen from './screens/MapScreen';
 import CuckooScreen from "./screens/CuckooScreen";
+import DelyFullScreen from "./screens/DelyFullScreen.js";
 
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
@@ -23,6 +24,8 @@ import ActivityScreen from "./screens/home_components/preferences/ActivityScreen
 import HelpScreen from "./screens/home_components/preferences/HelpScreen.js";
 import DarkModeScreen from "./screens/home_components/preferences/DarkModeScreen.js";
 import NotificationScreen from "./screens/home_components/preferences/NotificationsScreen.js";
+import AllEvents from "./screens/events_components/AllEvents.js";
+import DelyFullItem from "./screens/delyfull_components/DelyFullItem.js";
 
 //íconos
 import HomeIcon from '../images/icons/home_icon.svg';
@@ -40,6 +43,7 @@ import EventsIconActive from '../images/icons/eventos_icon_activo.svg';
 import Header from "./general_components/Header.js";
 import HeaderPrincipal from "./general_components/HeaderPrincipal.js";
 import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
+import DelyFullHeader from "./screens/delyfull_components/DelyFullHeader";
 
 const Tab = createBottomTabNavigator();
 const EventsStackNavigator = createNativeStackNavigator();
@@ -196,6 +200,18 @@ function EventosStack() {
                     header: ({route}) => <Header text="Detalles del evento"/>,
                 }}
             />
+            <EventsStackNavigator.Screen
+                name="TodosEventos"
+                component={AllEvents}
+                options={{
+                    animation: 'slide_from_right',
+                    transitionSpec: {
+                        open: { animation: 'timing', config: { duration: 20 } }, // Duración para la entrada
+                        close: { animation: 'timing', config: { duration: 20 } }, // Duración para la salida
+                    },
+                    header: ({route}) => <Header text="Todos los eventos"/>,
+                }}
+            />
         </EventsStackNavigator.Navigator>
     );
 }
@@ -219,6 +235,22 @@ function CuckooStack() {
                     header: () => <CuckooHeader ruta_imagen={require('../images/cuckoo/logo.png')} color_fondo='#014955' />
                 }}
             />
+            <CuckooStackNavigator.Screen
+                name="DelyFullScreen"
+                component={DelyFullScreen}
+                initialParams={{ color_1: '#419A6E', color_2: '#014B3C' }}
+                options={{
+                    header: () => <DelyFullHeader ruta_imagen={require('../images/cuckoo/Logo Dely.png')} color_fondo='#014B3C' />
+                }}
+            />
+            <CuckooStackNavigator.Screen
+                name="DelyFullItem"
+                component={DelyFullItem}
+                initialParams={{ color_1: '#419A6E', color_2: '#014B3C' }}
+                options={{
+                    header: () => <DelyFullHeader ruta_imagen={require('../images/cuckoo/Logo Dely.png')} color_fondo='#014B3C' />
+                }}
+            />
         </CuckooStackNavigator.Navigator>
     );
 }
@@ -230,6 +262,7 @@ export default function Navigation() {
                 screenOptions={({ route }) => ({
                     tabBarActiveTintColor: '#FD5900',
                     tabBarInactiveTintColor: '#B5B7BB',
+                    tabBarAllowFontScaling: true,
                     tabBarLabelStyle: {
                         fontFamily: 'lexend-light',
                         fontSize: 10,
