@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
 import DelyFullSubseccion from './DelyFullSubseccion';
+
+//import DelyFullSubseccion from './DelyFullSubseccion';
 //Imagenes
 // import a_enchiladas from '../../../images/cuckoo/a_enchiladas.jpg';
 // import b_caramel from '../../../images/cuckoo/b_caramel.jpg';

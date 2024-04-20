@@ -130,7 +130,7 @@ const HorarioScreen = () => {
     }
   }
 
-  const dias = ['LUN', 'MAR', 'MIE', 'JUE', 'VIE', 'SAB'];
+  const dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sab'];
 
   const renderedClasses = [];
   for (let actividad of actividades) {
@@ -138,7 +138,7 @@ const HorarioScreen = () => {
       renderedClasses.push(
         <Class key={`${actividad.name}-${dia}`} dia={dia} hora={calcularMediasHoras('07:00', actividad.start)+1} 
         longitud={calcularMediasHoras(actividad.start, actividad.end)} color={actividad.color} 
-        nombre={actividad.name} lugar={actividad.place}/>
+        nombre={actividad.name} lugar={actividad.place} inicio={actividad.start} fin={actividad.end}/>
       );
     }
   }
@@ -190,7 +190,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   headerCell: {
-    fontFamily: 'lexend-regular',
+    fontFamily: 'lexend-bold',
+    fontSize: 15,
     width: anchoCelda,
     textAlign: 'center',
     height: '100%',
@@ -207,6 +208,7 @@ const styles = StyleSheet.create({
   },
   Cell: {
     fontFamily: 'lexend-light',
+    fontSize: 11,
     width: anchoCelda,
     textAlign: 'center',
     textAlignVertical: 'center',
