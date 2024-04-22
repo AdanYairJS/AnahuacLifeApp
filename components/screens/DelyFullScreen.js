@@ -71,7 +71,7 @@ export default function DelyFullScreen({ route }) {
           />
           <Text style={styles.titulo}>MENÚ</Text>  
           <View>
-            <DelyFullProductos id_menu={'Platillos'}/>
+            <DelyFullProductos id_menu={'DelyFull'}/>
           </View>
         </ScrollView>
         {/* <StatusBar style="auto" /> */}
