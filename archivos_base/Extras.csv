@@ -1,0 +1,40 @@
+﻿id_extra,nombre,precio
+1,Huevo,0
+2,Cecina,7
+3,Chorizo,7
+4,Pollo,7
+5,Tasajo,12
+6,Jamón,7
+7,Tocino,7
+8,Queso,0
+9,Quesillo,0
+10,Cecina,4
+11,Chorizo,4
+12,Milanesa,4
+13,Tinga,4
+14,Tasajo,7
+15,Cecina,5
+16,Chorizo,5
+17,Milanesa,5
+18,Tinga,5
+19,Pastor,5
+20,Tasajo,8
+21,Tasajo,13
+22,Pastor,13
+23,Quesillo,0
+24,Jamón,0
+25,Quesillo + carne a elección,5
+26,Carga Extra,8
+27,Shot de Leche,8
+28,Leche Vegetal,8
+29,Shot de Sabor,10
+30,Caliente,0
+31,Frío,32
+32,Agua Mineral,7
+33,Aderezo Ranch,0
+34,Aderezo Italiano,0
+35,Aderezo Mostaza-Miel,0
+36,Chico,0
+37,Grande,10
+38,Grande,15
+39,Grande,40
