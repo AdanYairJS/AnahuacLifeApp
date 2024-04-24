@@ -128,6 +128,118 @@ const getTramites = async (arr) => {
     }
 };
 
+app.post('/subsecciones', async (req,res) =>{
+    console.log('Consulta en SUBSECCIONES');
+    const { id_seccion } = req.body;
+    let arr = [id_seccion];
+    const respuesta = await getSubsecciones(arr);
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.send(respuesta);
+});
+
+const getSubsecciones = async (arr) => {
+    try
+    {
+        // console.log(arr);
+        const texto_consulta = 'SELECT ss.id_subseccion AS "id_subseccion", ss.nombre AS "nombre_subseccion" FROM subsecciones ss JOIN secciones s ON (ss.id_seccion = s.id_seccion) WHERE ss.id_seccion = $1;';
+        const res = await pool.query(texto_consulta,arr);
+        const query = res.rows;
+        console.log(query);
+        // JSON.parse( JSON.stringify( query ) );
+        return query;
+    }
+    catch(e)
+    {
+        console.log(e);
+        const error = e.toString();
+        return error;
+    }
+};
+
+app.post('/platillos', async (req,res) =>{
+    console.log('Consulta en SUBSECCIONES');
+    const { id_subseccion } = req.body;
+    let arr = [id_subseccion];
+    const respuesta = await getPlatillos(arr);
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.send(respuesta);
+});
+
+const getPlatillos = async (arr) => {
+    try
+    {
+        // console.log(arr);
+        const texto_consulta = 'SELECT p.id_platillo AS "id_platillo", p.nombre AS "nombre", p.precio AS "precio", p.imagen AS "imagen" FROM platillos p JOIN subsecciones ss ON (p.id_subseccion = ss.id_subseccion) WHERE ss.id_subseccion = $1;';
+        const res = await pool.query(texto_consulta,arr);
+        const query = res.rows;
+        console.log(query);
+        // JSON.parse( JSON.stringify( query ) );
+        return query;
+    }
+    catch(e)
+    {
+        console.log(e);
+        const error = e.toString();
+        return error;
+    }
+};
+
+app.post('/sabores', async (req,res) =>{
+    console.log('Consulta en SABORES');
+    const { id_platillo } = req.body;
+    let arr = [id_platillo];
+    const respuesta = await getSabores(arr);
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.send(respuesta);
+});
+
+const getSabores = async (arr) => {
+    try
+    {
+        // console.log(arr);
+        const texto_consulta = 'SELECT nombre, imagen FROM sabores WHERE id_platillo = $1;';
+        const res = await pool.query(texto_consulta,arr);
+        const query = res.rows;
+        console.log(query);
+        // JSON.parse( JSON.stringify( query ) );
+        return query;
+    }
+    catch(e)
+    {
+        console.log(e);
+        const error = e.toString();
+        return error;
+    }
+};
+
+app.post('/extras', async (req,res) =>{
+    console.log('Consulta en EXTRAS');
+    const { id_platillo } = req.body;
+    let arr = [id_platillo];
+    const respuesta = await getExtras(arr);
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.send(respuesta);
+});
+
+const getExtras = async (arr) => {
+    try
+    {
+        // console.log(arr);
+        const texto_consulta = 'SELECT e.nombre, e.precio FROM platillos p JOIN platillos_extras pe ON (p.id_platillo = pe.id_platillo) JOIN extras e ON (pe.id_extra = e.id_extra) WHERE p.id_platillo = $1;';
+        const res = await pool.query(texto_consulta,arr);
+        const query = res.rows;
+        console.log(query);
+        // JSON.parse( JSON.stringify( query ) );
+        return query;
+    }
+    catch(e)
+    {
+        console.log(e);
+        const error = e.toString();
+        return error;
+    }
+};
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
 });

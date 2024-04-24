@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import EmailLink from '../../general_components/EmailLink';
-import Activity from '../../../images/directorios/w_default.jpg';
+// import Activity from '../../../images/directorios/w_default.jpg';
 import utf8 from 'utf8';
 
 // const path = require('path');
@@ -14,7 +14,7 @@ const DirectoryWorkerTarjeta = ({ nombre, puesto, correo, imagen }) => {
 
   return (
     <View style={styles.cardContainer}>
-      <Image source={Activity} style={styles.image}/>
+      <Image source={{uri: imagen}} style={styles.image}/>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{utf8.decode(nombre)}</Text>
         {puesto && <Text style={styles.job}>{utf8.decode(puesto)}</Text>}

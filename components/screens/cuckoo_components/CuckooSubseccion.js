@@ -1,37 +1,53 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, Touchable } from 'react-native';
 import CuckooTarjeta from './CuckooTarjeta';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const CuckooSubseccion = ({items}) => {
-//   const items = [
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_jugo_uva.jpg'), 
-//         // texto: 'Jugo (Uva, manzana, arándano o durazno)', 
-//         texto: 'Jugo', 
-//         precio: 20
-//     },
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_licuado_platano.jpeg'), 
-//         // texto: 'Licuado (Avena, plátano, manzana, Nesquik chocolate, Nesquik fresa o Nesquik vainilla)', 
-//         texto: 'Licuado', 
-//         precio: 25
-//     },
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_malteada_oreo.jpeg'), 
-//         // texto: 'Malteada (Oreo, Carlos V, Bubulubu, Emperador)',
-//         texto: 'Malteada',
-//         precio: 38
-//     },
-//   ];
+//
+
+const CuckooSubseccion = ({id_subseccion}) => {
+
+const [platillos, setPlatillos] = useState([]);
+
+let getPlatillos = (id_subseccion) => {
+  fetch("http://192.168.1.75:3333/platillos",{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({id_subseccion: id_subseccion})
+  })
+  .then(res =>{
+    // console.log(res.status);
+    // console.log(res.headers);
+    return res.json();
+  })
+  .then(
+    (result) => {
+      // console.log(result);
+      if(result.length === 0)
+      {
+        setPlatillos(undefined);
+      }
+      else
+      {
+        setPlatillos(result);
+      }
+    },
+    (error) => {
+      console.log(error);
+    }
+  )
+};
+
+useEffect(() => {
+  getPlatillos(id_subseccion);
+}, []);
 
   return (
     <ScrollView horizontal style={styles.contendor_scroll} showsHorizontalScrollIndicator={false}>
-      {items.map((item, index) => (        
-          <CuckooTarjeta key={index} {...item} />        
+      {platillos.map((platillo, index) => (        
+          <CuckooTarjeta key={index} {...platillo} />        
       ))}
     </ScrollView>
   );

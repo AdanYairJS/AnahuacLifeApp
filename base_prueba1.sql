@@ -204,8 +204,10 @@ CREATE TABLE eventos_categorias(
 --TABLA PLATILLOS
 CREATE TABLE platillos(
     id_platillo SERIAL CONSTRAINT PK_ID_PLATILLOS PRIMARY KEY NOT NULL,
+    nombre VARCHAR(50),
     precio FLOAT NOT NULL,
     descripcion VARCHAR(200),
+    imagen VARCHAR(200),
     id_subseccion INT CONSTRAINT FK_ID_SUBSECCION_PLATILLOS REFERENCES subsecciones (id_subseccion)
 );
 
@@ -226,6 +228,27 @@ CREATE TABLE tramites(
     id_tramite SERIAL CONSTRAINT PK_ID_TRAMITES PRIMARY KEY NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     id_depto INT CONSTRAINT FK_ID_DEPTO_TRAMITES REFERENCES departamentos (id_depto) NOT NULL
+);
+
+--CREACIÓN DE LA TABLA SABORES
+CREATE TABLE sabores(
+    id_sabor SERIAL CONSTRAINT PK_ID_SABORES PRIMARY KEY NOT NULL,
+    nombre VARCHAR(50),
+    imagen VARCHAR(200),
+    id_platillo INT CONSTRAINT FK_ID_SABOR_PLATILLOS REFERENCES platillos (id_platillo)
+);
+
+--CREACIÓN DE LA TABLA EXTRAS
+CREATE TABLE extras(
+    id_extra SERIAL CONSTRAINT PK_ID_EXTRAS PRIMARY KEY NOT NULL,
+    nombre VARCHAR(50),
+    precio INTEGER
+);
+
+--CREACIÓN DE LA TABLA PLATILLOS_EXTRAS
+CREATE TABLE platillos_extras(
+    id_platillo INT CONSTRAINT FK_ID_PLATILLO_PLATILLOS_EXTRAS REFERENCES platillos (id_platillo),
+    id_extra INT CONSTRAINT FK_ID_EXTRAS_PLATILLOS_EXTRAS REFERENCES extras (id_extra)
 );
 
 --INSERCIÓN DE VALORES EN TABLA LUGARES
@@ -316,41 +339,13 @@ INSERT INTO tramites VALUES (40,'Internacionalización en campus',11);
 INSERT INTO tramites VALUES (41,'Prácticas profesionales',11);
 INSERT INTO tramites VALUES (42,'Requisitos y periodos de internacionalización',11);
 
---INSERCIÓN DE VALORES EN TABLA TRABAJADORES
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(1,'Carolina','Lopez','Reyes','carolina.lopezre@anahuac.mx',NULL,'Asistente Dirección de Administración y Finanzas','../../../images/directorios/w_Carolina.jpeg',1);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(2,'Elizabeth','Cruz','Zafra','elizabeth.cruzz@anahuac.mx',NULL,'Especialista en Cobranza','../../../images/directorios/w_elizabeth_cruz.jpeg',2);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(3,'Amitsadai','Camacho','Cervantes','amitsadai.camacho@anahuac.mx',1411,'Auxiliar de servicios escolares','../../../images/directorios/w_Amitsadai.jpeg',3);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(4,'Arely','Amador','Geronimo','arely.amador@anahuac.mx',1412,'Auxiliar Administrativo de Servicios Escolares','../../../images/directorios/w_Arely.jpeg',3);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(5,'Dalia','Alarcón','Gonzalez','dalia.alarcon@anahuac.mx',1304,'Coordinadora de operación académica y normatividad','../../../images/directorios/w_Dalia_Alarcon.jpeg',4);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(6,'Roberto Geovanni','Lopez','Curiel','geovanni.curiel@anahuac.mx',NULL,'Operación Académica',NULL,4);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(7,'Noemi Esmeralda','Hernández','Alavez','noemi.hernandez@anahuac.mx',NULL,'Asistente de la  Dirección de Servicios Institucionales',NULL,4);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(8,'Nelly Tanivet','Lopez','Martinez','nelly.lopezm76@anahuac.mx',NULL,NULL,'../../../images/directorios/w_Nelly_Tanivet.jpeg',5);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(9,'Ariana','Solano','Zaragoza','ariana.solanoz48@anahuac.mx',1307,NULL,'../../../images/directorios/w_Ariana_Solano.jpeg',5);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(10,'Luisa Miriam','Toledo','Ramos','luisa.toledo@anahuac.mx',1307,'Coordinadora de tutorías y apoyo académico','../../../images/directorios/w_Miriam_Toledo.jpeg',6);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(11,'Esmeralda','Orozco','López','esmeralda.orozcol@anahuac.mx',NULL,'Tutora  de la Coordinación de tutorías y apoyo académico',NULL,6);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(12,'Edgar Joel','Jimenez','Carrasco','edgarjoel.jimenez@anahuac.mx',1401,'Auxiliar de Soporte Técnico',NULL,7);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(13,'Veronica Ivonne','Lopez','Garcia','ivonne.lopezga@anahuac.mx',1512,NULL,'../../../images/directorios/w_Ivonne_Lopez.jpeg',8);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(14,'Erwin','Garcia','Acevedo','erwin.garcia@anahuac.mx',1111,'Coordinador de Compromiso Social','../../../images/directorios/w_Erwin_Garcia.jpeg',10);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(15,'Jorge Francisco','Morales','Mejía','jorge.moralesme@anahuac.mx',NULL,'Coordinador de Pastoral Universitaria','../../../images/directorios/w_Francisco_Morales.jpeg',10);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(16,'Jose Lorenzo','Martinez','Valencia','jose.martinezval@anahuac.mx',NULL,'Coordinador de Deportes','../../../images/directorios/w_Jose_Martinez.jpeg',10);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(17,'Concepción Jazmin','Santos','Estrada','concepcion.santoses@anahuac.mx',NULL,'Coordinación de Arte y Cultura','../../../images/directorios/w_Jazmin_Santos.jpeg',10);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(18,'Francisco Javier','Marquez','Torres','javier.marquezt@anahuac.mx',NULL,'Coordinador de Programas de Liderazgo',NULL,10);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(19,'Diego','Arroyo','Celaya','diego.arroyo@anahuac.mx',1318,'Coordinador Centro de lenguas',NULL,11);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(20,'Martin','Garnica','Hernandez','martin.garnica@anahuac.mx',1317,'Director Escuela de Ingeniería','../../../images/directorios/w_Martin_Garnica.jpeg',12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(21,'Rodrigo','Felguerez','Allende','rodrigo.felguerez@anahuac.mx',1321,'Director Escuela de Psicología','../../../images/directorios/w_Rodrigo_Felguerez.jpeg',12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(22,'David Ricardo','Mayren','Garcia','david.mayren@anahuac.mx',NULL,'Director Escuela de Medicina','../../../images/directorios/w_Ricardo_Mayren.jpeg',12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(23,'Hector Humberto','Vásquez','Quevedo','hector.vasquez@anahuac.mx',1320,'Director Escuela de Ciencias Jurídicas y Sociales',NULL,12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(24,'Yvette Flor','Solano','Carrillo','yvette.solanoca@anahuac.mx',1316,'Directora Escuela de Comunicación',NULL,12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(25,'Maria del Pilar','Aguilar','Beristain','maria.aguilarna@anahuac.mx',NULL,'Directora Escuela de Diseño',NULL,12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(26,'Carlos Alberto','Olavarría','Zárate','carlos.olavarria@anahuac.mx',1319,'Director Escuela de Economía y Negocios','../../../images/directorios/w_Carlos_Olavarria.jpeg',12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(27,'Marisol','Chavez','Bautista','marisol.chavez@anahuac.mx',NULL,'Directora Escuela de Turismo y Gastronomía','../../../images/directorios/w_Marisol_Chavez.jpeg',12);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(28,'Alina','Hernández','Nieto','alina.hernandez@anahuac.mx',1520,'Coordinadora de Vinculación Eventos y Egresados','../../../images/directorios/w_Alina_Nieto.jpeg',13);
-INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,telefono,puesto,imagen,id_depto) VALUES(29,'Diana','Velasco','Rodríguez','diana.velascoro@anahuac.mx',2188,'Enlaces Operativos Sorteo Anáhuac','../../../images/directorios/w_Diana_Velasco.jpeg',14);
+--INSERCIÓN EN LA TABLA TRABAJADORES
+\COPY trabajadores FROM 'Trabajadores.csv' WITH (FORMAT CSV, HEADER, NULL 'NULL');
 
---INSERCIÓN DE VALORES EN TABLA TRABAJADORES 2
-UPDATE trabajadores
-SET imagen = '../../../images/directorios/w_default.jpg'
-WHERE imagen = NULL;
+-- --INSERCIÓN DE VALORES EN TABLA TRABAJADORES 2
+-- UPDATE trabajadores
+-- SET imagen = '../../../images/directorios/w_default.jpg'
+-- WHERE imagen = NULL;
 
 --== SECCIÓN COMIDA ==--
 --INSERCIÓN EN TABLA RESTAURANTES
@@ -370,3 +365,21 @@ INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (7,'Delyfull',4)
 
 --INSERCIÓN EN LA TABLA SUBSECCIONES
 \COPY subsecciones FROM 'Subsecciones.csv' WITH (FORMAT CSV, HEADER);
+
+--INSERCIÓN EN LA TABLA PLATILLOS
+\COPY platillos FROM 'Platillos.csv' WITH (FORMAT CSV, HEADER, NULL '');
+
+--INSERCIÓN EN LA TABLA SABORES
+\COPY sabores FROM 'Sabores.csv' WITH (FORMAT CSV, HEADER, NULL 'NULL');
+
+--INSERCIÓN EN LA TABLA EXTRAS
+\COPY extras FROM 'Extras.csv' WITH (FORMAT CSV, HEADER, NULL 'NULL');
+
+--INSERCIÓN EN LA TABLA PLATILLOS_EXTRAS
+\COPY platillos_extras FROM 'Platillos_extras.csv' WITH (FORMAT CSV, HEADER, NULL 'NULL');
+
+
+SELECT ss.id_subseccion, ss.nombre, s.id_seccion, s.nombre
+FROM subsecciones ss JOIN secciones s
+ON (ss.id_seccion = s.id_seccion)
+WHERE ss.id_seccion = 1;
