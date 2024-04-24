@@ -168,7 +168,6 @@ CREATE TABLE ordenes(
 CREATE TABLE secciones(
     id_seccion SERIAL CONSTRAINT PK_ID_SECCIONES PRIMARY KEY NOT NULL,
     nombre VARCHAR(40) NOT NULL,
-    imagen VARCHAR(200) NOT NULL,
     id_restaurante INT CONSTRAINT FK_ID_RESTAURANTE_SECCIONES REFERENCES restaurantes (id_restaurante)
 );
 
@@ -176,7 +175,6 @@ CREATE TABLE secciones(
 CREATE TABLE subsecciones(
     id_subseccion SERIAL CONSTRAINT PK_ID_SUBSECCIONES PRIMARY KEY NOT NULL,
     nombre VARCHAR(40) NOT NULL,
-    imagen VARCHAR(200) NOT NULL,
     id_seccion INT CONSTRAINT FK_ID_SECCION_SUBSECCIONES REFERENCES secciones (id_seccion)
 );
 
@@ -353,3 +351,22 @@ INSERT INTO trabajadores (id_trabajador,nombre,apellido_p,apellido_m,correo,tele
 UPDATE trabajadores
 SET imagen = '../../../images/directorios/w_default.jpg'
 WHERE imagen = NULL;
+
+--== SECCIÓN COMIDA ==--
+--INSERCIÓN EN TABLA RESTAURANTES
+INSERT INTO restaurantes (id_restaurante,nombre,id_lugar) VALUES (1,'Cuckoo',7);
+INSERT INTO restaurantes (id_restaurante,nombre,id_lugar) VALUES (2,'Cuckoo Coffee',7);
+INSERT INTO restaurantes (id_restaurante,nombre,id_lugar) VALUES (3,'CuckooBox',22);
+INSERT INTO restaurantes (id_restaurante,nombre,id_lugar) VALUES (4,'Dellyful',21);
+
+--INSERCIÓN EN TABLA SECCIONES
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (1,'Desayunos',1);
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (2,'Antojitos',1);
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (3,'Platillos',1);
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (4,'Cuckoo Coffee',2);
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (5,'Base Café',3);
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (6,'Alternativas sin Café',3);
+INSERT INTO secciones (id_seccion,nombre,id_restaurante) VALUES (7,'Delyfull',4);
+
+--INSERCIÓN EN LA TABLA SUBSECCIONES
+\COPY subsecciones FROM 'Subsecciones.csv' WITH (FORMAT CSV, HEADER);
