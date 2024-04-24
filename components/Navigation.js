@@ -14,6 +14,8 @@ import MapScreen from './screens/MapScreen';
 import CopiaMapScreen from './screens/CopiaMapScreen';
 import CuckooScreen from "./screens/CuckooScreen";
 import DelyFullScreen from "./screens/DelyFullScreen.js";
+import FoodScreen from "./screens/FoodScreen.js";
+
 
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
@@ -219,7 +221,17 @@ function EventosStack() {
 
 function CuckooStack() {
     return (
-        <CuckooStackNavigator.Navigator initialRouteName="CuckooScreen">
+        <CuckooStackNavigator.Navigator initialRouteName="FoodScreen">
+            <CuckooStackNavigator.Screen
+                name="FoodScreen"
+                component={FoodScreen}
+                options={{
+                    headerBackTitle: false,
+                    headerShown: false,
+                    //animationTypeForReplace:'pop',
+                    //animation: 'fade',
+                }}
+            />
             <CuckooStackNavigator.Screen
                 name="CuckooScreen"
                 component={CuckooScreen}

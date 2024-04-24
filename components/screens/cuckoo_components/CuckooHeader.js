@@ -10,9 +10,9 @@ const altoVentana = Dimensions.get('window').height;
 const CuckooHeader = ({ruta_imagen , color_fondo}) =>{
     const navigation = useNavigation();
     return (
-        <TouchableOpacity style={[styles.barra_superior, {backgroundColor:color_fondo}]} onPress={() => navigation.navigate("DelyFullScreen")}>
+        <View style={[styles.barra_superior, {backgroundColor:color_fondo}]}>
           <Image source={ruta_imagen} style={styles.imagen_superior}></Image>
-        </TouchableOpacity>
+        </View>
     );
 }
 
