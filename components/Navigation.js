@@ -45,6 +45,8 @@ import HeaderPrincipal from "./general_components/HeaderPrincipal.js";
 import CuckooHeader from "./screens/cuckoo_components/CuckooHeader";
 import DelyFullHeader from "./screens/delyfull_components/DelyFullHeader";
 
+import utf8 from 'utf8';
+
 const Tab = createBottomTabNavigator();
 const EventsStackNavigator = createNativeStackNavigator();
 const CuckooStackNavigator = createNativeStackNavigator();
@@ -152,7 +154,7 @@ function DirectoryStack() {
                 component={DirectoryWorkers}
                 options={{
                     // headerShown: false,
-                    header: ({route}) => <Header text={route.params.texto}/>
+                    header: ({route}) => <Header text={utf8.decode(route.params.nombre)}/>
                 }}
             >
             </DirectoryStackNavigator.Screen>

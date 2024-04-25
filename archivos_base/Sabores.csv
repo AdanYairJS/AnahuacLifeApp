@@ -1,0 +1,100 @@
+﻿id_sabor,nombre,imagen,id_platillo
+1,Jamon,NULL,1
+2,Salchicha,NULL,1
+3,Chorizo,NULL,1
+4,A la mexicana,NULL,1
+5,Jamón,NULL,5
+6,Salchicha,NULL,5
+7,Tocino,NULL,5
+8,Chorizo,NULL,5
+9,Champiñones,NULL,5
+10,Jamón,NULL,6
+11,Tomate asado,NULL,6
+12,Champiñones,NULL,6
+13,Salsa roja,NULL,11
+14,Salsa verde,NULL,11
+15,Salsa de guajillo,NULL,11
+16,Frijol,NULL,11
+17,Salsa roja,NULL,19
+18,Salsa verde,NULL,19
+19,Salsa roja,NULL,27
+20,Salsa verde,NULL,27
+21,Frijol,NULL,27
+22,Plátano,NULL,37
+23,Manzana - Canela,NULL,37
+24,Arándanos,NULL,37
+25,Quesillo,NULL,38
+26,Manchego,NULL,38
+27,Uva,NULL,44
+28,Manzana,NULL,44
+29,Arándano,NULL,44
+30,Durazno,NULL,44
+31,Avena,NULL,45
+32,Plátano,NULL,45
+33,Manzana,NULL,45
+34,Nesquik Chocolate,NULL,45
+35,Nesquik Fresa,NULL,45
+36,Nesquik Vainilla,NULL,45
+37,Oreo,NULL,46
+38,Carlos V,NULL,46
+39,Bubulubu,NULL,46
+40,Emperador,NULL,46
+41,Queso,NULL,47
+42,Quesillo,NULL,47
+43,Quesillo con frijol encima,NULL,50
+44,Quesillo con guacamole encima,NULL,50
+45,Tinga con frijol encima,NULL,50
+46,Tinga con guacamole encima,NULL,50
+47,Champiñones con frijol encima,NULL,50
+48,Champiñones con guacamole encima,NULL,50
+49,Quesillo con frijol encima,NULL,51
+50,Quesillo con guacamole encima,NULL,51
+51,Tinga con frijol encima,NULL,51
+52,Tinga con guacamole encima,NULL,51
+53,Fritas con base de frijol,NULL,55
+54,Fritas con base de guacamole,NULL,55
+55,Horneadas con base de frijol,NULL,55
+56,Horneadas con base de guacamole,NULL,55
+57,Bistec,NULL,109
+58,Cecina,NULL,109
+59,Pastor,NULL,109
+60,Pollo,NULL,109
+61,Pastor,NULL,110
+62,Chorizo,NULL,110
+63,Cecina,NULL,110
+64,Bistec,NULL,110
+65,Champiñones,NULL,110
+66,Tango Mango,NULL,215
+67,Moras de la Selva,NULL,215
+68,Dragon Fruit,NULL,215
+69,Ponche de Guayaba,NULL,215
+70,Manzana,NULL,215
+71,Arándano,NULL,215
+72,Cherry Banana,NULL,215
+73,Maracuyá,NULL,215
+74,Frutas Tropicales,NULL,215
+75,Blue Dream,NULL,215
+76,Té Verde,NULL,216
+77,Té Verde Jazmín,NULL,216
+78,Té Negro,NULL,216
+79,Té Blanco,NULL,216
+80,Té de Hierbabuena,NULL,216
+81,Té Manzanilla-Lavanda,NULL,216
+82,Tango Mango,NULL,220
+83,Moras de la Selva,NULL,220
+84,Dragon Fruit,NULL,220
+85,Ponche de Guayaba,NULL,220
+86,Manzana,NULL,220
+87,Arándano,NULL,220
+88,Cherry Banana,NULL,220
+89,Maracuyá,NULL,220
+90,Frutas Tropicales,NULL,220
+91,Blue Dream,NULL,220
+92,Té Verde,NULL,221
+93,Té Verde Jazmín,NULL,221
+94,Té Negro,NULL,221
+95,Té Blanco,NULL,221
+96,Té de Hierbabuena,NULL,221
+97,Té Manzanilla-Lavanda,NULL,221
+98,Cacao-fresa,NULL,241
+99,Moras-limón,NULL,241

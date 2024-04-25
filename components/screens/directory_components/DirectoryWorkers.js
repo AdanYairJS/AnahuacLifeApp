@@ -1,37 +1,90 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import DirectoryWorkerTarjeta from './DirectoryWorkerTarjeta';
 import Constants from 'expo-constants';
 import EmailLink from '../../general_components/EmailLink';
+import utf8 from 'utf8';
 // import { useNavigation } from '@react-navigation/native';
 
 alto = Constants.statusBarHeight;
 
 const DirectoryWorker = ({navigation , route}) => {
-  //   const items = [
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_jugo_uva.jpg'), 
-//         // texto: 'Jugo (Uva, manzana, arándano o durazno)', 
-//         texto: 'Jugo', 
-//         precio: 20
-//     },
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_licuado_platano.jpeg'), 
-//         // texto: 'Licuado (Avena, plátano, manzana, Nesquik chocolate, Nesquik fresa o Nesquik vainilla)', 
-//         texto: 'Licuado', 
-//         precio: 25
-//     },
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_malteada_oreo.jpeg'), 
-//         // texto: 'Malteada (Oreo, Carlos V, Bubulubu, Emperador)',
-//         texto: 'Malteada',
-//         precio: 38
-//     },
-//   ];
-  const trabajadores = route.params.trabajadores;
+  console.log(route.params.id_depto);
+  console.log(route.params.correo);
+  const [trabajadores, setTrabajadores] = useState([]);
+
+  let getTrabajadores = (id_depto) => {
+    fetch("http://192.168.1.75:3333/trabajadores",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id_depto: id_depto})
+    })
+    .then(res =>{
+      // console.log(res.status);
+      // console.log(res.headers);
+      return res.json();
+    })
+    .then(
+      (result) => {
+        // console.log(result);
+        if(result.length === 0)
+        {
+          setTrabajadores(undefined);
+        }
+        else
+        {
+          setTrabajadores(result);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  };
+
+  useEffect(() => {
+    getTrabajadores(route.params.id_depto);
+  }, []);
+
+  const [tramites, setTramites] = useState([]);
+
+  let getTramites = (id_depto) => {
+    fetch("http://192.168.1.75:3333/tramites",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id_depto: id_depto})
+    })
+    .then(res =>{
+      // console.log(res.status);
+      // console.log(res.headers);
+      return res.json();
+    })
+    .then(
+      (result) => {
+        // console.log(result);
+        if(result.length === 0)
+        {
+          setTramites(undefined);
+        }
+        else
+        {
+          setTramites(result);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+  };
+
+  useEffect(() => {
+    getTramites(route.params.id_depto);
+  }, []);
+
   return (
     <ScrollView style={styles.contendor_scroll} showsHorizontalScrollIndicator={false}>
       <Text style={styles.encabezado}>INFORMACIÓN</Text>
@@ -40,21 +93,33 @@ const DirectoryWorker = ({navigation , route}) => {
           <Text style={styles.subtitulo}>
             Contacto:
           </Text>
-          <View style={styles.contenedor_tramites}>
+          <View style={styles.contenedor_texto}>
             <Text style={styles.texto}>
               <EmailLink email={route.params.correo}>{route.params.correo}</EmailLink> 
             </Text>
           </View>
         </View>
       }
-      {route.params.tramites && 
+      {route.params.hora_ap1 && 
+        <View style={styles.cardContainer}>
+          <Text style={styles.subtitulo}>
+            Horario de atención:
+          </Text>
+          <View style={styles.contenedor_texto}>
+            <Text style={styles.texto}>
+              {route.params.hora_ap1+"-"+route.params.hora_ci1}
+            </Text>
+          </View>
+        </View>
+      }
+      {tramites && 
         <View style={styles.cardContainer}>
           <Text style={styles.subtitulo}>
             Trámites: 
           </Text>
           <View style={styles.contenedor_tramites}>
-              {route.params.tramites.map((tramite, index) => (
-                <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {tramite}</Text>
+              {tramites.map((tramite, index) => (
+                <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {utf8.decode(tramite.nombre)}</Text>
               ))}
           </View>
         </View>
@@ -62,20 +127,24 @@ const DirectoryWorker = ({navigation , route}) => {
       <View style={styles.cardContainer}>
         <Text style={styles.subtitulo}>Ubicación: </Text>
         <View style={styles.contenedor_tramites}>
-          <Text style={styles.texto}>
-            {route.params.ubicacion}
+          <Text style={[styles.texto,{/*fontSize:20,fontFamily:'lexend-light'*/}]}>
+            {route.params.nombre_lugar}
           </Text>
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Mapa",{id_ubicacion: route.params.id_ubicacion})}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Mapa",{id_lugar: route.params.id_lugar})}>
           <Text style={styles.buttonText}>Ver en el mapa</Text>
         </TouchableOpacity>
       </View>
-      {route.params.trabajadores && <Text style={styles.encabezado}>MIEMBROS</Text>}
-      {route.params.trabajadores &&       
-        <View style={styles.miembros}>
-          {trabajadores.map((trabajador, index) => (        
-              <DirectoryWorkerTarjeta key={index} {...trabajador} />        
-          ))}
+      {/* {trabajadores && } */}
+      {trabajadores &&       
+      // {route.params.trabajadores &&       
+        <View>
+          <Text style={styles.encabezado}>MIEMBROS</Text>
+          <View style={styles.miembros}>
+            {trabajadores.map((trabajador, index) => (        
+                <DirectoryWorkerTarjeta key={index} {...trabajador} />        
+            ))}
+          </View>
         </View>
       }
       {/* <Text style={styles.encabezado}>MIEMBROS</Text> */}
@@ -123,16 +192,33 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginBottom: 15,
   },
+  contenedor_texto: {
+    marginTop: -10,
+    alignSelf: 'center',
+    width: '100%',
+    paddingHorizontal: 40,
+    // paddingLeft: 30,
+    // borderColor: 'blue',
+    // borderWidth: 3,
+    // marginLeft: 25,
+    // marginBottom: 12
+  },
   contenedor_tramites: {
     marginTop: -10,
     alignSelf: 'center',
+    width: '100%',
+    paddingLeft: 30,
+    paddingRight: 20,
+    // borderColor: 'blue',
+    // borderWidth: 3,
     // marginLeft: 25,
     // marginBottom: 12
   },
   texto: {
     fontFamily: 'lexend-regular',
-    fontSize: 18,
+    fontSize: 15,
     // paddingLeft: 20,
+    marginTop: 5,
     marginBottom: 3,
     textAlign: 'center',
     // borderColor: 'red',
@@ -148,7 +234,7 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 50,
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 10,
     // marginBottom: -28,
     // paddingHorizontal: 20,
