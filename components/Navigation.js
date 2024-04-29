@@ -239,7 +239,7 @@ function CuckooStack() {
                 component={CuckooScreen}
                 initialParams={{ color_1: '#13aed1', color_2: '#014955' }}
                 options={{
-                    header: () => <CuckooHeader ruta_imagen={require('../images/cuckoo/logo.png')} color_fondo='#014955' />
+                    header: () => <CuckooHeader ruta_imagen={require('../images/food/t_cuckoo_resto.png')} color_fondo='#014955' />
                 }}
             />
             <CuckooStackNavigator.Screen
@@ -247,7 +247,7 @@ function CuckooStack() {
                 component={CuckooItem}
                 initialParams={{ color_1: '#13aed1', color_2: '#014955' }}
                 options={{
-                    header: () => <CuckooHeader ruta_imagen={require('../images/cuckoo/logo.png')} color_fondo='#014955' />
+                    header: () => <CuckooHeader ruta_imagen={require('../images/food/t_cuckoo_resto.png')} color_fondo='#014955' />
                 }}
             />
             <CuckooStackNavigator.Screen

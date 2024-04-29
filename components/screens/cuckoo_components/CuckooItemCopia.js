@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, ScrollView, Platform, StatusBar, TouchableOpacity} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
+import { LinearGradient } from 'expo-linear-gradient'; 
 import { FontAwesome6 } from '@expo/vector-icons';
 // import utf8 from 'utf8';
 

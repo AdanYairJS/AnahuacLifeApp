@@ -4,11 +4,15 @@ import { useNavigation } from '@react-navigation/native';
 import Constants from 'expo-constants';
 
 import bg_1 from '../../images/food/bg_cuckoo_resto.png';
-import t_1 from '../../images/food/t_cuckoo_resto.png';
-import bg_2 from '../../images/food/bg_cuckoo_coffee.png';
-import t_2 from '../../images/food/t_cuckoo_coffee.png';
-import bg_3 from '../../images/food/bg_cuckoo_box.png';
+import t_1 from '../../images/food/t_cuckoo_resto1.png';
+import bg_2 from '../../images/food/bg_cuckoo_coffee2.png';
+import bg_22 from '../../images/food/bg_cuckoo_coffee.png';
+import t_2 from '../../images/food/t_cuckoo_coffee1.png';
+import bg_3 from '../../images/food/bg_cuckoo_box2.png';
+import bg_32 from '../../images/food/bg_cuckoo_box.png';
+import bg_33 from '../../images/food/bg_cuckoo_box3.png';
 import t_3 from '../../images/food/t_cuckoo_box.png';
+import t_31 from '../../images/cuckoo/Logo BOX 2.png';
 import bg_4 from '../../images/food/bg_delyfull.png';
 import t_4 from '../../images/food/t_delyfull.png';
 
@@ -27,7 +31,7 @@ const FoodScreen = () => {
             </TouchableOpacity>
             <TouchableOpacity style={styles.cardContainer}>  
                 <Image source={t_3} style={styles.titulo} />    
-                <Image source={bg_3} style={styles.imagen} />          
+                <Image source={bg_33} style={styles.imagen} />          
             </TouchableOpacity>
             <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DelyFullScreen")}>   
                 <Image source={t_4} style={styles.titulo_d} />    

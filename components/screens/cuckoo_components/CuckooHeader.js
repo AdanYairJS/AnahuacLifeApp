@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import Constants from 'expo-constants';
 //const navigation = useNavigation();
 
@@ -8,10 +9,13 @@ const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
 const CuckooHeader = ({ruta_imagen , color_fondo}) =>{
-    const navigation = useNavigation();
+    const navigation = useNavigation();   
+    const t = 30; 
     return (
         <View style={[styles.barra_superior, {backgroundColor:color_fondo}]}>
-          <Image source={ruta_imagen} style={styles.imagen_superior}></Image>
+            <TouchableOpacity onPress={() => navigation.pop()} style={styles.touch}><ArrowIcon name="left" size={t} color='#fff' /></TouchableOpacity>
+            <Image source={ruta_imagen} style={styles.imagen_superior}></Image>
+            <TouchableOpacity style={styles.touch}><ArrowIcon name="shoppingcart" size={t} color='#fff' /></TouchableOpacity>
         </View>
     );
 }
@@ -20,21 +24,31 @@ const styles = StyleSheet.create({
     barra_superior: {
         paddingTop: Constants.statusBarHeight*1.20,
         height: 120,
-        width: anchoVentana,
-        backgroundColor: '#014955',
-        //display: 'flex',
+        //height: '40%',
+        width: '100%',
         alignSelf: 'flex-start',
         alignItems: 'center',
-        justifyContent: 'center',
+        //alignContent: 'center',
+        //justifyContent: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     },
     imagen_superior: {
-        width: anchoVentana*0.75,
-        maxWidth: 500,
+        width: anchoVentana*0.35,
+        //maxWidth: 500, mantener para cuando hagamos la WEB
         resizeMode: 'contain',
-        marginTop: '5%',
-        marginBottom: '10%',
+        marginTop: '11%',
+        marginBottom: 50,
         // paddingBottom: '5%',
-      },
+        //backgroundColor: '#000',
+    },
+    touch: {
+        //backgroundColor: '#000',
+        padding: 3,
+        //backgroundColor: '#000',
+        height: '100%',
+        justifyContent: 'center'
+    },
 });
 
 export default CuckooHeader;

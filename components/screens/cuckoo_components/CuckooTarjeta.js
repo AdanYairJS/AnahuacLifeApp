@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import utf8 from 'utf8';
+// import utf8 from 'utf8';
 
 //
 
@@ -12,7 +12,8 @@ const CuckooTarjeta = ({ id_platillo, nombre, imagen, precio}) => {
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("CuckooItem",{id_platillo,nombre,precio,imagen})}>
       <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.image}/>
       <View style={styles.textContainer}>
-        <Text style={styles.activityName}>{utf8.decode(nombre)}</Text>
+        {/* <Text style={styles.activityName}>{utf8.decode(nombre)}</Text> */}
+        <Text style={styles.activityName}>{nombre}</Text>
         <Text style={styles.activityDate}>${precio.toFixed(2)}</Text>
       </View>
     </TouchableOpacity>

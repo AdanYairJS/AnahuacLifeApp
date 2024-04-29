@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import EmailLink from '../../general_components/EmailLink';
 // import Activity from '../../../images/directorios/w_default.jpg';
-import utf8 from 'utf8';
+// import utf8 from 'utf8';
 
 // const path = require('path');
 
@@ -16,8 +16,10 @@ const DirectoryWorkerTarjeta = ({ nombre, puesto, correo, imagen }) => {
     <View style={styles.cardContainer}>
       <Image source={{uri: imagen}} style={styles.image}/>
       <View style={styles.textContainer}>
-        <Text style={styles.name}>{utf8.decode(nombre)}</Text>
-        {puesto && <Text style={styles.job}>{utf8.decode(puesto)}</Text>}
+        {/* <Text style={styles.name}>{utf8.decode(nombre)}</Text> */}
+        <Text style={styles.name}>{nombre}</Text>
+        {/* {puesto && <Text style={styles.job}>{utf8.decode(puesto)}</Text>} */}
+        {puesto && <Text style={styles.job}>{puesto}</Text>}
         <EmailLink email={correo}>{correo}</EmailLink>
       </View>
     </View>

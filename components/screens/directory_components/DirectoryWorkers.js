@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'rea
 import DirectoryWorkerTarjeta from './DirectoryWorkerTarjeta';
 import Constants from 'expo-constants';
 import EmailLink from '../../general_components/EmailLink';
-import utf8 from 'utf8';
+// import utf8 from 'utf8';
 // import { useNavigation } from '@react-navigation/native';
 
 alto = Constants.statusBarHeight;
@@ -14,7 +14,7 @@ const DirectoryWorker = ({navigation , route}) => {
   const [trabajadores, setTrabajadores] = useState([]);
 
   let getTrabajadores = (id_depto) => {
-    fetch("http://192.168.1.75:3333/trabajadores",{
+    fetch("http://10.100.130.134:3333/trabajadores",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,7 +51,7 @@ const DirectoryWorker = ({navigation , route}) => {
   const [tramites, setTramites] = useState([]);
 
   let getTramites = (id_depto) => {
-    fetch("http://192.168.1.75:3333/tramites",{
+    fetch("http://10.100.130.134:3333/tramites",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -119,7 +119,8 @@ const DirectoryWorker = ({navigation , route}) => {
           </Text>
           <View style={styles.contenedor_tramites}>
               {tramites.map((tramite, index) => (
-                <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {utf8.decode(tramite.nombre)}</Text>
+              // <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {utf8.decode(tramite.nombre)}</Text>
+              <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {tramite.nombre}</Text>
               ))}
           </View>
         </View>

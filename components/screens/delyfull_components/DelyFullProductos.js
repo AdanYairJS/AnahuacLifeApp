@@ -15,7 +15,7 @@ const DelyFullProductos = ({id_menu}) => {
   const [subsecciones, setSubsecciones] = useState([]);
 
   let getSubsecciones = (id_seccion) => {
-    fetch("http://192.168.1.75:3333/subsecciones",{
+    fetch("http://10.100.130.134:3333/subsecciones",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -50,7 +50,8 @@ const DelyFullProductos = ({id_menu}) => {
     <View style={styles.container}>
       {subsecciones.map((subseccion, index) => (      
         <View key={index} style= {styles.container}>
-          <Text style={styles.titulo_seccion}>{utf8.decode(subseccion.nombre_subseccion)}</Text>
+          {/* <Text style={styles.titulo_seccion}>{utf8.decode(subseccion.nombre_subseccion)}</Text> */}
+          <Text style={styles.titulo_seccion}>{subseccion.nombre_subseccion}</Text>
           <DelyFullSubseccion key={subseccion.id_subseccion} id_subseccion={subseccion.id_subseccion}/>     
         </View>  
       ))}

@@ -13,7 +13,7 @@ export default function DelyFullItem({navigation , route}) {
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch("http://192.168.1.75:3333/sabores",{
+    fetch("http://10.100.130.134:3333/sabores",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ export default function DelyFullItem({navigation , route}) {
   const [extras, setExtras] = useState([]);
 
   let getExtras = (id_platillo) => {
-    fetch("http://192.168.1.75:3333/extras",{
+    fetch("http://10.100.130.134:3333/extras",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -94,7 +94,8 @@ export default function DelyFullItem({navigation , route}) {
               <View style={[styles.view_return,{justifyContent: 'center'}]}>
                 <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.imagen}/>
               </View>
-            <Text style={styles.titulo}>{utf8.decode(nombre)}</Text>
+            {/* <Text style={styles.titulo}>{utf8.decode(nombre)}</Text> */}
+            <Text style={styles.titulo}>{nombre}</Text>
             <Text style={styles.subtitulo}>${precio.toFixed(2)}</Text>
             <TouchableOpacity style= {[styles.boton_seccion,{backgroundColor: '#FFF'}]}>
             <   Text style={[styles.titulo,{color: color_2,fontSize: 20, fontWeight: 'normal', marginTop: 12, marginBottom: 12}]}>Ordenar</Text>
@@ -103,13 +104,15 @@ export default function DelyFullItem({navigation , route}) {
             {sabores && <Text style={styles.titulo}>Sabores</Text>}
             {sabores && 
               sabores.map((sabor, index) => (      
-                <Text key={index} style={styles.subtitulo}>{utf8.decode(sabor.nombre)}</Text>
+                // <Text key={index} style={styles.subtitulo}>{utf8.decode(sabor.nombre)}</Text>
+                <Text key={index} style={styles.subtitulo}>{sabor.nombre}</Text>
               ))
             }
             {extras && <Text style={styles.titulo}>Extras</Text>}
             {extras && 
               extras.map((extra, index) => (      
-                <Text key={index} style={styles.subtitulo}>{utf8.decode(extra.nombre)+' $'+extra.precio.toFixed(2)}</Text>
+                // <Text key={index} style={styles.subtitulo}>{utf8.decode(extra.nombre)+' $'+extra.precio.toFixed(2)}</Text>
+                <Text key={index} style={styles.subtitulo}>{extra.nombre+' $'+extra.precio.toFixed(2)}</Text>
               ))
             }
             </ScrollView>

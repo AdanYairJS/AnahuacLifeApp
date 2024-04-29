@@ -20,6 +20,8 @@ import ss_pan from '../../../images/cuckoo/ss_pan.jpg';
 import ss_bebidas from '../../../images/cuckoo/ss_bebidas.jpg';
 // import { ScrollView } from 'react-native-gesture-handler';
 
+// import utf8 from 'utf8';
+
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
@@ -30,7 +32,7 @@ const DirectoryDepartments = ({id_menu}) => {
   const [deptos, setDeptos] = useState([]);
 
   let getDeptos = () => {
-    fetch("http://192.168.1.75:3333/departamentos",{
+    fetch("http://10.100.130.134:3333/departamentos",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

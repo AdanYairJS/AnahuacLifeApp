@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
-import utf8 from 'utf8';
+// import utf8 from 'utf8';
 
 const DirectoryWorkerTarjeta = ({nombre, id_depto, correo, hora_ap1, hora_ci1, id_lugar, nombre_lugar}) => {
   const navigation = useNavigation();
@@ -10,7 +10,8 @@ const DirectoryWorkerTarjeta = ({nombre, id_depto, correo, hora_ap1, hora_ci1, i
   return (
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{id_depto, correo, nombre, hora_ap1, hora_ci1, id_lugar, nombre_lugar})}>
       <View style={styles.textContainer}>
-        <Text style={styles.name}>{utf8.decode(nombre)}</Text>
+        {/* <Text style={styles.name}>{utf8.decode(nombre)}</Text> */}
+        <Text style={styles.name}>{nombre}</Text>
       </View>
       <ArrowIcon name="right" size={26} color="#FD5900" style={styles.image}/>
     </TouchableOpacity>
