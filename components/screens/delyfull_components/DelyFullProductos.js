@@ -15,7 +15,7 @@ const DelyFullProductos = ({id_menu}) => {
   const [subsecciones, setSubsecciones] = useState([]);
 
   let getSubsecciones = (id_seccion) => {
-    fetch("http://192.168.1.75:3333/subsecciones",{
+    fetch("http://192.168.1.66:3333/subsecciones",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

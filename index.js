@@ -240,6 +240,25 @@ const getExtras = async (arr) => {
     }
 };
 
+const getEncoding = async () => {
+    try
+    {
+        const texto_consulta = 'SHOW CLIENT_ENCODING;';
+        const res = await pool.query(texto_consulta);
+        const query = res.rows;
+        console.log(query);
+        return query;
+    }
+    catch(e)
+    {
+        console.log(e);
+        const error = e.toString();
+        return error;
+    }
+};
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
 });
+
+getEncoding();

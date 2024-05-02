@@ -14,7 +14,7 @@ const DirectoryWorker = ({navigation , route}) => {
   const [trabajadores, setTrabajadores] = useState([]);
 
   let getTrabajadores = (id_depto) => {
-    fetch("http://192.168.1.75:3333/trabajadores",{
+    fetch("http://192.168.1.66:3333/trabajadores",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,7 +51,7 @@ const DirectoryWorker = ({navigation , route}) => {
   const [tramites, setTramites] = useState([]);
 
   let getTramites = (id_depto) => {
-    fetch("http://192.168.1.75:3333/tramites",{
+    fetch("http://192.168.1.66:3333/tramites",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

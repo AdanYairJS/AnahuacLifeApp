@@ -1,245 +1,245 @@
 ﻿ID_platillo,Nombre,Precio,Descripción (Nulleable),Imagen,ID_subseccion
-1,Huevos Revueltos,40,,'../../../images/cuckoo/p_huevos_revueltos.jpg',1
-2,Huevos Estrellados,43,Servidos con tocino y salchicha,'../../../images/cuckoo/p_huevos_estrellados.jpeg',1
-3,Huevos Divorciados,43,Estrellados con salsa roja y verde,'../../../images/cuckoo/p_huevos_divorciados.jpg',1
-4,Huevos rancheros,47,Estrellados con jamón y salsa roja,'../../../images/cuckoo/p_huevos_rancheros.jpg',1
-5,Omelette con queso,47,(Guarnición de ensalada o frijol),'../../../images/cuckoo/p_omelette_con_queso.jpg',1
-6,Omelette de claras,50,(Guarnición de ensalada o frijol),'../../../images/cuckoo/p_omelette_de_claras.jpg',1
-7,Omelette especial,54,Bañado en salsa roja o verde,'../../../images/cuckoo/p_omelette_especial.jpg',1
-8,Salsa de huevo,45,,'../../../images/cuckoo/p_salsa_de_huevo.jpg',1
-9,Salsa de queso o quesillo,45,,'../../../images/cuckoo/p_salsa_de_queso_o_quesillo.jpg',1
-10,Huevos Cuckoo,60,"Revueltos con chistorra, servidos con dobladita de chorizo y aguacate",'../../../images/cuckoo/p_huevos_cuckoo.jpg',1
-11,Chilaquiles,43,,'../../../images/cuckoo/p_chilaquiles.jpg',2
-15,Chilaquiles divorciados,45,Salsa roja y salsa verde,'../../../images/cuckoo/p_chilaquiles.jpg',2
-19,Entomatadas,43,,'../../../images/cuckoo/p_entomatadas.jpg',2
-23,Enfrijoladas,43,,'../../../images/cuckoo/p_enfrijoladas.jpg',2
-27,Chilaquiles Cuckoo,62,Gratinados con manchego y tasajo picado,'../../../images/cuckoo/p_chilaquiles_cuckoo.jpg',2
-28,Enchiladas suizas,58,"Rellenas de pollo, bañadas en salsa verde, gratinadas con queso manchego",'../../../images/cuckoo/p_enchiladas_suizas.jpg',2
-29,Enchiladas divorciadas,60,"Rellenas de pollo, bañadas en salsa roja y verde, gratinadas con queso manchego",'../../../images/cuckoo/p_enchiladas_divorciadas.jpg',2
-30,Enchiladas oaxaqueñas,58,"Rellenas de pollo, bañadas en salsa de guajillo",'../../../images/cuckoo/p_enchiladas_oaxaqueñas.jpg',2
-31,Enmoladas,58,"Rellenas de pollo, bañadas en mole negro oaxaqueño",'../../../images/cuckoo/p_enmoladas.jpg',2
-32,Enfrijoladas Cuckoo,60,Rellenas de chorizo y gratinadas con queso manchego,'../../../images/cuckoo/p_enfrijoladas_cuckoo.jpg',2
-33,Pan francés,36,,'../../../images/cuckoo/p_pan_frances.jpeg',3
-34,Pan francés con nutella,40,,'../../../images/cuckoo/p_pan_frances_nutella.jpg',3
-35,Pan francés con nutella y plátano,45,,'../../../images/cuckoo/p_pan_frances_nutella_platano.jpeg',3
-36,Coctel de frutas,30,,'../../../images/cuckoo/p_coctel_frutas.jpg',3
-37,Tazón de avena con leche,29,,'../../../images/cuckoo/p_tazon_avena_leche.jpg',3
-38,Molletes,35,,'../../../images/cuckoo/p_molletes_queso.jpg',4
-41,Grill sándwich con queso,45,"Tres  panes gratinados a la plancha con queso philadelphia, queso americano y queso manchego",'../../../images/cuckoo/p_grill_sandwich_queso.jpg',4
-42,Sándwich montecristo,50,"Tres panes, jamón y queso manchego gratinado",'../../../images/cuckoo/p_sandwich_montecristo.jpg',4
-43,Sándwich inglés,52,"Tres panes, tocino y queso manchego gratinado con mermelada de fresa",'../../../images/cuckoo/p_sandwich_ingles.jpg',4
-44,Jugos,20,,'../../../images/cuckoo/p_jugo_uva.jpg',5
-45,Licuados,25,,'../../../images/cuckoo/p_licuado_platano.jpeg',5
-46,Malteadas,38,,'../../../images/cuckoo/p_malteada_oreo.jpeg',5
-47,Memelita,16,,'../../../images/cuckoo/p_memelita.jpg',6
-50,Quesadillas fritas (3pzas),48,,'../../../images/cuckoo/p_quesadillas_fritas.jpg',6
-51,Tacos dorados (3pzas),45,,'../../../images/cuckoo/p_tacos_dorados.jpg',6
-52,Taco blando con quesillo,20,,'../../../images/cuckoo/p_taco_blando_quesillo.jpg',6
-55,Tostadas,20,,'../../../images/cuckoo/p_tostadas.jpg',6
-57,Tlayuda con quesillo,45,,'../../../images/cuckoo/p_tlayuda.jpg',6
-60,Torta de quesillo,20,,'../../../images/cuckoo/p_torta_quesillo.jpg',7
-61,Torta de jamón con quesillo,25,,'../../../images/cuckoo/p_torta_jamon_quesillo.jpeg',7
-62,Torta de choriqueso,32,,'../../../images/cuckoo/p_torta_choriqueso.jpg',7
-63,Torta de tinga con quesillo,32,,'../../../images/cuckoo/p_torta_tinga_quesillo.jpg',7
-64,Torta de cecina con quesillo,32,,'../../../images/cuckoo/p_torta_alambre.jpg',7
-65,Torta de milanesa con quesillo,32,,'../../../images/cuckoo/p_torta_milanesa.jpg',7
-66,Torta de pierna con quesillo,32,,'../../../images/cuckoo/p_torta_pierna.jpg',7
-67,Torta de tasajo con quesillo,39,,'../../../images/cuckoo/p_torta_tasajo.jpg',7
-68,Torta de chorizo con huevo,37,,'../../../images/cuckoo/p_torta_choriqueso.jpg',7
-69,Torta al pastor,37,,'../../../images/cuckoo/p_torta_pastor.jpg',8
-70,Torta cubana,38,"Pierna, jamón y queso manchego",'../../../images/cuckoo/p_torta_cubana.jpg',8
-71,Torta hawaiana,28,"Pierna, jamón, quesillo y piña",'../../../images/cuckoo/p_torta_hawaiana.jpg',8
-72,Torta oaxaqueña,40,"Pierna, salchicha, chorizo y quesillo",'../../../images/cuckoo/p_torta_oaxaquena.jpg',8
-73,Torta regia,40,"Milanesa, pierna, jamón, queso amarillo y queso manchego",'../../../images/cuckoo/p_torta_regia.jpg',8
-74,Torta de alambre,42,,'../../../images/cuckoo/p_torta_alambre.jpg',8
-75,Torta Cuckoo,60,,'../../../images/cuckoo/p_torta_cuckoo.jpg',8
-76,Sincronizada,20,,'../../../images/cuckoo/p_sincronizada.jpg',9
-77,Sincronizada manchego,23,Con jamón y queso manchego,'../../../images/cuckoo/p_sincronizada_manchego.jpg',9
-78,Sincronizada tres quesos,23,"Queso americano, queso manchego y quesillo",'../../../images/cuckoo/p_sincronizada_tres_quesos.jpg',9
-79,Sincronizada champiñones,28,Quesillo y champiñones,'../../../images/cuckoo/p_sincronizada_champinones.jpg',9
-80,Sincronizada cubana,30,"Pierna, jamón y queso manchego",'../../../images/cuckoo/p_sincronizada_cubana.jpg',9
-81,Dobladitas,20,,'../../../images/cuckoo/p_dobladitas.jpg',9
-82,Dobladitas con chorizo,30,,'../../../images/cuckoo/p_dobladitas_chorizo.jpg',9
-83,Gringa al pastor,20,,'../../../images/cuckoo/p_gringa_pastor.jpg',9
-84,Suiza de tasajo,23,,'../../../images/cuckoo/p_suiza_tasajo.jpg',9
-85,Hot dog,20,,'../../../images/cuckoo/p_hot_dog.jpg',9
-86,Hamburguesa clásica,42,,'../../../images/cuckoo/p_hamburguesa.jpeg',9
-87,Hamburguesa hawaiana,45,Piña y jamón,'../../../images/cuckoo/p_hamburguesa.jpeg',9
-88,Hamburguesa mexicana,45,Chorizo y quesillo,'../../../images/cuckoo/p_hamburguesa.jpeg',9
-89,Hamburguesa BBQ,48,Queso manchego y salsa BBQ,'../../../images/cuckoo/p_hamburguesa.jpeg',9
-90,Hamburguesa doble con queso,50,,'../../../images/cuckoo/p_hamburguesa.jpeg',9
-91,Sándwich quesillo,18,,'../../../images/cuckoo/p_club_sandwich.jpeg',9
-92,Sándwich quesillo + jamón,22,,'../../../images/cuckoo/p_club_sandwich.jpeg',9
-93,Sándwich quesillo + carne a elección,23,,'../../../images/cuckoo/p_club_sandwich.jpeg',9
-94,Sándwich BLT,30,"Tocino, manchego y tomate",'../../../images/cuckoo/p_club_sandwich.jpeg',9
-95,Sándwich integral,32,"Queso panela, tomate y aguacate",'../../../images/cuckoo/p_club_sandwich.jpeg',9
-96,Sándwich verde,32,"Queso panela, aguacate y germinado",'../../../images/cuckoo/p_club_sandwich.jpeg',9
-97,Club sándwich,48,,'../../../images/cuckoo/p_club_sandwich.jpeg',9
-98,BBQ club sándwich,50,,'../../../images/cuckoo/p_club_sandwich.jpeg',9
-99,Buffalo club sándwich,50,,'../../../images/cuckoo/p_club_sandwich.jpeg',9
-100,Papas a la francesa,40,,'../../../images/cuckoo/p_papas_francesa.jpg',9
-101,Cecina asada,58,Servida con ensalada fresca y timbal de arroz,'../../../images/cuckoo/p_cecina_asada.jpg',10
-102,Pechuga de pollo a la plancha,58,Servida con ensalada fresca y timbal de arroz,'../../../images/cuckoo/p_pechuga_pollo_plancha.jpeg',10
-103,Pechuga de pollo gratinada,62,Servida con ensalada fresca y timbal de arroz,'../../../images/cuckoo/p_pechuga_pollo_gratinada.jpg',10
-104,Tasajo asado,69,Servida con ensalada fresca y timbal de arroz,'../../../images/cuckoo/p_tasajo_asado.jpg',10
-105,Tampiqueña de res,69,Con mini taquitos dorados y queso asado,'../../../images/cuckoo/p_tampiquena_res.jpg',10
-106,Tampiqueña de res,69,Con mini taquitos dorados y queso asado,'../../../images/cuckoo/p_tampiquena_res_toreada.jpg',10
-107,Pasta boloñesa,49,,'../../../images/cuckoo/p_bolonesa.jpg',11
-108,Pasta arrabiata,59,,'../../../images/cuckoo/p_arrabiata.jpg',11
+1,Huevos Revueltos,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_huevos_revueltos.jpg,1
+2,Huevos Estrellados,43,Servidos con tocino y salchicha,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_huevos_estrellados.jpeg,1
+3,Huevos Divorciados,43,Estrellados con salsa roja y verde,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_huevos_divorciados.jpg,1
+4,Huevos rancheros,47,Estrellados con jamón y salsa roja,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_huevos_rancheros.jpg,1
+5,Omelette con queso,47,(Guarnición de ensalada o frijol),https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_omelette_queso.jpg,1
+6,Omelette de claras,50,(Guarnición de ensalada o frijol),https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_omelette_claras.jpeg,1
+7,Omelette especial,54,Bañado en salsa roja o verde,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_omelette_especial.jpeg,1
+8,Salsa de huevo,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_salsa_huevo.png,1
+9,Salsa de queso o quesillo,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_salsa_queso.jpg,1
+10,Huevos Cuckoo,60,"Revueltos con chistorra, servidos con dobladita de chorizo y aguacate",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_huevos_divorciados.jpg,1
+11,Chilaquiles,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_chilaquiles.jpg,2
+15,Chilaquiles divorciados,45,Salsa roja y salsa verde,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_chilaquiles_divorciados_tasajo.jpg,2
+19,Entomatadas,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_entomatadas.jpg,2
+23,Enfrijoladas,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_enfrijoladas.jpg,2
+27,Chilaquiles Cuckoo,62,Gratinados con manchego y tasajo picado,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_chilaquiles_cuckoo.jpg,2
+28,Enchiladas suizas,58,"Rellenas de pollo, bañadas en salsa verde, gratinadas con queso manchego",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_enchiladas_suizas.jpeg,2
+29,Enchiladas divorciadas,60,"Rellenas de pollo, bañadas en salsa roja y verde, gratinadas con queso manchego",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_enchiladas_divorciadas.jpg,2
+30,Enchiladas oaxaqueñas,58,"Rellenas de pollo, bañadas en salsa de guajillo",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_enchiladas_oaxaque%C3%B1as.jpg,2
+31,Enmoladas,58,"Rellenas de pollo, bañadas en mole negro oaxaqueño",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_enmoladas.jpg,2
+32,Enfrijoladas Cuckoo,60,Rellenas de chorizo y gratinadas con queso manchego,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_enfrijoladas_chorizo.jpg,2
+33,Pan francés,36,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_pan_frances.jpeg,3
+34,Pan francés con nutella,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_pan_frances_nutella.jpg,3
+35,Pan francés con nutella y plátano,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_pan_frances_nutella_platano.jpeg,3
+36,Coctel de frutas,30,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_coctel_frutas.jpg,3
+37,Tazón de avena con leche,29,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tazon_avena_leche.jpg,3
+38,Molletes,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_molletes_queso.jpg,4
+41,Grill sándwich con queso,45,"Tres  panes gratinados a la plancha con queso philadelphia, queso americano y queso manchego",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_grill_sandwich_queso.jpg,4
+42,Sándwich montecristo,50,"Tres panes, jamón y queso manchego gratinado",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sandwich_montecristo.jpg,4
+43,Sándwich inglés,52,"Tres panes, tocino y queso manchego gratinado con mermelada de fresa",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sandwich_ingles.jpg,4
+44,Jugos,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_jugo_uva.jpg,5
+45,Licuados,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_licuado_platano.jpeg,5
+46,Malteadas,38,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_malteada_oreo.jpeg,5
+47,Memelita,16,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_memelita.jpg,6
+50,Quesadillas fritas (3pzas),48,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_quesadillas_fritas.jpg,6
+51,Tacos dorados (3pzas),45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tacos_dorados.jpg,6
+52,Taco blando con quesillo,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_taco_blando_preparado.jpg,6
+55,Tostadas,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tostadas.jpg,6
+57,Tlayuda con quesillo,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tlayuda.jpg,6
+60,Torta de quesillo,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_quesillo.jpg,7
+61,Torta de jamón con quesillo,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_jamon_quesillo.jpeg,7
+62,Torta de choriqueso,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_choriqueso.jpg,7
+63,Torta de tinga con quesillo,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_tinga_quesillo.jpg,7
+64,Torta de cecina con quesillo,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_alambre.jpg,7
+65,Torta de milanesa con quesillo,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_milanesa.jpg,7
+66,Torta de pierna con quesillo,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_pierna.jpg,7
+67,Torta de tasajo con quesillo,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_tasajo.jpg,7
+68,Torta de chorizo con huevo,37,,https://github.com/AdanYairJS/AnahuacLifeApp/blob/main/images/cuckoo/p_torta_chorizo_huevo.jpg,7
+69,Torta al pastor,37,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_pastor.jpg,8
+70,Torta cubana,38,"Pierna, jamón y queso manchego",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_cubana.jpg,8
+71,Torta hawaiana,28,"Pierna, jamón, quesillo y piña",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_hawaiana.jpg,8
+72,Torta oaxaqueña,40,"Pierna, salchicha, chorizo y quesillo",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_oaxaquena.jpeg,8
+73,Torta regia,40,"Milanesa, pierna, jamón, queso amarillo y queso manchego",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_regia.jpeg,8
+74,Torta de alambre,42,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_alambre.jpg,8
+75,Torta Cuckoo,60,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_torta_cuckoo.jpeg,8
+76,Sincronizada,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sincronizada.jpg,9
+77,Sincronizada manchego,23,Con jamón y queso manchego,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sincronizada_manchego.jpeg,9
+78,Sincronizada tres quesos,23,"Queso americano, queso manchego y quesillo",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sincronizada_tres_quesos.jpg,9
+79,Sincronizada champiñones,28,Quesillo y champiñones,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sincronizada_champinones.jpg,9
+80,Sincronizada cubana,30,"Pierna, jamón y queso manchego",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_sincronizada_cubana.jpeg,9
+81,Dobladitas,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_dobladitas.jpg,9
+82,Dobladitas con chorizo,30,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_dobladitas_chorizo.jpg,9
+83,Gringa al pastor,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_gringa_pastor.jpg,9
+84,Suiza de tasajo,23,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_suiza_tasajo.jpg,9
+85,Hot dog,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_hot_dog.jpg,9
+86,Hamburguesa clásica,42,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_hamburguesa.jpeg,9
+87,Hamburguesa hawaiana,45,Piña y jamón,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_hamburguesa.jpeg,9
+88,Hamburguesa mexicana,45,Chorizo y quesillo,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_hamburguesa.jpeg,9
+89,Hamburguesa BBQ,48,Queso manchego y salsa BBQ,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_hamburguesa.jpeg,9
+90,Hamburguesa doble con queso,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_hamburguesa.jpeg,9
+91,Sándwich quesillo,18,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+92,Sándwich quesillo + jamón,22,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+93,Sándwich quesillo + carne a elección,23,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+94,Sándwich BLT,30,"Tocino, manchego y tomate",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+95,Sándwich integral,32,"Queso panela, tomate y aguacate",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+96,Sándwich verde,32,"Queso panela, aguacate y germinado",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+97,Club sándwich,48,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+98,BBQ club sándwich,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+99,Buffalo club sándwich,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_club_sandwich.jpg,9
+100,Papas a la francesa,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_papas_francesa.jpg,9
+101,Cecina asada,58,Servida con ensalada fresca y timbal de arroz,https://github.com/AdanYairJS/AnahuacLifeApp/blob/main/images/cuckoo/p_cecina_asada.jpg,10
+102,Pechuga de pollo a la plancha,58,Servida con ensalada fresca y timbal de arroz,https://github.com/AdanYairJS/AnahuacLifeApp/blob/main/images/cuckoo/p_pechuga_pollo_plancha.jpeg,10
+103,Pechuga de pollo gratinada,62,Servida con ensalada fresca y timbal de arroz,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_pechuga_pollo_gratinada.jpg,10
+104,Tasajo asado,69,Servida con ensalada fresca y timbal de arroz,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tasajo_asado.jpg,10
+105,Tampiqueña de res,69,Con mini taquitos dorados y queso asado,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tampiquena_res.jpg,10
+106,Tampiqueña de res,69,Con mini taquitos dorados y queso asado,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_tampiquena_res_toreada.jpg,10
+107,Pasta boloñesa,49,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_bolonesa.jpg,11
+108,Pasta arrabiata,59,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_arrabiata.jpg,11
 109,Alambres,63,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/cuckoo/p_alambre_bistec.jpg,12
-110,Queso fundido,60,,'../../../images/cuckoo/p_queso_fundido_pastor.jpeg',13
-111,Clásica empanizada,50,"Milanesa de pollo, servida con ensalada fresca y timbal de arroz",'../../../images/cuckoo/p_milanesa_clasica.jpeg',14
-112,Italiana,65,Manchego + salsa italiana,'../../../images/cuckoo/p_milanesa_italiana.jpg',14
-113,Capresse,65,Manchego + tomate y albahaca,'../../../images/cuckoo/p_milanesa_capresse.jpeg',14
-114,Napolitana,68,Manchego + jamón y salsa italiana,'../../../images/cuckoo/p_milanesa_napolitana.jpeg',14
-115,Hawaiana,68,Manchego + jamón y piña,'../../../images/cuckoo/p_milanesa_hawaiana.jpeg',14
-116,Pepperoni,68,Manchego + pepperoni,'../../../images/cuckoo/p_milanesa_pepperoni.jpg',14
-117,Morrón,68,Manchego + pimientos,'../../../images/cuckoo/p_milanesa_morron.jpg',14
-118,Ensalada capresse,28,,'../../../images/cuckoo/p_ensalada_capresse.jpeg',15
-119,Café del día,15,,'../../../images/cuckoo/p_cafe_dia.jpeg',16
-120,Espresso,20,,'../../../images/cuckoo/p_cafe_ espresso.jpeg',16
-121,Americano,20,,'../../../images/cuckoo/p_cafe_americano.jpeg',16
-122,Capuchino,30,,'../../../images/cuckoo/p_cafe_capuchino.jpeg',16
-123,Latte,33,,'../../../images/cuckoo/p_cafe_latte.jpeg',16
-124,Mocha,35,,'../../../images/cuckoo/p_cafe_mocha.jpeg',16
-125,Caramel Blend Macchiato,40,,'../../../images/cuckoo/p_caramel_blend_macchiato.jpeg',16
-126,Cajeta Capuchino,40,,'../../../images/cuckoo/p_cajeta_capuchino.jpeg',16
-127,Chocolate de Agua,28,,'../../../images/cuckoo/p_chocolate_agua.jpeg',16
-128,Chocolate de Leche,32,,'../../../images/cuckoo/p_chocolate_leche.jpeg',16
-129,Americano Helado,28,,'../../../images/cuckoo/p_americano_helado.jpeg',17
-130,Latte Helado,35,,'../../../images/cuckoo/p_latte_helado.jpeg',17
-131,Mocha Helado,38,,'../../../images/cuckoo/p_mocha_helado.jpeg',17
-132,Cold Brew,35,,'../../../images/cuckoo/p_cold_brew.jpeg',17
-133,Vanilla Cold Brew,39,,'../../../images/cuckoo/p_vanilla_cold_brew.jpeg',17
-134,Frappé Original,48,,'../../../images/cuckoo/p_frappe_original.jpeg',18
-135,Frappé Nutella,50,,'../../../images/cuckoo/p_frappe_nutella.jpeg',18
-136,Frappé Cajeta,50,,'../../../images/cuckoo/p_frappe_cajeta.jpeg',18
-137,Frappé Mocha,50,,'../../../images/cuckoo/p_frappe_mocha.jpeg',18
-138,Frappé Oreo,52,,'../../../images/cuckoo/p_frappe_oreo.jpeg',18
-139,Smoothie Fresa,50,,'../../../images/cuckoo/p_smoothie_fresa.jpeg',19
-140,Smoothie Moras,50,,'../../../images/cuckoo/p_smoothie_moras.jpeg',19
-141,Smoothie Mango,50,,'../../../images/cuckoo/p_smoothie_mango.jpeg',19
-142,Smoothie Piña,50,,'../../../images/cuckoo/p_smoothie_piña.jpeg',19
-143,Smoothie Chamoyada,52,,'../../../images/cuckoo/p_smoothie_chamoyada.jpeg',19
-144,Manzana Verde,39,,'../../../images/cuckoo/p_soda_manzana_verde.jpeg',20
-145,Grosella,39,,'../../../images/cuckoo/p_soda_grosella.jpeg',20
-146,Blueberry,39,,'../../../images/cuckoo/p_soda_blueberry.jpeg',20
-147,Frambuesa,39,,'../../../images/cuckoo/p_soda_frambuesa.jpeg',20
-148,Verde,28,,'../../../images/cuckoo/p_te_verde.jpeg',21
-149,Verde Jasmín,28,,'../../../images/cuckoo/p_te_verde_jasmin.jpeg',21
-150,Blanco,28,,'../../../images/cuckoo/p_te_blanco.jpeg',21
-151,Negro,28,,'../../../images/cuckoo/p_te_negro.jpeg',21
-152,Manzanilla Lavanda,28,,'../../../images/cuckoo/p_te_manzanilla_lavanda.jpeg',21
-153,Hierbabuena,28,,'../../../images/cuckoo/p_te_hierbabuena.jpeg',21
-154,Tango Mango,28,,'../../../images/cuckoo/p_tango_mango.jpeg',22
-155,Moras de la Selva,28,,'../../../images/cuckoo/p_moras_selva.jpeg',22
-156,Fruta del Dragón,28,,'../../../images/cuckoo/p_fruta_dragon.jpeg',22
-157,Ponche de Guayaba,28,,'../../../images/cuckoo/p_ponche_guayaba.jpeg',22
-158,Manzana Arandano,28,,'../../../images/cuckoo/p_manzana_arandano.jpeg',22
-159,Cherry Banana,28,,'../../../images/cuckoo/p_cherry_banana.jpeg',22
-160,Maracuya,28,,'../../../images/cuckoo/p_maracuya.jpeg',22
-161,Frutos Tropicales,28,,'../../../images/cuckoo/p_frutos_tropicales.jpeg',22
-162,Blue dream,28,,'../../../images/cuckoo/p_blue_dream.jpeg',22
-163,Original,35,,,23
-164,Con Fresas,39,,,23
-165,Mojito,39,,,23
-166,Half & Half Té Verde,45,,,23
-167,Half & Half Té Negro,45,,,23
-168,Ensalada Cuckoo,69,"Mezcla de lechugas, zanahoria, tomate, croutones y queso parmesano. Pechuga de pollo empanizada y crujiente.",'../../../images/cuckoo/p_ensalada_cuckoo.jpeg',24
-169,Arrachera,65,"Lechuga, tomate, granos de elote, queso manchego, tortilla frita y chiles jalapeños toreados. Arrachera de res marinada.",'../../../images/cuckoo/p_ensalada_arrachera.jpeg',24
-170,Spicy Buffalo,65,"Mezcla de lechugas, zanahoria, tomate, apio y queso manchego. Pechuga de pollo rebozada en salsa wings.",'../../../images/cuckoo/p_ensalada_spicy_buffalo.jpeg',24
-171,Chicken Tai,60,"Lechuga, zanahoria, pimientos y pepino. Pechuga de pollo Thai en salsa de cacahuate picante.",'../../../images/cuckoo/p_ensalada_tai.jpeg',24
-172,Mediterranea,60,"Mezcla de lechugas, pepino, tomate, pimientos, aceitunas y queso panela. Pechuga de pollo marinada estilo mediterraneo.",'../../../images/cuckoo/p_ensalada_mediterranea.jpeg',24
-173,BBQ,60,"Mezcla de lechugas, elote, tomate, queso manchego y tortilla frita. Pechuga de pollo en salsa BBQ.",'../../../images/cuckoo/p_ensalada_bbq.jpeg',24
-174,Teriyaki,60,"Mezcla de lechugas, zanahoria, col morada y tortilla frita. Pechuga de pollo estilo teriyaki con semillas de sésamo.",'../../../images/cuckoo/p_ensalada_teriyaki.jpeg',24
-175,Grill Chicken,55,"Mezcla de Lechugas, zanahoria, tomate, croutones y queso parmesano. Pechuga de pollo a la plancha.",'../../../images/cuckoo/p_ensalada_grill_chicken.jpeg',24
-176,Queso Panela y Jamón,55,"Mezcla de lechugas, zanahoria, tomate, croutones y queso parmesano. Queso panela y jamón.",'../../../images/cuckoo/p_ensalada_queso_jamon.jpeg',24
-177,Vegana,50,"Mezcla de lechugas, zanahoria, tomate, pepino, granos de elote, aceitunas y croutones.",'../../../images/cuckoo/p_ensalada_vegana.jpeg',24
-178,Americano,20,,'../../../images/cuckoo/p_cafe_americano.jpeg',25
-179,Espresso,20,,'../../../images/cuckoo/p_cafe_ espresso.jpeg',25
-180,Capuchino,30,,'../../../images/cuckoo/p_cafe_capuchino.jpeg',25
-181,Capuchino Vainilla,40,,'../../../images/cuckoo/p_cafe_capuchino_vainilla.jpeg',25
-182,Capuchino Avellanas,40,,'../../../images/cuckoo/p_cafe_capuchino_avellanas.jpeg',25
-183,Capuchino Crema Irlandesa,40,,'../../../images/cuckoo/p_cafe_capuchino_irlandesa.jpeg',25
-184,Latte,33,,'../../../images/cuckoo/p_cafe_latte.jpeg',25
-185,Latte Vainilla,43,,'../../../images/cuckoo/p_cafe_latte_vainilla.jpeg',25
-186,Latte Avellanas,43,,'../../../images/cuckoo/p_cafe_latte_avellanas.jpeg',25
-187,Latte Crema Irlandesa,43,,'../../../images/cuckoo/p_cafe_latte_irlandesa.jpeg',25
-188,Caramel Machiatto,43,,'../../../images/cuckoo/p_cafe_caramel_machiatto.jpeg',25
-189,Avellanas Machiatto,43,,'../../../images/cuckoo/p_cafe_avellanas_machiatto.jpeg',25
-190,Mocha,35,,'../../../images/cuckoo/p_cafe_mocha.jpeg',25
-191,Mocha Blanco,45,,'../../../images/cuckoo/p_cafe_mocha_blanco.jpeg',25
-192,Mocha Menta,45,,'../../../images/cuckoo/p_cafe_mocha_menta.jpeg',25
-193,Dirty Chai,53,Chai + Espresso,'../../../images/cuckoo/p_cafe_dirty_chai.jpeg',25
-194,Americano Helado,28,,'../../../images/cuckoo/p_americano_helado.jpeg',26
-195,Cold Brew,35,,'../../../images/cuckoo/p_cold_brew.jpeg',26
-196,Vanilla Cold  Brew,39,,'../../../images/cuckoo/p_vanilla_cold_brew.jpeg',26
-197,Caramel Machiatto Helado,49,,'../../../images/cuckoo/p_caramel_machiatto_helado.jpeg',26
-198,Avellanas Machiatto Helado,49,,'../../../images/cuckoo/p_avellanas_machiatto_helado.jpeg',26
-199,Latte Helado,35,,'../../../images/cuckoo/p_latte_helado.jpeg',26
-200,Latte Helado Vainilla,45,,'../../../images/cuckoo/p_latte_helado_vainilla.jpeg',26
-201,Latte Helado Avellanas,45,,'../../../images/cuckoo/p_latte_helado_avellanas.jpeg',26
-202,Latte Helado Crema Irlandesa,45,,'../../../images/cuckoo/p_latte_helado_irlandesa.jpeg',26
-203,Mocha Helado,38,,'../../../images/cuckoo/p_mocha_helado.jpeg',26
-204,Mocha Blanco Helado,48,,'../../../images/cuckoo/p_mocha_blanco_helado.jpeg',26
-205,Mocha Menta Helado,48,,'../../../images/cuckoo/p_mocha_menta_helado.jpeg',26
+110,Queso fundido,60,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_queso_fundido_pastor.jpeg,13
+111,Clásica empanizada,50,"Milanesa de pollo, servida con ensalada fresca y timbal de arroz",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_clasica.jpeg,14
+112,Italiana,65,Manchego + salsa italiana,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_italiana.jpg,14
+113,Capresse,65,Manchego + tomate y albahaca,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_capresse.jpeg,14
+114,Napolitana,68,Manchego + jamón y salsa italiana,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_napolitana.jpeg,14
+115,Hawaiana,68,Manchego + jamón y piña,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_hawaiana.jpeg,14
+116,Pepperoni,68,Manchego + pepperoni,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_pepperoni.jpg,14
+117,Morrón,68,Manchego + pimientos,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_milanesa_morron.jpg,14
+118,Ensalada capresse,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/cuckoo/p_ensalada_capresse.jpeg,15
+119,Café del día,15,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_dia.jpg,16
+120,Espresso,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_%20espresso.jpg,16
+121,Americano,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_americano.jpeg,16
+122,Capuchino,30,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_capuchino.jpeg,16
+123,Latte,33,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_latte.jpg,16
+124,Mocha,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_mocha.jpg,16
+125,Caramel Blend Macchiato,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_caramel_blend_macchiato.jpg,16
+126,Cajeta Capuchino,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cajeta_capuchino.jpeg,16
+127,Chocolate de Agua,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_chocolate_agua.jpg,16
+128,Chocolate de Leche,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_chocolate_leche.jpg,16
+129,Americano Helado,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_americano_helado.jpeg,17
+130,Latte Helado,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_latte_helado.jpeg,17
+131,Mocha Helado,38,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_mocha_helado.jpg,17
+132,Cold Brew,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cold_brew.jpg,17
+133,Vanilla Cold Brew,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_vanilla_cold_brew.jpg,17
+134,Frappé Original,48,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_frappe_original.jpg,18
+135,Frappé Nutella,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_frappe_nutella.jpg,18
+136,Frappé Cajeta,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_frappe_cajeta.jpg,18
+137,Frappé Mocha,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_frappe_mocha.jpg,18
+138,Frappé Oreo,52,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_frappe_oreo.jpg,18
+139,Smoothie Fresa,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_smoothie_fresa.jpeg,19
+140,Smoothie Moras,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_smoothie_moras.jpeg,19
+141,Smoothie Mango,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_smoothie_mango.jpg,19
+142,Smoothie Piña,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_smoothie_pi%C3%B1a.jpg,19
+143,Smoothie Chamoyada,52,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_smoothie_chamoyada.jpg,19
+144,Manzana Verde,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_soda_manzana_verde.jpeg,20
+145,Grosella,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_soda_grosella.jpeg,20
+146,Blueberry,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_soda_blueberry.jpeg,20
+147,Frambuesa,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_soda_frambuesa.jpeg,20
+148,Verde,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_verde.jpg,21
+149,Verde Jasmín,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_verde_jasmin.jpeg,21
+150,Blanco,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_blanco.jpeg,21
+151,Negro,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_negro.jpg,21
+152,Manzanilla Lavanda,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_manzanilla_lavanda.jpg,21
+153,Hierbabuena,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_hierbabuena.jpeg,21
+154,Tango Mango,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_tango_mango.jpghttps:/github.com/AdanYairJS/AnahuacLifeApp/blob/main/images/cuckoo_cofee/p_tango_mango.jpghttps:/github.com/AdanYairJS/AnahuacLifeApp/blob/main/images/cuckoo_cofee/p_tango_mango.jpg,22
+155,Moras de la Selva,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_moras_selva.jpeg,22
+156,Fruta del Dragón,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_fruta_dragon.jpeg,22
+157,Ponche de Guayaba,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ponche_guayaba.jpg,22
+158,Manzana Arandano,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_manzana_arandano.jpg,22
+159,Cherry Banana,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cherry_banana.jpg,22
+160,Maracuya,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_maracuya.jpeg,22
+161,Frutos Tropicales,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_frutos_tropicales.jpeg,22
+162,Blue dream,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_blue_dream.png,22
+163,Original,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_original.png,23
+164,Con Fresas,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_fresas.png,23
+165,Mojito,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_mojito.jpeg,23
+166,Half & Half Té Verde,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_te_verde.jpg,23
+167,Half & Half Té Negro,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_te_negro.jpg,23
+168,Ensalada Cuckoo,69,"Mezcla de lechugas, zanahoria, tomate, croutones y queso parmesano. Pechuga de pollo empanizada y crujiente.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_cuckoo.jpg,24
+169,Arrachera,65,"Lechuga, tomate, granos de elote, queso manchego, tortilla frita y chiles jalapeños toreados. Arrachera de res marinada.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_arrachera.jpeg,24
+170,Spicy Buffalo,65,"Mezcla de lechugas, zanahoria, tomate, apio y queso manchego. Pechuga de pollo rebozada en salsa wings.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_spicy_buffalo.jpg,24
+171,Chicken Tai,60,"Lechuga, zanahoria, pimientos y pepino. Pechuga de pollo Thai en salsa de cacahuate picante.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_tai.jpg,24
+172,Mediterranea,60,"Mezcla de lechugas, pepino, tomate, pimientos, aceitunas y queso panela. Pechuga de pollo marinada estilo mediterraneo.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_mediterranea.jpg,24
+173,BBQ,60,"Mezcla de lechugas, elote, tomate, queso manchego y tortilla frita. Pechuga de pollo en salsa BBQ.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_bbq.jpg,24
+174,Teriyaki,60,"Mezcla de lechugas, zanahoria, col morada y tortilla frita. Pechuga de pollo estilo teriyaki con semillas de sésamo.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_teriyaki.jpg,24
+175,Grill Chicken,55,"Mezcla de Lechugas, zanahoria, tomate, croutones y queso parmesano. Pechuga de pollo a la plancha.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_grill_chicken.jpg,24
+176,Queso Panela y Jamón,55,"Mezcla de lechugas, zanahoria, tomate, croutones y queso parmesano. Queso panela y jamón.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_queso_jamon.jpg,24
+177,Vegana,50,"Mezcla de lechugas, zanahoria, tomate, pepino, granos de elote, aceitunas y croutones.",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ensalada_vegana.jpg,24
+178,Americano,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_americano.jpeg,25
+179,Espresso,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_%20espresso.jpg,25
+180,Capuchino,30,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_capuchino.jpeg,25
+181,Capuchino Vainilla,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_capuchino_vainilla.jpg,25
+182,Capuchino Avellanas,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_capuchino_avellanas.jpeg,25
+183,Capuchino Crema Irlandesa,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_capuchino_irlandesa.jpeg,25
+184,Latte,33,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_latte.jpg,25
+185,Latte Vainilla,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_latte_vainilla.jpg,25
+186,Latte Avellanas,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_latte_avellanas.jpg,25
+187,Latte Crema Irlandesa,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_latte_irlandesa.jpg,25
+188,Caramel Machiatto,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_caramel_blend_macchiato.jpg,25
+189,Avellanas Machiatto,43,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_avellanas_machiatto.jpg,25
+190,Mocha,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cafe_mocha.jpg,25
+191,Mocha Blanco,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_mocha_blanco.jpg,25
+192,Mocha Menta,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_mocha_menta.jpg,25
+193,Dirty Chai,53,Chai + Espresso,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_dirty_chai.jpg,25
+194,Americano Helado,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_americano_helado.jpeg,26
+195,Cold Brew,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_cold_brew.jpg,26
+196,Vanilla Cold  Brew,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_vanilla_cold_brew.jpg,26
+197,Caramel Machiatto Helado,49,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_caramel_machiatto_helado.jpg,26
+198,Avellanas Machiatto Helado,49,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_avellanas_machiatto_helado.jpeg,26
+199,Latte Helado,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_latte_helado.jpeg,26
+200,Latte Helado Vainilla,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_latte_helado_vainilla.jpg,26
+201,Latte Helado Avellanas,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_latte_helado_avellanas.jpg,26
+202,Latte Helado Crema Irlandesa,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_latte_helado_irlandesa.jpg,26
+203,Mocha Helado,38,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_mocha_helado.jpg,26
+204,Mocha Blanco Helado,48,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_mocha_blanco.jpg,26
+205,Mocha Menta Helado,48,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_cafe_mocha_menta.jpg,26
 206,Carga Extra Espresso,8,,,27
 207,Shot de Leche,8,,,27
 208,Cambio por Leche Vegetal,8,,,27
 209,Shot de Sabor,10,,,27
-210,Chai Latte,45,,'../../../images/cuckoo/p_Chai_latte.jpeg',28
-211,Green Matcha Latte,49,,'../../../images/cuckoo/p_Green_matcha_latte.jpeg',28
-212,Blue Matcha Latte,49,,'../../../images/cuckoo/p_Blue_matcha_latte.jpeg',28
-213,Chocolate Oaxaqueño de Leche,32,,'../../../images/cuckoo/p_chocolate_leche.jpeg',28
-214,Chocolate Oaxaqueño de Agua,28,,'../../../images/cuckoo/p_chocolate_agua.jpeg',28
-215,Tisanas,28,,'../../../images/cuckoo/p_tisanas.jpeg',28
-216,Tés,28,,'../../../images/cuckoo/p_tes.jpeg',28
-217,Chai Latte Helado,55,,'../../../images/cuckoo/p_Chai_latte_H.jpeg',29
-218,Green Matcha Latte Helado,59,,'../../../images/cuckoo/p_Green_matcha_latte_H.jpeg',29
-219,Blue Matcha Latte Helado,59,,'../../../images/cuckoo/p_Blue_matcha_latte_H.jpeg',29
-220,Tisanas Heladas,32,,'../../../images/cuckoo/p_tisanas_H.jpeg',29
-221,Tés Helados,32,,'../../../images/cuckoo/p_tes_H.jpeg',29
-222,Original,35,,'../../../images/cuckoo/p_limo_original.jpeg',30
-223,Con Fresas,39,,'../../../images/cuckoo/p_limo_fresas.jpeg',30
-224,Mojito,39,,'../../../images/cuckoo/p_limo_mojito.jpeg',30
-225,Blue Butterfly,49,,'../../../images/cuckoo/p_blue_butterfly.jpeg',30
-226,Half & Half Té Negro,45,,'../../../images/cuckoo/p_limo_half_te_negro.jpeg',30
-227,Half & Half Té Verde,45,,'../../../images/cuckoo/p_limo_half_te_verde.jpeg',30
-228,Pomodoro,65,"Pan multigrano, queso mozarella, tomate deshidratado, albahaca, pechuga de pollo al pesto",'../../../images/delyfull/p_pomodoro.png',31
-229,Atún & Aguacate,65,"Atún, aguacate, espinacas, queso mozarella",'../../../images/delyfull/p_atun_aguacate.png',31
-230,Turkey Palermo,65,"Jamón de pavo orgánico, espinacas, cebolla morada, tomate, queso, mozarella, aguacate, mayonesa y pesto",'../../../images/delyfull/p_turkey_palermo.jpeg',31
-231,Griega,75,"Tomate, aceitunas, pepino, lechuga italiana, feta",'../../../images/delyfull/p_griega.jpg',32
-232,Oriental,75,"Fideos de arroz, aderezo de cacahuate",'../../../images/delyfull/p_oriental.jpg',32
-233,Paraíso Balsámico,75,"Fresa, manzana, almendras, lechugas, Vinagreta Raspberry",'../../../images/delyfull/p_paraiso_balsamico.jpg',32
-234,Cesar Pollo,85,,'../../../images/delyfull/p_cesar_pollo.jpg',32
-235,Jamón de Pavo,85,,'../../../images/delyfull/p_Jamon_pavo.jpeg',33
-236,Chicken Roma,85,,'../../../images/delyfull/p_Chicken_roma.jpg',33
-237,Queso gratinado,80,,'../../../images/delyfull/p_queso_gratinado.jpg',33
-238,Hamburguesa Vegana,65,,'../../../images/delyfull/p_ham_vegana.jpg',34
-239,Hamburguesa Chorizo con queso,65,,'../../../images/delyfull/p_ham_chorizo_queso.jpg',34
-240,Pudín de chía,45,,'../../../images/delyfull/p_pudin_chia.jpg',35
-241,Over Night Oats,45,,'../../../images/delyfull/p_Night_oats.jpg',35
-242,Americano,20,,'../../../images/delyfull/p_cafe_americano.jpg',36
-243,Café con leche,25,,'../../../images/delyfull/p_cafe_leche.jpg',36
-244,Capuccino,25,,'../../../images/delyfull/p_capuccino.jpeg',36
-245,Latte,25,,'../../../images/delyfull/p_latte.jpg',36
-246,Capuccino Vainilla,25,,'../../../images/delyfull/p_capuccino_vainilla.jpeg',36
-247,Latte Vainilla,25,,'../../../images/delyfull/p_latte_vainilla.jpeg',36
-248,Chocolate Caliente,25,,'../../../images/delyfull/p_chocolate_caliente.jpg',36
-249,Moka Canela,25,,'../../../images/delyfull/p_moka_caliente.jpg',36
-250,Mokaccino,25,,'../../../images/delyfull/p_mokaccino.jpeg',36
-251,Chocovainilla,25,,'../../../images/delyfull/p_chocovainilla.jpg',36
-252,Dely Mojito,50,,'../../../images/delyfull/p_delymojito.jpg',37
-253,Dely Citrus,50,,'../../../images/delyfull/p_delycitrus.jpeg',37
-254,Dely Berry,70,,'../../../images/delyfull/p_delyberry.jpg',38
-255,Dely Full,70,,'../../../images/delyfull/p_delyfull.jpg',38
-256,DelyMoka,70,,'../../../images/delyfull/p_delymoka.jpg',38
-257,DelyCacao,70,,'../../../images/delyfull/p_delycacao.jpg',38
-258,Manzana con chile,40,,'../../../images/delyfull/p_manzana_chile.jpg',39
-259,Carlota,28,,'../../../images/delyfull/p_carlota.jpg',39
-260,Coctel de frutas,35,,'../../../images/delyfull/p_coctel_frutas.jpg',39
-261,Malangas,35,,'../../../images/delyfull/p_malangas.jpg',39
-262,Buble Tea,40,,'../../../images/delyfull/p_buble_tea.jpg',40
-263,Chai Late,40,,'../../../images/delyfull/p_chai_late.jpg',40
-264,Agua + Ciabatta + Ensalada/Malanga,100,,'../../../images/delyfull/p_Combo1.jpg',41
-265,Smoothie + Ciabata + Malangas,160,,'../../../images/delyfull/p_Combo2.jpeg',41
+210,Chai Latte,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_Chai_latte.jpg,28
+211,Green Matcha Latte,49,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_Green_matcha_latte.jpg,28
+212,Blue Matcha Latte,49,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_Blue_matcha_latte.jpg,28
+213,Chocolate Oaxaqueño de Leche,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_chocolate_leche.jpg,28
+214,Chocolate Oaxaqueño de Agua,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_chocolate_agua.jpg,28
+215,Tisanas,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ponche_guayaba.jpg,28
+216,Tés,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_manzanilla_lavanda.jpg,28
+217,Chai Latte Helado,55,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_Chai_latte.jpg,29
+218,Green Matcha Latte Helado,59,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_Green_matcha_latte.jpg,29
+219,Blue Matcha Latte Helado,59,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_Blue_matcha_latte.jpg,29
+220,Tisanas Heladas,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_ponche_guayaba.jpg,29
+221,Tés Helados,32,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_te_manzanilla_lavanda.jpg,29
+222,Original,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_original.png,30
+223,Con Fresas,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_fresas.png,30
+224,Mojito,39,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_mojito.jpeg,30
+225,Blue Butterfly,49,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/90f20dae90b37d8e838dca5bff065efa8e52fe4c/images/cuckoo_box/p_blue_butterfly.jpg,30
+226,Half & Half Té Negro,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_te_negro.jpg,30
+227,Half & Half Té Verde,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/299aa298448f64b2756b8995ab76f3ad96e76c5c/images/cuckoo_cofee/p_limonada_te_verde.jpg,30
+228,Pomodoro,65,"Pan multigrano, queso mozarella, tomate deshidratado, albahaca, pechuga de pollo al pesto",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_pomodoro.png,31
+229,Atún & Aguacate,65,"Atún, aguacate, espinacas, queso mozarella",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_atun_aguacate.png,31
+230,Turkey Palermo,65,"Jamón de pavo orgánico, espinacas, cebolla morada, tomate, queso, mozarella, aguacate, mayonesa y pesto",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_turkey_palermo.jpeg,31
+231,Griega,75,"Tomate, aceitunas, pepino, lechuga italiana, feta",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_griega.jpg,32
+232,Oriental,75,"Fideos de arroz, aderezo de cacahuate",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_oriental.jpg,32
+233,Paraíso Balsámico,75,"Fresa, manzana, almendras, lechugas, Vinagreta Raspberry",https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_paraiso_balsamico.jpg,32
+234,Cesar Pollo,85,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_cesar_pollo.jpg,32
+235,Jamón de Pavo,85,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_Jamon_pavo.jpeg,33
+236,Chicken Roma,85,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_Chicken_roma.jpg,33
+237,Queso gratinado,80,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_queso_gratinado.jpg,33
+238,Hamburguesa Vegana,65,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_ham_vegana.jpg,34
+239,Hamburguesa Chorizo con queso,65,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_ham_chorizo_queso.jpg,34
+240,Pudín de chía,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_pudin_chia.jpg,35
+241,Over Night Oats,45,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_Night_oats.jpg,35
+242,Americano,20,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_cafe_americano.jpg,36
+243,Café con leche,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_cafe_leche.jpg,36
+244,Capuccino,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_capuccino.jpeg,36
+245,Latte,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_latte.jpg,36
+246,Capuccino Vainilla,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_capuccino_vainilla.jpeg,36
+247,Latte Vainilla,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_latte_vainilla.jpeg,36
+248,Chocolate Caliente,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_chocolate_caliente.jpg,36
+249,Moka Canela,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_moka_caliente.jpg,36
+250,Mokaccino,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_mokaccino.jpeg,36
+251,Chocovainilla,25,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_chocovainilla.jpg,36
+252,Dely Mojito,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_delymojito.jpg,37
+253,Dely Citrus,50,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_delycitrus.jpeg,37
+254,Dely Berry,70,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_delyberry.jpg,38
+255,Dely Full,70,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_delyfull.jpg,38
+256,DelyMoka,70,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_delymoka.jpg,38
+257,DelyCacao,70,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_delycacao.jpg,38
+258,Manzana con chile,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_manzana_chile.jpg,39
+259,Carlota,28,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_carlota.jpg,39
+260,Coctel de frutas,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_coctel_frutas.jpg,39
+261,Malangas,35,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_malangas.jpg,39
+262,Buble Tea,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_buble_tea.jpg,40
+263,Chai Late,40,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_chai_late.jpg,40
+264,Agua + Ciabatta + Ensalada/Malanga,100,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_Combo1.jpg,41
+265,Smoothie + Ciabata + Malangas,160,,https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/413626294bc3756e85f114e095afa949869dd38e/images/delyfull/p_Combo2.jpeg,41

@@ -10,6 +10,7 @@ import HomeScreen from './screens/HomeScreen';
 import EventsScreen from './screens/EventsScreen';
 import DirectoryScreen from './screens/DirectoryScreen';
 import DirectoryWorkers from "./screens/directory_components/DirectoryWorkers.js";
+import CopiaMapScreen from './screens/CopiaMapScreen';
 import MapScreen from './screens/MapScreen';
 import CuckooScreen from "./screens/CuckooScreen";
 import DelyFullScreen from "./screens/DelyFullScreen.js";
@@ -346,7 +347,7 @@ export default function Navigation() {
                 />
                 <Tab.Screen
                     name="Mapa"
-                    component={MapScreen}
+                    component={CopiaMapScreen}
                     options={{
                         tabBarLabel: 'Mapa',
                         headerShown: false

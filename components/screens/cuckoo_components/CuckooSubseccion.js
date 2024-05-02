@@ -10,7 +10,7 @@ const CuckooSubseccion = ({id_subseccion}) => {
 const [platillos, setPlatillos] = useState([]);
 
 let getPlatillos = (id_subseccion) => {
-  fetch("http://192.168.1.75:3333/platillos",{
+  fetch("http://192.168.1.66:3333/platillos",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

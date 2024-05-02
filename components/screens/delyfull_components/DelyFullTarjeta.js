@@ -10,7 +10,7 @@ const DelyFullTarjeta = ({ id_platillo, nombre, imagen, precio}) => {
 
   return (
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DelyFullItem",{id_platillo,nombre,precio,imagen})}>
-      <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.image}/>
+      <Image source={{uri: imagen}} style={styles.image}/>
       <View style={styles.textContainer}>
         <Text style={styles.activityName}>{utf8.decode(nombre)}</Text>
         <Text style={styles.activityDate}>${precio.toFixed(2)}</Text>
