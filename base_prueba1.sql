@@ -209,7 +209,7 @@ CREATE TABLE platillos(
     nombre VARCHAR(50),
     precio FLOAT NOT NULL,
     descripcion VARCHAR(200),
-    imagen VARCHAR(200),
+    imagen VARCHAR(500),
     id_subseccion INT CONSTRAINT FK_ID_SUBSECCION_PLATILLOS REFERENCES subsecciones (id_subseccion)
 );
 
