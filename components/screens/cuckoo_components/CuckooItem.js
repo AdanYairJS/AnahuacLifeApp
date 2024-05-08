@@ -8,20 +8,20 @@ import Iconos from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 // import utf8 from 'utf8';
 
+import {EXPO_ip, EXPO_puerto} from "@env";
+
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
 export default function CuckooScreen({navigation , route}) {
-  navigation = useNavigation();
+  const {color_1, color_2, id_platillo, nombre, precio, imagen} = route.params;
 
-  const {color_1, color_2, id_platillo, nombre, precio, imagen, descripcion} = route.params;
+  console.log(imagen);
 
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/sabores"
-    //fetch("http://192.168.1.70:3333/sabores"
-    ,{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/sabores`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -55,9 +55,7 @@ export default function CuckooScreen({navigation , route}) {
   const [extras, setExtras] = useState([]);
 
   let getExtras = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/extras"
-    //fetch("http://192.168.1.70:3333/extras"
-    ,{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/extras`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -111,8 +109,14 @@ export default function CuckooScreen({navigation , route}) {
           <View style={styles.fondo}>
             <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
             <ScrollView>
-              <View style={styles.imagen_container}>
-                <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.imagen}/>
+              <View style={styles.view_return}>
+                <TouchableOpacity styles={styles.boton_return} onPress={() => navigation.goBack()}>
+                  <FontAwesome6 name="chevron-left" size={30} color="white" />
+                </TouchableOpacity>
+              </View>
+              <View style={[styles.view_return,{justifyContent: 'center'}]}>
+                {/* <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.imagen}/> */}
+                <Image source={{uri: imagen}} style={styles.imagen}/>
               </View>
               <Text style={styles.titulo}>{nombre.toUpperCase()}</Text>
               {descripcion &&

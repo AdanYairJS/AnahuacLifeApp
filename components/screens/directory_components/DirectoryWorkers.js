@@ -4,7 +4,8 @@ import DirectoryWorkerTarjeta from './DirectoryWorkerTarjeta';
 import Constants from 'expo-constants';
 import EmailLink from '../../general_components/EmailLink';
 // import utf8 from 'utf8';
-// import { useNavigation } from '@react-navigation/native';
+
+import {EXPO_ip} from "@env";
 
 alto = Constants.statusBarHeight;
 
@@ -14,7 +15,7 @@ const DirectoryWorker = ({navigation , route}) => {
   const [trabajadores, setTrabajadores] = useState([]);
 
   let getTrabajadores = (id_depto) => {
-    fetch("http://10.100.130.134:3333/trabajadores",{
+    fetch(`http://${EXPO_ip}:3333/trabajadores`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -51,7 +52,7 @@ const DirectoryWorker = ({navigation , route}) => {
   const [tramites, setTramites] = useState([]);
 
   let getTramites = (id_depto) => {
-    fetch("http://10.100.130.134:3333/tramites",{
+    fetch(`http://${EXPO_ip}:3333/tramites`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

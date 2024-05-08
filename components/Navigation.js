@@ -10,6 +10,7 @@ import HomeScreen from './screens/HomeScreen';
 import EventsScreen from './screens/EventsScreen';
 import DirectoryScreen from './screens/DirectoryScreen';
 import DirectoryWorkers from "./screens/directory_components/DirectoryWorkers.js";
+import CopiaMapScreen from './screens/CopiaMapScreen';
 import MapScreen from './screens/MapScreen';
 import CopiaMapScreen from './screens/CopiaMapScreen';
 import CuckooScreen from "./screens/CuckooScreen";

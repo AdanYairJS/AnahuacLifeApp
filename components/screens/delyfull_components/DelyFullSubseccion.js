@@ -3,38 +3,14 @@ import { View, Text, ScrollView, StyleSheet, Image, Touchable } from 'react-nati
 import DelyFullTarjeta from './DelyFullTarjeta';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-//
+import {EXPO_ip, EXPO_puerto} from "@env";
 
 const DelyFullSubseccion = ({id_subseccion}) => {
-// const CuckooSubseccion = ({items}) => {
-//   const items = [
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_jugo_uva.jpg'), 
-//         // texto: 'Jugo (Uva, manzana, arándano o durazno)', 
-//         texto: 'Jugo', 
-//         precio: 20
-//     },
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_licuado_platano.jpeg'), 
-//         // texto: 'Licuado (Avena, plátano, manzana, Nesquik chocolate, Nesquik fresa o Nesquik vainilla)', 
-//         texto: 'Licuado', 
-//         precio: 25
-//     },
-//     {
-//         nombre: 'Bebidas' , 
-//         imagen: require('../../../images/cuckoo/p_malteada_oreo.jpeg'), 
-//         // texto: 'Malteada (Oreo, Carlos V, Bubulubu, Emperador)',
-//         texto: 'Malteada',
-//         precio: 38
-//     },
-//   ];
 
 const [platillos, setPlatillos] = useState([]);
 
 let getPlatillos = (id_subseccion) => {
-  fetch("http://10.100.130.134:3333/platillos",{
+  fetch(`http://${EXPO_ip}:${EXPO_puerto}/platillos`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
