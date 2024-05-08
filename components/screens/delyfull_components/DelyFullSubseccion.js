@@ -3,14 +3,14 @@ import { View, Text, ScrollView, StyleSheet, Image, Touchable } from 'react-nati
 import DelyFullTarjeta from './DelyFullTarjeta';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-//
+import {EXPO_ip, EXPO_puerto} from "@env";
 
 const DelyFullSubseccion = ({id_subseccion}) => {
 
 const [platillos, setPlatillos] = useState([]);
 
 let getPlatillos = (id_subseccion) => {
-  fetch("http://192.168.1.66:3333/platillos",{
+  fetch(`http://${EXPO_ip}:${EXPO_puerto}/platillos`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

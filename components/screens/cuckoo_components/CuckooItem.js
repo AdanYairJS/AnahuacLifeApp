@@ -4,6 +4,8 @@ import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-l
 import { FontAwesome6 } from '@expo/vector-icons';
 import utf8 from 'utf8';
 
+import {EXPO_ip, EXPO_puerto} from "@env";
+
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
@@ -15,7 +17,7 @@ export default function CuckooScreen({navigation , route}) {
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch("http://192.168.1.66:3333/sabores",{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/sabores`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +51,7 @@ export default function CuckooScreen({navigation , route}) {
   const [extras, setExtras] = useState([]);
 
   let getExtras = (id_platillo) => {
-    fetch("http://192.168.1.66:3333/extras",{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/extras`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

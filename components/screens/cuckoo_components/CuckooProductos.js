@@ -3,6 +3,8 @@ import { View, TouchableOpacity, Text, Image, StyleSheet, Dimensions, ScrollView
 import { useNavigation } from '@react-navigation/native';
 import utf8 from 'utf8';
 
+import {EXPO_ip, EXPO_puerto} from "@env";
+
 import CuckooSubseccion from './CuckooSubseccion';
 
 const anchoVentana = Dimensions.get('window').width;
@@ -15,7 +17,7 @@ const CuckooMenu = ({id_menu}) => {
   const [subsecciones, setSubsecciones] = useState([]);
 
   let getSubsecciones = (id_seccion) => {
-    fetch("http://192.168.1.66:3333/subsecciones",{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/subsecciones`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
