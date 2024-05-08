@@ -20,8 +20,6 @@ import ss_pan from '../../../images/cuckoo/ss_pan.jpg';
 import ss_bebidas from '../../../images/cuckoo/ss_bebidas.jpg';
 // import { ScrollView } from 'react-native-gesture-handler';
 
-
-
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
@@ -32,7 +30,9 @@ const CuckooMenu = ({id_menu}) => {
   const [subsecciones, setSubsecciones] = useState([]);
 
   let getSubsecciones = (id_seccion) => {
-    fetch("http://10.100.130.134:3333/subsecciones",{
+    fetch("http://10.100.130.134:3333/subsecciones"
+    //fetch("http://192.168.1.70:3333/subsecciones"
+    ,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

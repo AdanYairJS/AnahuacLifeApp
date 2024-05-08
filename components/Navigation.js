@@ -16,7 +16,6 @@ import CuckooScreen from "./screens/CuckooScreen";
 import DelyFullScreen from "./screens/DelyFullScreen.js";
 import FoodScreen from "./screens/FoodScreen.js";
 
-
 //subscreens
 import GroupsStackScreen from './screens/events_components/GroupsStackScreen';
 import DetailedEvent from './screens/events_components/DetailedEvent.js';
@@ -29,6 +28,7 @@ import DarkModeScreen from "./screens/home_components/preferences/DarkModeScreen
 import NotificationScreen from "./screens/home_components/preferences/NotificationsScreen.js";
 import AllEvents from "./screens/events_components/AllEvents.js";
 import DelyFullItem from "./screens/delyfull_components/DelyFullItem.js";
+import CuckooCart from "./screens/cuckoo_components/CuckooCart.js";
 
 //íconos
 import HomeIcon from '../images/icons/home_icon.svg';
@@ -245,6 +245,14 @@ function CuckooStack() {
             <CuckooStackNavigator.Screen
                 name="CuckooItem"
                 component={CuckooItem}
+                initialParams={{ color_1: '#13aed1', color_2: '#014955' }}
+                options={{
+                    header: () => <CuckooHeader ruta_imagen={require('../images/food/t_cuckoo_resto.png')} color_fondo='#014955' />
+                }}
+            />
+            <CuckooStackNavigator.Screen
+                name="CuckooCart"
+                component={CuckooCart}
                 initialParams={{ color_1: '#13aed1', color_2: '#014955' }}
                 options={{
                     header: () => <CuckooHeader ruta_imagen={require('../images/food/t_cuckoo_resto.png')} color_fondo='#014955' />

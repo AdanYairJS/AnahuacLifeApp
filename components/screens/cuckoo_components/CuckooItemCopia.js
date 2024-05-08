@@ -13,7 +13,9 @@ export default function CuckooScreen({navigation , route}) {
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/sabores",{
+    //fetch("http://10.100.130.134:3333/subsecciones"
+    fetch("http://192.168.1.70:3333/subsecciones"
+    ,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

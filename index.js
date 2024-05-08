@@ -169,7 +169,7 @@ const getPlatillos = async (arr) => {
     try
     {
         // console.log(arr);
-        const texto_consulta = 'SELECT p.id_platillo AS "id_platillo", p.nombre AS "nombre", p.precio AS "precio", p.imagen AS "imagen" FROM platillos p JOIN subsecciones ss ON (p.id_subseccion = ss.id_subseccion) WHERE ss.id_subseccion = $1;';
+        const texto_consulta = 'SELECT p.id_platillo AS "id_platillo", p.nombre AS "nombre", p.precio AS "precio", p.imagen AS "imagen", p.descripcion AS "descripcion" FROM platillos p JOIN subsecciones ss ON (p.id_subseccion = ss.id_subseccion) WHERE ss.id_subseccion = $1;';
         const res = await pool.query(texto_consulta,arr);
         const query = res.rows;
         console.log(query);

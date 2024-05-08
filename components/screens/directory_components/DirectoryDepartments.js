@@ -32,7 +32,7 @@ const DirectoryDepartments = ({id_menu}) => {
   const [deptos, setDeptos] = useState([]);
 
   let getDeptos = () => {
-    fetch("http://192.168.1.70:8081/departamentos",{
+    fetch("http://192.168.1.70:3333/departamentos",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
