@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import { PanGestureHandler, PinchGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+
+const window = Dimensions.get('window');
 
 const MapScreen = () => {
   const scale = useSharedValue(1);
@@ -17,8 +19,17 @@ const MapScreen = () => {
       ctx.startY = offsetY.value;
     },
     onActive: (event, ctx) => {
-      offsetX.value = ctx.startX + event.translationX;
-      offsetY.value = ctx.startY + event.translationY;
+      const maxOffsetX = (window.width * (scale.value - 1)) / 2;
+      const maxOffsetY = (window.height * (scale.value - 1)) / 2;
+
+      let newOffsetX = ctx.startX + event.translationX;
+      let newOffsetY = ctx.startY + event.translationY;
+
+      newOffsetX = Math.max(Math.min(newOffsetX, maxOffsetX), -maxOffsetX);
+      newOffsetY = Math.max(Math.min(newOffsetY, maxOffsetY), -maxOffsetY);
+
+      offsetX.value = newOffsetX;
+      offsetY.value = newOffsetY;
     },
     onEnd: () => {
       offsetX.value = withSpring(offsetX.value);
@@ -31,7 +42,9 @@ const MapScreen = () => {
       ctx.startScale = scale.value;
     },
     onActive: (event, ctx) => {
-      scale.value = ctx.startScale * event.scale;
+      let newScale = ctx.startScale * event.scale;
+      newScale = Math.max(1, Math.min(newScale, 3)); // Limita la escala entre 1 y 3
+      scale.value = newScale;
     },
     onEnd: () => {
       scale.value = withSpring(scale.value);
