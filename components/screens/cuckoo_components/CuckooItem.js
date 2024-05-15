@@ -1,12 +1,11 @@
 import React, { useState , useEffect } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, ScrollView, Platform, StatusBar, TouchableOpacity, TextInput} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
+import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome6 } from '@expo/vector-icons';
 import Element_Switch from '../home_components/Element_Switch';
 import Element_Button from './Element_Button';
 import Iconos from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
-// import utf8 from 'utf8';
 
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
@@ -20,7 +19,6 @@ export default function CuckooScreen({navigation , route}) {
 
   let getSabores = (id_platillo) => {
     fetch("http://10.100.130.134:3333/sabores"
-    //fetch("http://192.168.1.70:3333/sabores"
     ,{
       method: 'POST',
       headers: {
@@ -56,7 +54,6 @@ export default function CuckooScreen({navigation , route}) {
 
   let getExtras = (id_platillo) => {
     fetch("http://10.100.130.134:3333/extras"
-    //fetch("http://192.168.1.70:3333/extras"
     ,{
       method: 'POST',
       headers: {
@@ -118,22 +115,18 @@ export default function CuckooScreen({navigation , route}) {
               {descripcion &&
                 <Text style={styles.descripcion2}> {descripcion} </Text>
               }
-              {/* {sabores && <Text></Text>} */}
               {sabores && 
                 <View style={styles.cardContainer}>
                   <View style={styles.preferencesContainer}>
-                    {/* <Text style={styles.titulo_inside}>SABORES</Text>  */}
                     {sabores && sabores.map((sabor, index) => (
                       <Element_Button key={index} text={sabor.nombre}/>           
                     ))}
                   </View>
                 </View>
               }
-              {/* {extras && <Text style={styles.titulo}>Extras</Text>} */}
               {extras && 
                 <View style={styles.cardContainer}>
                   <View style={styles.preferencesContainer}>
-                    {/* <Text style={styles.titulo_inside}>EXTRAS</Text>  */}
                     {extras && extras.map((extra, index) => (
                       <Element_Button 
                         key={index} 
@@ -242,7 +235,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginLeft: 15,
     marginTop: 20,
-    //marginBottom: 5,
     padding: 10,
     shadowColor: '#000',
     shadowOffset: {
@@ -257,8 +249,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   preferencesContainer:{
-    // borderWidth: 2,
-    // borderColor: 'red',
     marginVertical: 10,
     width: '100%',
   },
@@ -267,7 +257,6 @@ const styles = StyleSheet.create({
     fontFamily: 'lexend-bold',
     fontSize: 16,
     paddingVertical: 10,
-    //marginVertical: 5,
   },
   input:{
     backgroundColor: '#ffffff',
@@ -275,7 +264,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginLeft: 15,
     marginTop: 20,
-    //marginBottom: 5,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -299,12 +287,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 15,
-    //position: 'absolute',
-    //alignSelf: 'center',
-    //marginTop: '70%',
   },
   cantidad:{
-    //marginLeft: 15,
     flexDirection: 'row',
     backgroundColor: '#ffffff',
     borderRadius: 10,
@@ -317,8 +301,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   agregar:{
-    //marginLeft: 15,
-    //marginRight: 15,
     flexDirection: 'row',
     backgroundColor: '#FD5900',
     borderRadius: 10,
