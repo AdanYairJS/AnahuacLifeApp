@@ -3,6 +3,7 @@ import { View, StyleSheet, Dimensions, Image, ActivityIndicator } from 'react-na
 import { PanGestureHandler, PinchGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import ImageMapper from '../general_components/ImageMapper';
+import CustomModal from '../general_components/CustomModal';  // Asegúrate de que la ruta sea correcta
 
 // Importar imágenes
 import mapa_final from '../../images/map/mapa_final.png';
@@ -30,40 +31,40 @@ import mapa_cuckoo_box from '../../images/map/mapa_cuckoo_box.png';
 
 const window = Dimensions.get('window');
 
-// Mapa de imágenes
-const imageMap = {
-  'mapa_final': mapa_final,
-  'mapa_edificio_a': mapa_edificio_a,
-  'mapa_edificio_b': mapa_edificio_b,
-  'mapa_edificio_c': mapa_edificio_c,
-  'mapa_edificio_d': mapa_edificio_d,
-  'mapa_edificio_e': mapa_edificio_e,
-  'mapa_gimnasio': mapa_gimnasio,
-  'mapa_cuckoo': mapa_cuckoo,
-  'mapa_SUM': mapa_SUM,
-  'mapa_cancha_basquet': mapa_cancha_basquet,
-  'mapa_usos': mapa_usos,
-  'mapa_capilla': mapa_capilla,
-  'mapa_cancha_fut': mapa_cancha_fut,
-  'mapa_cancha_fut_r': mapa_cancha_fut_r,
-  'mapa_cancha_tenis': mapa_cancha_tenis,
-  'mapa_estacionamiento_1': mapa_estacionamiento_2,
-  'mapa_estacionamiento_2': mapa_estacionamiento_1,
-  'mapa_estacionamiento_d': mapa_estacionamiento_d,
-  'mapa_plaza_central': mapa_plaza_central,
-  'mapa_edificio_f': mapa_edificio_f,
-  'mapa_delyfull': mapa_delyfull,
-  'mapa_cuckoo_box': mapa_cuckoo_box,
-};
+const RECTANGLE_MAP = [
+  { id: '1', name: 'Edificio A', shape: 'circle', x1: 142.5, y1: 392, radius: 17, image: mapa_edificio_a, color_p: '#faae30', color_s: '#f7712e' },
+  { id: '2', name: 'Edificio B', shape: 'circle', x1: 110, y1: 375.5, radius: 17, image: mapa_edificio_b, color_p: '#e33f91', color_s: '#e44060' },
+  { id: '3', name: 'Edificio C', shape: 'circle', x1: 226, y1: 348, radius: 16, image: mapa_edificio_c, color_p: '#10bbed', color_s: '#197aa4' },
+  { id: '4', name: 'Edificio D', shape: 'circle', x1: 198, y1: 339, radius: 16, image: mapa_edificio_d, color_p: '#994e37', color_s: '#5d3626' },
+  { id: '5', name: 'Edificio E', shape: 'circle', x1: 257, y1: 368, radius: 16, image: mapa_edificio_e, color_p: '#20b545', color_s: '#166834' },
+  { id: '6', name: 'Gimnasio UAO', shape: 'circle', x1: 170, y1: 308, radius: 16, image: mapa_gimnasio, color_p: '#f7d32d', color_s: '#f59730' },
+  { id: '7', name: 'Cuckoo', shape: 'circle', x1: 79, y1: 354, radius: 16, image: mapa_cuckoo, color_p: '#563b33', color_s: '#342620' },
+  { id: '8', name: 'Auditorio SUM', shape: 'circle', x1: 60.5, y1: 370, radius: 16, image: mapa_SUM, color_p: '#e2f828', color_s: '#eaed24' },
+  { id: '9', name: 'Canchas de Basquetbol', shape: 'circle', x1: 132, y1: 335, radius: 9, image: mapa_cancha_basquet, color_p: '#0184da', color_s: '#0184da' },
+  { id: '10', name: 'Salón de Usos Múltiples', shape: 'circle', x1: 143, y1: 354.5, radius: 9, image: mapa_usos, color_p: '#dfd300', color_s: '#f6bd03' },
+  { id: '11', name: 'Capilla', shape: 'circle', x1: 128, y1: 356, radius: 9, image: mapa_capilla, color_p: '#9fce2d', color_s: '#64ba20' },
+  { id: '12', name: 'Cancha de Fútbol', shape: 'circle', x1: 148.5, y1: 321.5, radius: 10, image: mapa_cancha_fut, color_p: '#5f2fd0', color_s: '#7522bd' },
+  { id: '13', name: 'Cancha de Fútbol Rápido', shape: 'circle', x1: 191, y1: 325.5, radius: 9, image: mapa_cancha_fut_r, color_p: '#31ccbe', color_s: '#219bbc' },
+  { id: '15', name: 'Canchas de Tenis', shape: 'circle', x1: 111, y1: 318.5, radius: 9, image: mapa_cancha_tenis, color_p: '#b6444d', color_s: '#a34837' },
+  { id: '16', name: 'Estacionamiento 1', shape: 'circle', x1: 69, y1: 324, radius: 17, image: mapa_estacionamiento_2, color_p: '#ce324c', color_s: '#bb3222' },
+  { id: '17', name: 'Estacionamiento 2', shape: 'circle', x1: 317, y1: 363, radius: 16, image: mapa_estacionamiento_1, color_p: '#c2256f', color_s: '#c2256f'},
+  { id: '18', name: 'Estacionamiento para Docentes', shape: 'circle', x1: 68, y1: 410, radius: 17, image: mapa_estacionamiento_d, color_p: '#3270ce', color_s: '#203cba' },
+  { id: '19', name: 'Plaza Central', shape: 'circle', x1: 177, y1: 364, radius: 10, image: mapa_plaza_central, color_p: '#d951be', color_s: '#c4498f' },
+  { id: '20', name: 'Edificio ACI', shape: 'circle', x1: 212, y1: 318, radius: 16, image: mapa_edificio_f, color_p: '#622838', color_s: '#963952' },
+  { id: '21', name: 'Delyfull', shape: 'circle', x1: 243, y1: 344, radius: 9, image: mapa_delyfull, color_p: '#1C5865', color_s: '#1E6A60' },
+  { id: '22', name: 'CuckooBox', shape: 'circle', x1: 279, y1: 361, radius: 9, image: mapa_cuckoo_box, color_p: '#601C65', color_s: '#4F1F67' },
+];
 
 const MapScreen = () => {
   const scale = useSharedValue(1);
   const offsetX = useSharedValue(0);
   const offsetY = useSharedValue(0);
   const [selectedAreaId, setSelectedAreaId] = useState([]);
-  const [imgSource, setImgSource] = useState(imageMap['mapa_final']);
+  const [imgSource, setImgSource] = useState(mapa_final);
   const [loading, setLoading] = useState(false);
   const [nextImgSource, setNextImgSource] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalItem, setModalItem] = useState({ name: '', color_p: '' });
 
   const panRef = useRef();
   const pinchRef = useRef();
@@ -116,8 +117,9 @@ const MapScreen = () => {
     };
   });
 
-  const mapperAreaClickHandler = (item, idx, event) => {
-    setNextImgSource(imageMap[item.image]);
+  const mapperAreaClickHandler = (item) => {
+    setNextImgSource(item.image);
+    setModalItem({ name: item.name, color_p: item.color_p });
     setLoading(true);
   };
 
@@ -125,6 +127,12 @@ const MapScreen = () => {
     setImgSource(nextImgSource);
     setLoading(false);
     setNextImgSource(null);
+    setModalVisible(true);
+  };
+
+  const handleModalClose = () => {
+    setModalVisible(false);
+    setImgSource(mapa_final);
   };
 
   return (
@@ -144,7 +152,7 @@ const MapScreen = () => {
                   {loading && (
                     <ActivityIndicator
                       size="large"
-                      color="#cabec8"
+                      color="#0000ff"
                       style={styles.loadingIndicator}
                     />
                   )}
@@ -170,202 +178,16 @@ const MapScreen = () => {
             </PinchGestureHandler>
           </Animated.View>
         </PanGestureHandler>
+
+        <CustomModal
+          visible={modalVisible}
+          onClose={handleModalClose}
+          item={modalItem}
+        />
       </View>
     </GestureHandlerRootView>
   );
 };
-
-const RECTANGLE_MAP = [
-  {
-    id: '1',
-    name: 'Edificio A',
-    shape: 'circle',
-    x1: 142.5,
-    y1: 392,
-    radius: 17,
-    image: 'mapa_edificio_a',
-  },
-  {
-    id: '2',
-    name: 'Edificio B',
-    shape: 'circle',
-    x1: 110,
-    y1: 375.5,
-    radius: 17,
-    image: 'mapa_edificio_b',
-  },
-  {
-    id: '3',
-    name: 'Edificio C',
-    shape: 'circle',
-    x1: 226,
-    y1: 348,
-    radius: 16,
-    image: 'mapa_edificio_c',
-  },
-  {
-    id: '4',
-    name: 'Edificio D',
-    shape: 'circle',
-    x1: 198,
-    y1: 339,
-    radius: 16,
-    image: 'mapa_edificio_d',
-  },
-  {
-    id: '5',
-    name: 'Edificio E',
-    shape: 'circle',
-    x1: 257,
-    y1: 368,
-    radius: 16,
-    image: 'mapa_edificio_e',
-  },
-  {
-    id: '6',
-    name: 'Gimnasio UAO',
-    shape: 'circle',
-    x1: 170,
-    y1: 308,
-    radius: 16,
-    image: 'mapa_gimnasio',
-  },
-  {
-    id: '7',
-    name: 'Cuckoo',
-    shape: 'circle',
-    x1: 79,
-    y1: 354,
-    radius: 16,
-    image: 'mapa_cuckoo',
-  },
-  {
-    id: '8',
-    name: 'Auditorio SUM',
-    shape: 'circle',
-    x1: 60.5,
-    y1: 370,
-    radius: 16,
-    image: 'mapa_SUM',
-  },
-  {
-    id: '9',
-    name: 'Canchas de Basquetbol',
-    shape: 'circle',
-    x1: 132,
-    y1: 335,
-    radius: 9,
-    image: 'mapa_cancha_basquet',
-  },
-  {
-    id: '10',
-    name: 'Salón de Usos Múltiples',
-    shape: 'circle',
-    x1: 143,
-    y1: 354.5,
-    radius: 9,
-    image: 'mapa_usos',
-  },
-  {
-    id: '11',
-    name: 'Capilla',
-    shape: 'circle',
-    x1: 128,
-    y1: 356,
-    radius: 9,
-    image: 'mapa_capilla',
-  },
-  {
-    id: '12',
-    name: 'Cancha de Fútbol',
-    shape: 'circle',
-    x1: 148.5,
-    y1: 321.5,
-    radius: 10,
-    image: 'mapa_cancha_fut',
-  },
-  {
-    id: '13',
-    name: 'Cancha de Fútbol Rápido',
-    shape: 'circle',
-    x1: 191,
-    y1: 325.5,
-    radius: 9,
-    image: 'mapa_cancha_fut_r',
-  },
-  {
-    id: '15',
-    name: 'Canchas de Tenis',
-    shape: 'circle',
-    x1: 111,
-    y1: 318.5,
-    radius: 9,
-    image: 'mapa_cancha_tenis',
-  },
-  {
-    id: '16',
-    name: 'Estacionamiento 1',
-    shape: 'circle',
-    x1: 69,
-    y1: 324,
-    radius: 17,
-    image: 'mapa_estacionamiento_1',
-  },
-  {
-    id: '17',
-    name: 'Estacionamiento 2',
-    shape: 'circle',
-    x1: 317,
-    y1: 363,
-    radius: 16,
-    image: 'mapa_estacionamiento_2',
-  },
-  {
-    id: '18',
-    name: 'Estacionamiento para Docentes',
-    shape: 'circle',
-    x1: 68,
-    y1: 410,
-    radius: 17,
-    image: 'mapa_estacionamiento_d',
-  },
-  {
-    id: '19',
-    name: 'Plaza Central',
-    shape: 'circle',
-    x1: 177,
-    y1: 364,
-    radius: 10,
-    image: 'mapa_plaza_central',
-  },
-  {
-    id: '20',
-    name: 'Edificio ACI',
-    shape: 'circle',
-    x1: 212,
-    y1: 318,
-    radius: 16,
-    image: 'mapa_edificio_f',
-  },
-  {
-    id: '21',
-    name: 'Delyfull',
-    shape: 'circle',
-    x1: 243,
-    y1: 344,
-    radius: 9,
-    image: 'mapa_delyfull',
-  },
-  {
-    id: '22',
-    name: 'CuckooBox',
-    shape: 'circle',
-    x1: 279,
-    y1: 361,
-    radius: 9,
-    image: 'mapa_cuckoo_box',
-  },
-];
 
 const styles = StyleSheet.create({
   container: {
