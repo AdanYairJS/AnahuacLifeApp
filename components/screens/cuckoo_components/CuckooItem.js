@@ -14,7 +14,7 @@ const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
 export default function CuckooScreen({navigation , route}) {
-  const {color_1, color_2, id_platillo, nombre, precio, imagen} = route.params;
+  const {color_1, color_2, id_platillo, nombre, precio, imagen, descripcion} = route.params;
 
   console.log(imagen);
 

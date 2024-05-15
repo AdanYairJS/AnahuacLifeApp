@@ -9,7 +9,7 @@ const CuckooTarjeta = ({ id_platillo, nombre, imagen, precio, descripcion}) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("CuckooItem",{id_platillo,nombre,precio,imagen})}>
+    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("CuckooItem",{id_platillo,nombre,precio,imagen, descripcion})}>
       <Image source={{uri: imagen}} style={styles.image}/>
       <View style={styles.textContainer}>
         {/* <Text style={styles.activityName}>{utf8.decode(nombre)}</Text> */}
