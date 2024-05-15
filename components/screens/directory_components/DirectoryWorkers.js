@@ -12,6 +12,7 @@ alto = Constants.statusBarHeight;
 const DirectoryWorker = ({navigation , route}) => {
   console.log(route.params.id_depto);
   console.log(route.params.correo);
+  console.log("id_lugar: " + route.params.id_lugar);
   const [trabajadores, setTrabajadores] = useState([]);
 
   let getTrabajadores = (id_depto) => {
@@ -133,7 +134,7 @@ const DirectoryWorker = ({navigation , route}) => {
             {route.params.nombre_lugar}
           </Text>
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Mapa",{id_lugar: route.params.id_lugar})}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Mapa",{itemId: route.params.id_lugar})}>
           <Text style={styles.buttonText}>Ver en el mapa</Text>
         </TouchableOpacity>
       </View>

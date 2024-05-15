@@ -367,7 +367,7 @@ export default function Navigation() {
                 />
                 <Tab.Screen
                     name="Mapa"
-                    component={CopiaMapScreen}
+                    component={MapScreen}
                     options={{
                         tabBarLabel: 'Mapa',
                         headerShown: false
