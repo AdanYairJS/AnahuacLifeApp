@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, Dimensions, Image, ActivityIndicator } from 'react-native';
 import { PanGestureHandler, PinchGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+import { useRoute } from '@react-navigation/native'; // Importa useRoute
 import ImageMapper from '../general_components/ImageMapper';
 import CustomModal from '../general_components/CustomModal';  // Asegúrate de que la ruta sea correcta
 
@@ -43,8 +44,8 @@ const RECTANGLE_MAP = [
   { id: '9', name: 'Canchas de Basquetbol', shape: 'circle', x1: 132, y1: 335, radius: 9, image: mapa_cancha_basquet, color_p: '#0184da', color_s: '#0184da' },
   { id: '10', name: 'Salón de Usos Múltiples', shape: 'circle', x1: 143, y1: 354.5, radius: 9, image: mapa_usos, color_p: '#dfd300', color_s: '#f6bd03' },
   { id: '11', name: 'Capilla', shape: 'circle', x1: 128, y1: 356, radius: 9, image: mapa_capilla, color_p: '#9fce2d', color_s: '#64ba20' },
-  { id: '12', name: 'Cancha de Fútbol', shape: 'circle', x1: 148.5, y1: 321.5, radius: 10, image: mapa_cancha_fut, color_p: '#5f2fd0', color_s: '#7522bd' },
-  { id: '13', name: 'Cancha de Fútbol Rápido', shape: 'circle', x1: 191, y1: 325.5, radius: 9, image: mapa_cancha_fut_r, color_p: '#31ccbe', color_s: '#219bbc' },
+  { id: '12', name: 'Cancha de Fútbol', shape: 'circle', x1: 148.5, y1: 321.5, radius: 10, image: mapa_cancha_fut, color_p: '#31ccbe', color_s: '#219bbc' },
+  { id: '13', name: 'Cancha de Fútbol Rápido', shape: 'circle', x1: 191, y1: 325.5, radius: 9, image: mapa_cancha_fut_r, color_p: '#5f2fd0', color_s: '#7522bd' },
   { id: '15', name: 'Canchas de Tenis', shape: 'circle', x1: 111, y1: 318.5, radius: 9, image: mapa_cancha_tenis, color_p: '#b6444d', color_s: '#a34837' },
   { id: '16', name: 'Estacionamiento 1', shape: 'circle', x1: 69, y1: 324, radius: 17, image: mapa_estacionamiento_2, color_p: '#ce324c', color_s: '#bb3222' },
   { id: '17', name: 'Estacionamiento 2', shape: 'circle', x1: 317, y1: 363, radius: 16, image: mapa_estacionamiento_1, color_p: '#c2256f', color_s: '#c2256f'},
@@ -56,6 +57,9 @@ const RECTANGLE_MAP = [
 ];
 
 const MapScreen = () => {
+  const route = useRoute();
+  const { itemId } = route.params || {}; // Obtener itemId de los parámetros de la ruta
+
   const scale = useSharedValue(1);
   const offsetX = useSharedValue(0);
   const offsetY = useSharedValue(0);
@@ -122,6 +126,15 @@ const MapScreen = () => {
     setModalItem({ name: item.name, color_p: item.color_p });
     setLoading(true);
   };
+
+  useEffect(() => {
+    if (itemId) {
+      const selectedItem = RECTANGLE_MAP.find(item => item.id === itemId.toString());
+      if (selectedItem) {
+        mapperAreaClickHandler(selectedItem);
+      }
+    }
+  }, [itemId]);
 
   const handleImageLoad = () => {
     setImgSource(nextImgSource);
