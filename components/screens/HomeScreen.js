@@ -28,14 +28,14 @@ const HomeScreen = () => {
       <ScrollView style={styles.container}>    
         <View style={styles.avatarContainer}>
           <Image
-            source={require('../../images/home/MessiPerfil.jpeg')} // Cambia la ruta a tu foto de perfil
+            source={require('../../images/home/carlosperfil.jpg')} // Cambia la ruta a tu foto de perfil
             style={styles.avatar}
           />
         </View>
         <View style={styles.informacion}>
-          <Text style={styles.nombre}>Lionel Andrés Messi Cuccittini</Text>
-          <Text style={styles.carrera}>CAMPEÓN DEL MUNDO</Text>
-          <Text style={styles.correo}>messi_thegoat@anahuac.mx</Text>
+          <Text style={styles.nombre}>Carlos Javier González Bautista</Text>
+          <Text style={styles.carrera}>Ingeniería en Tecnologías de Información</Text>
+          <Text style={styles.correo}>carlos_gonzalez@anahuac.mx</Text>
         </View>
         
         <View style={styles.contenedor_titulo}>
