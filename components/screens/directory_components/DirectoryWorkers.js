@@ -14,7 +14,7 @@ const DirectoryWorker = ({navigation , route}) => {
   console.log(route.params.correo);
   console.log("id_lugar: " + route.params.id_lugar);
   const [trabajadores, setTrabajadores] = useState([]);
-
+  
   let getTrabajadores = (id_depto) => {
     fetch(`http://${EXPO_ip}:3333/trabajadores`,{
       method: 'POST',

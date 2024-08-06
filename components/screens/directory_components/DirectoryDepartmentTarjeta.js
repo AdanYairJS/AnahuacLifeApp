@@ -6,7 +6,7 @@ import ArrowIcon from 'react-native-vector-icons/AntDesign';
 
 const DirectoryWorkerTarjeta = ({nombre, id_depto, correo, hora_ap1, hora_ci1, id_lugar, nombre_lugar}) => {
   const navigation = useNavigation();
-  
+
   return (
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{id_depto, correo, nombre, hora_ap1, hora_ci1, id_lugar, nombre_lugar})}>
       <View style={styles.textContainer}>

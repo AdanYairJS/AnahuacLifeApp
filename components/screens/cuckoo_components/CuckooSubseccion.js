@@ -5,7 +5,11 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import {EXPO_ip, EXPO_puerto} from "@env";
 
+console.log('Subsecciones2');
+console.log(EXPO_ip);
+
 const CuckooSubseccion = ({id_subseccion}) => {
+
 
 const [platillos, setPlatillos] = useState([]);
 

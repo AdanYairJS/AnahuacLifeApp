@@ -10,6 +10,7 @@ import {EXPO_ip} from "@env";
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
+console.log('Directorio2');
 console.log(EXPO_ip);
 
 const DirectoryDepartments = ({id_menu}) => {
