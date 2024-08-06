@@ -36,7 +36,7 @@ const Class = ({ dia, hora, longitud, color, nombre, lugar, inicio, fin}) => {
     },
     subcontainer: {
       width: '100%',
-      flexDirection: 'row',
+      //flexDirection: 'row',
       display: 'flex',
       justifyContent: 'flex-start',
       padding: 1,

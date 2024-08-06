@@ -7,6 +7,8 @@ import Element_Button from './Element_Button';
 import Iconos from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 
+import {EXPO_ip, EXPO_puerto} from "@env";
+
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
@@ -18,7 +20,7 @@ export default function CuckooScreen({navigation , route}) {
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/sabores"
+    fetch('http://${EXPO_ip}:${EXPO_puerto}/sabores'
     ,{
       method: 'POST',
       headers: {
@@ -53,7 +55,7 @@ export default function CuckooScreen({navigation , route}) {
   const [extras, setExtras] = useState([]);
 
   let getExtras = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/extras"
+    fetch('http://${EXPO_ip}:${EXPO_puerto}/extras'
     ,{
       method: 'POST',
       headers: {
@@ -109,7 +111,7 @@ export default function CuckooScreen({navigation , route}) {
             <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
             <ScrollView>
               <View style={styles.imagen_container}>
-                <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.imagen}/>
+                <Image source={{uri: imagen}} style={styles.imagen}/>
               </View>
               <Text style={styles.titulo}>{nombre.toUpperCase()}</Text>
               {descripcion &&

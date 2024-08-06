@@ -4,8 +4,6 @@ import Constants from 'expo-constants';
 import { StyleSheet, Text, View, Image, Dimensions, ScrollView, Platform, StatusBar, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-linear-gradient
 import { SliderBox } from 'react-native-image-slider-box';
-import CuckooMenu from './cuckoo_components/CuckooMenu';
-import CuckooSubseccion from './cuckoo_components/CuckooSubseccion';
 import CuckooProductos from './cuckoo_components/CuckooProductos'
 
 const anchoVentana = Dimensions.get('window').width;

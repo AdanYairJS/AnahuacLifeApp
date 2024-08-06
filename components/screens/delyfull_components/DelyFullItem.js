@@ -4,16 +4,20 @@ import { LinearGradient } from 'expo-linear-gradient'; //npx expo install expo-l
 import { FontAwesome6 } from '@expo/vector-icons';
 import utf8 from 'utf8';
 
+import {EXPO_ip, EXPO_puerto} from "@env";
+
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
 export default function DelyFullItem({navigation , route}) {
   const {color_1, color_2, id_platillo, nombre, precio, imagen} = route.params;
 
+  console.log(imagen);
+
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/sabores",{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/sabores`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -47,7 +51,7 @@ export default function DelyFullItem({navigation , route}) {
   const [extras, setExtras] = useState([]);
 
   let getExtras = (id_platillo) => {
-    fetch("http://10.100.130.134:3333/extras",{
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/extras`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -92,7 +96,8 @@ export default function DelyFullItem({navigation , route}) {
                 </TouchableOpacity>
               </View>
               <View style={[styles.view_return,{justifyContent: 'center'}]}>
-                <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.imagen}/>
+                {/* <Image source={{uri: 'https://rawcdn.githack.com/AdanYairJS/AnahuacLifeApp/e1447b54be16cb89b7c425452a6c321bfe11225e/images/directorios/w_default.jpg'}} style={styles.imagen}/> */}
+                <Image source={{uri: imagen}} style={styles.imagen}/>
               </View>
             {/* <Text style={styles.titulo}>{utf8.decode(nombre)}</Text> */}
             <Text style={styles.titulo}>{nombre}</Text>

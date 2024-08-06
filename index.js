@@ -3,6 +3,17 @@ IMPORTANTÍSIMO EJECUTAR LOS COMANDOS
 npm install pg
 npm install express
 */
+require('dotenv').config();
+
+const usuario = process.env.EXPO_usuario;
+const puerto = process.env.EXPO_puerto_db;
+const contra = process.env.EXPO_contra;
+const db = process.env.EXPO_db;
+
+console.log(usuario);
+console.log(puerto);
+console.log(contra);
+console.log(db);
 
 const express=require('express');
 const app=express();
@@ -17,10 +28,10 @@ app.use(bodyParser.json());
 
 const config = 
 {
-    user: 'postgres',
-    port: '5433',
-    password: 'oracle',
-    database: 'alife_prueba3',
+    user: usuario,
+    port: puerto,
+    password: contra,
+    database: db,
     client_encoding: 'utf8',
     server_encoding: 'utf8',
     charset: 'utf8',
@@ -240,6 +251,25 @@ const getExtras = async (arr) => {
     }
 };
 
+const getEncoding = async () => {
+    try
+    {
+        const texto_consulta = 'SHOW CLIENT_ENCODING;';
+        const res = await pool.query(texto_consulta);
+        const query = res.rows;
+        console.log(query);
+        return query;
+    }
+    catch(e)
+    {
+        console.log(e);
+        const error = e.toString();
+        return error;
+    }
+};
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
 });
+
+getEncoding();
