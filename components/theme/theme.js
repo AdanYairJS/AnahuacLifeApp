@@ -7,7 +7,7 @@ const theme = {
         shadowColor: '#000',
         backgroundTabBar: '#fff',
         backgroundCardCuckoo: '#fff',
-        colorCuckoo: '#fff'
+        colorCuckoo: '#000'
     },
     dark: {
         theme: 'dark',
@@ -16,7 +16,7 @@ const theme = {
         backgroundCard: '#303134',
         shadowColor: '#000000',
         backgroundTabBar: '#000',
-        backgroundCardCuckoo: 'white',
+        backgroundCardCuckoo: '#fff',
         colorCuckoo: '#000'
     }
 }
