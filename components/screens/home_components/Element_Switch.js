@@ -1,20 +1,13 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import CustomSwitch from '../../general_components/CustomSwitch';
+import themeContext from '../../theme/themeContext';
 
 const Element_Switch = ({text}) => {
-  return (
-    <View style={styles.subcontainer}>
-        <Text style={styles.preferencia}>{text}</Text>
-        <View style={styles.flecha}>
-            <CustomSwitch/>
-        </View> 
-    </View>        
-  );
-};
+  const theme = useContext(themeContext);
 
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
     subcontainer: {
         // borderWidth: 2,
         // borderColor: 'green',
@@ -27,7 +20,8 @@ const styles = StyleSheet.create({
         //paddingHorizontal: 20,
         paddingRight: 20,        
       },
-      preferencia:{
+    preferencia:{
+      color: theme.color,
         // borderWidth: 2,
         // borderColor: 'blue',
         width: '80%',
@@ -38,13 +32,23 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         textAlignVertical: 'center',
       },
-      flecha:{
+    flecha:{
         // borderWidth: 2,
         // borderColor: 'black',
         width: '15%',
         alignItems: 'center',
         justifyContent: 'center',
       },
-});
+  });
+
+  return (
+    <View style={styles.subcontainer}>
+        <Text style={styles.preferencia}>{text}</Text>
+        <View style={styles.flecha}>
+            <CustomSwitch/>
+        </View> 
+    </View>        
+  );
+};
 
 export default Element_Switch;

@@ -7,6 +7,8 @@ import {EXPO_ip, EXPO_puerto} from "@env";
 
 import DelyFullSubseccion from './DelyFullSubseccion';
 
+console.log(EXPO_ip);
+
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 

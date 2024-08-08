@@ -1,29 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import themeContext from '../../theme/themeContext';
 
 const AllCards = ({ name, date, score, images }) => {
   const navigation = useNavigation();
+  const theme = useContext(themeContext);
 
-  return (
-    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DetallesEvento")}>
-      <View style={styles.textContainer}>
-        <Text style={styles.activityName}>{name}</Text>
-        <Text style={styles.activityDate}>{date}</Text>
-        <Text style={styles.activityScore}>Puntos Nova: {score}</Text>
-      </View>
-      <View style={styles.imageContainer}>
-          {images.map((image, index) => (
-           <Image key={index} source={image} style={styles.image}/>
-          ))}
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
     cardContainer: {
-      backgroundColor: '#ffffff',
+      backgroundColor: theme.backgroundCard,
       borderRadius: 10,
       marginRight: 5,
       marginBottom: 10,
@@ -45,11 +31,13 @@ const styles = StyleSheet.create({
       margin: 12,
     },
     activityName: {
+      color: theme.color,
       fontSize: 15,
       fontFamily: 'lexend-medium',
       marginBottom: 5,
     },
     activityDate: {
+      color: theme.color,
       fontFamily: 'lexend-regular',
       fontSize: 13,
       marginBottom: 5,
@@ -78,4 +66,20 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default AllCards;
+  return (
+    <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DetallesEvento")}>
+      <View style={styles.textContainer}>
+        <Text style={styles.activityName}>{name}</Text>
+        <Text style={styles.activityDate}>{date}</Text>
+        <Text style={styles.activityScore}>Puntos Nova: {score}</Text>
+      </View>
+      <View style={styles.imageContainer}>
+          {images.map((image, index) => (
+           <Image key={index} source={image} style={styles.image}/>
+          ))}
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+export default AllCards;

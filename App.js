@@ -3,6 +3,9 @@ import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
 import Constants from 'expo-constants';
 import Navigation from "./components/Navigation";
 import * as Font from 'expo-font';
+import { EventRegister } from "react-native-event-listeners";
+import theme from "./components/theme/theme";
+import themeContext from "./components/theme/themeContext";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -19,6 +22,17 @@ const fetchFonts = () => {
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [darkMode,setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const listener = EventRegister.addEventListener('ChangeTheme', (data) => {
+      setDarkMode(data)
+      //console.log(data)
+    })
+    return () => {
+      EventRegister.removeAllListeners(listener)
+    }
+  },[darkMode])
 
   useEffect(() => {
     const loadFonts = async () => {
@@ -34,7 +48,9 @@ export default function App() {
   }
 
   return (
-      <Navigation/>
+      <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
+        <Navigation/>
+      </themeContext.Provider>
     // <SafeAreaView style={[styles.container, {paddingTop: Platform.OS === 'android' ? Constants.statusBarHeight : -Constants.statusBarHeight}]}>
     //   <Navigation/>
     // </SafeAreaView>

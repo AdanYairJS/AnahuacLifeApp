@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import AllCards from './AllCards';
+import themeContext from '../../theme/themeContext';
 
 const AllEvents = () => {
   const [activeIndex, setActiveIndex] = useState(0); // Estado para mantener el índice del botón activo
@@ -78,6 +79,52 @@ const AllEvents = () => {
 
   const categories = ['Todos', 'Deportes', 'Cultura', 'Religión', 'Puntos nova'];
 
+  const theme = useContext(themeContext);
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      paddingTop: 95,
+      backgroundColor: theme.backgroundColor,
+    },
+    filterButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#B5B7BB',
+      opacity: 0.7,
+      paddingLeft: 15,
+      paddingRight: 10,
+      paddingVertical: 5,
+      marginHorizontal: 5,
+      marginVertical: 15,
+      borderRadius: 20,
+      alignContent: 'center',
+    },
+    filterButtonText: {
+      color: 'white',
+      fontFamily: 'lexend-regular',
+      marginRight: 5,
+      alignSelf: 'center',
+    },
+    eventsContainer: {
+      backgroundColor: theme.backgroundColor,
+      flexDirection: 'column',
+      alignItems: 'center',
+      paddingBottom: 100,
+    },
+    eventRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 10,
+      width: '100%',
+    },
+    eventColumn: {
+      flex: 1,
+      marginRight: 5,
+    },
+  });
+
   return (
     <ScrollView style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingVertical: 5}}>
@@ -106,48 +153,6 @@ const AllEvents = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 95,
-  },
-  filterButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#B5B7BB',
-    opacity: 0.7,
-    paddingLeft: 15,
-    paddingRight: 10,
-    paddingVertical: 5,
-    marginHorizontal: 5,
-    marginVertical: 15,
-    borderRadius: 20,
-    alignContent: 'center',
-  },
-  filterButtonText: {
-    color: 'white',
-    fontFamily: 'lexend-regular',
-    marginRight: 5,
-    alignSelf: 'center',
-  },
-  eventsContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    paddingBottom: 100,
-  },
-  eventRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-    width: '100%',
-  },
-  eventColumn: {
-    flex: 1,
-    marginRight: 5,
-  },
-});
 
 export default AllEvents;
 

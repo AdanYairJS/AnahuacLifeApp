@@ -13,7 +13,7 @@ const Class = ({ dia, hora, longitud, color, nombre, lugar, inicio, fin}) => {
   const styles = StyleSheet.create({
     cardContainer: {
       marginLeft: columna + 0.5,
-      marginTop: fila,
+      marginTop: fila + 5, //5 representa el padding del header
       width: anchoCelda - 1.5,
       height: (altoCelda * longitud),
       backgroundColor: color,

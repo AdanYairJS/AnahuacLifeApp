@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import EmailLink from '../../general_components/EmailLink';
+import themeContext from '../../theme/themeContext';
 // import Activity from '../../../images/directorios/w_default.jpg';
 // import utf8 from 'utf8';
 
@@ -9,26 +10,13 @@ import EmailLink from '../../general_components/EmailLink';
 
 const DirectoryWorkerTarjeta = ({ nombre, puesto, correo, imagen }) => {
   const navigation = useNavigation();
+  const theme = useContext(themeContext);
   console.log(imagen);
   // const img = require(imagen);
 
-  return (
-    <View style={styles.cardContainer}>
-      <Image source={{uri: imagen}} style={styles.image}/>
-      <View style={styles.textContainer}>
-        {/* <Text style={styles.name}>{utf8.decode(nombre)}</Text> */}
-        <Text style={styles.name}>{nombre}</Text>
-        {/* {puesto && <Text style={styles.job}>{utf8.decode(puesto)}</Text>} */}
-        {puesto && <Text style={styles.job}>{puesto}</Text>}
-        <EmailLink email={correo}>{correo}</EmailLink>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
     cardContainer: {
-      backgroundColor: '#ffffff',
+      backgroundColor: theme.backgroundCard,
       borderRadius: 10,
       marginRight: 5,
       marginBottom: 10,
@@ -60,6 +48,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     name: {
+      color: theme.color,
       fontSize: 15,
       fontFamily: 'lexend-bold',
       // fontWeight: 'bold',
@@ -104,4 +93,18 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default DirectoryWorkerTarjeta;
+  return (
+    <View style={styles.cardContainer}>
+      <Image source={{uri: imagen}} style={styles.image}/>
+      <View style={styles.textContainer}>
+        {/* <Text style={styles.name}>{utf8.decode(nombre)}</Text> */}
+        <Text style={styles.name}>{nombre}</Text>
+        {/* {puesto && <Text style={styles.job}>{utf8.decode(puesto)}</Text>} */}
+        {puesto && <Text style={styles.job}>{puesto}</Text>}
+        <EmailLink email={correo}>{correo}</EmailLink>
+      </View>
+    </View>
+  );
+};
+
+export default DirectoryWorkerTarjeta;

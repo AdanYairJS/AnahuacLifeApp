@@ -1,13 +1,113 @@
-import React from 'react';
+import React,{createContext, useContext} from 'react';
 import { View, TouchableOpacity, Dimensions, ScrollView, Text, StyleSheet, Image, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
-//const navigation = useNavigation();
+import { Calendar, LocaleConfig } from 'react-native-calendars';
+import ArrowIcon from 'react-native-vector-icons/AntDesign';
+import themeContext from '../../theme/themeContext';
+
+LocaleConfig.locales['mx'] = {
+  monthNames: [
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Mayo',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Diciembre'
+  ],
+  monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+  dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+  dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+  today: "Hoy"
+};
+LocaleConfig.defaultLocale = 'mx';
 
 const anchoVentana = Dimensions.get('window').width;
 
 const AgendaScreen = () => {
   const navigation = useNavigation();
+  const theme = useContext(themeContext);
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.backgroundColor,
+    },
+    menu:{
+      paddingTop: Constants.statusBarHeight,
+      height: 60 + Constants.statusBarHeight,
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: theme.backgroundCard, // Fondo blanco
+      // paddingVertical: 10,
+      // paddingHorizontal: 20,
+      shadowColor: '#000', // Color de la sombra
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5, // Elevación para Android
+      position: 'absolute', // Posición absoluta para mantener fijo
+      top: 0, // Coloca el encabezado en la parte superior
+      left: 0,
+      right: 0,
+      zIndex: 1,
+    },
+    tab:{
+      width: anchoVentana/3,
+      height: '100%',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
+    tab_name_active: {
+      marginBottom: 12,
+      textAlign: 'center',
+      fontFamily: 'lexend-regular',
+      color: '#FD5900',
+      fontSize: 17,
+    },
+    tab_name: {
+      marginBottom: 15,
+      textAlign: 'center',
+      fontFamily: 'lexend-regular',
+      color: 'gray',
+      fontSize: 17,
+    },
+    line: {
+      height: 3,
+      width: '100%',
+      backgroundColor: '#FD5900',
+      borderRadius: 5,
+    },
+    contenedor_titulo: {
+      marginTop: 30,
+      alignItems: 'center',
+      margin: 15,
+      marginBottom: 30,
+    },
+    titulo: {
+        marginTop: 110,
+        marginBottom: 10,
+        textAlign: 'center',
+        fontFamily: 'lexend-extrabold',
+        fontSize: 20,
+        color: '#FD5900',
+    },
+    calendario: {
+      elevation: 4,
+      margin: 15,
+      borderRadius: 10,
+      padding: 5,
+    }
+  });  
 
   return (
     <View style={styles.container}>
@@ -26,79 +126,29 @@ const AgendaScreen = () => {
       </View>
 
       <ScrollView style={styles.container}>    
-          <Text style={styles.titulo}>AGENDA</Text>
+          <Text style={styles.titulo}>CALENDARIO ACADÉMICO</Text>
+          <Calendar style={styles.calendario}
+          minDate={"2024-07-01"}
+          maxDate={"2025-01-31"}
+            theme={{
+              calendarBackground: theme.backgroundCard,
+              todayTextColor: '#FD5900',
+              //arrowColor: '#FD5900',
+              monthTextColor: '#FD5900',
+              dayTextColor: theme.color,
+              //textDisabledColor: 'gray',
+              textMonthFontSize: 20,
+              textDayFontFamily: 'lexend-light',
+              textMonthFontFamily: 'lexend-bold',
+              textDayHeaderFontFamily: 'lexend-light',
+            }}
+            renderArrow={direction => <ArrowIcon name={direction} size={19} color="#FD5900"/>}
+            enableSwipeMonths={true}
+          />
       </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8F8F8',
-  },
-  menu:{
-    paddingTop: Constants.statusBarHeight,
-    height: 60 + Constants.statusBarHeight,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff', // Fondo blanco
-    // paddingVertical: 10,
-    // paddingHorizontal: 20,
-    shadowColor: '#000', // Color de la sombra
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5, // Elevación para Android
-    position: 'absolute', // Posición absoluta para mantener fijo
-    top: 0, // Coloca el encabezado en la parte superior
-    left: 0,
-    right: 0,
-    zIndex: 1,
-  },
-  tab:{
-    width: anchoVentana/3,
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  tab_name_active: {
-    marginBottom: 12,
-    textAlign: 'center',
-    fontFamily: 'lexend-regular',
-    color: '#FD5900',
-    fontSize: 17,
-  },
-  tab_name: {
-    marginBottom: 15,
-    textAlign: 'center',
-    fontFamily: 'lexend-regular',
-    color: 'gray',
-    fontSize: 17,
-  },
-  line: {
-    height: 3,
-    width: '100%',
-    backgroundColor: '#FD5900',
-    borderRadius: 5,
-  },
-  contenedor_titulo: {
-    marginTop: 30,
-    alignItems: 'center',
-    margin: 15,
-    marginBottom: 30,
-  },
-  titulo: {
-      marginTop: 250,
-      textAlign: 'center',
-      fontFamily: 'lexend-extrabold',
-      fontSize: 20,
-      color: '#FD5900',
-  } 
-});
 
 export default AgendaScreen;
 

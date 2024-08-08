@@ -12,6 +12,9 @@ import {EXPO_ip, EXPO_puerto} from "@env";
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
+console.log('Cuckoo Item2');
+console.log(EXPO_ip);
+
 export default function CuckooScreen({navigation , route}) {
   navigation = useNavigation();
 
@@ -232,7 +235,7 @@ const styles = StyleSheet.create({
     marginRight: 70,
   },
   cardContainer: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
     borderRadius: 10,
     marginRight: 15,
     marginLeft: 15,

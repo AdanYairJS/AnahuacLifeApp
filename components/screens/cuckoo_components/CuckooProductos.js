@@ -10,10 +10,9 @@ import CuckooSubseccion from './CuckooSubseccion';
 const anchoVentana = Dimensions.get('window').width;
 const altoVentana = Dimensions.get('window').height;
 
-
-console.log('Cuckoojhgvgv Productos2');
+console.log('Cuckoo Productos2');
 console.log(EXPO_ip);
-console.log(EXPO_puerto);
+//console.log(EXPO_puerto);
 
 const CuckooMenu = ({id_menu}) => {
   const navigation = useNavigation();

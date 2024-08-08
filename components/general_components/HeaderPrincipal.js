@@ -1,29 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image, Platform } from 'react-native';
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import Constants from 'expo-constants';
-
+import themeContext from '../theme/themeContext';
 
 const Header = ({text,imagen}) => {
   const navigation = useNavigation();
+  const theme = useContext(themeContext)
 
-  return (
-    <View style={styles.header}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.groupName}>{text}</Text>
-        </View>
-    </View>   
-  );
-};
-
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
     header: {
         paddingTop: Constants.statusBarHeight + 10,
         paddingBottom: 15,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: theme.backgroundCard,
         // paddingVertical: 10,
         paddingHorizontal: 20,
         shadowColor: '#000',
@@ -41,11 +33,13 @@ const styles = StyleSheet.create({
         zIndex: 1,
     },
     titleContainer: {
+        color: theme.color,
         flexDirection: 'row',
         alignItems: 'center',
         flex: 1,
     },
     groupName: {
+        color: theme.color,
         fontSize: 24,
         marginRight: 'auto',
         fontFamily: 'lexend-medium',
@@ -53,6 +47,17 @@ const styles = StyleSheet.create({
         width: '100%',
         textAlign: 'center',
     },
-});
+  });
+
+  return (
+    <View style={styles.header}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.groupName}>{text}</Text>
+        </View>
+    </View>   
+  );
+};
+
+
 
 export default Header;

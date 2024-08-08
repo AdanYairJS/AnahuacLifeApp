@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
 import EventCard from './EventCard';
+import themeContext from '../../theme/themeContext';
 
 const EventSection = () => {
   const events = [
@@ -24,6 +25,17 @@ const EventSection = () => {
     }
   ];
 
+  const theme = useContext(themeContext);
+
+  const styles = StyleSheet.create({
+    contendor_scroll: {
+      backgroundColor: theme.backgroundColor,
+      //margin: 15,
+      marginTop: 15,
+      marginBottom: 15,
+    }
+  });
+
   return (
     <ScrollView horizontal style={styles.contendor_scroll} showsHorizontalScrollIndicator={false}>
       {events.map((event, index) => (        
@@ -32,13 +44,5 @@ const EventSection = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  contendor_scroll: {
-    //margin: 15,
-    marginTop: 15,
-    marginBottom: 15,
-  }
-});
 
 export default EventSection;

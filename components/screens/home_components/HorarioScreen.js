@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import { View, TouchableOpacity, Dimensions, ScrollView, Text, StyleSheet, Image, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
 import HomeMenu from './HomeMenu';
 import Class from './Class';
+import themeContext from '../../theme/themeContext';
 
 const anchoCelda = (Dimensions.get('window').width) / 7.4;
 const altoCelda = (Dimensions.get('window').height) / 33;
@@ -130,7 +131,7 @@ const HorarioScreen = () => {
     }
   }
 
-  const dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sab'];
+  const dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
   const renderedClasses = [];
   for (let actividad of actividades) {
@@ -143,12 +144,84 @@ const HorarioScreen = () => {
     }
   }
 
+  const theme = useContext(themeContext);
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.backgroundColor,
+      paddingTop: 60 + Constants.statusBarHeight,
+    },
+    horario: {
+      margin: 20,
+      paddingTop: 5,
+      alignSelf: 'center',
+      //height: '100%',
+      backgroundColor: theme.backgroundCard,
+      elevation: 4,
+      borderRadius: 10,
+      overflow: 'hidden',
+    },
+    headerRow: {
+      flexDirection: 'row',
+      width: anchoCelda * 7,
+      //borderColor: 'gray',
+      alignContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+    },
+    headerCell: {
+      fontFamily: 'lexend-bold',
+      fontSize: 15,
+      color: '#FD5900',
+      color:'gray',
+      width: anchoCelda,
+      textAlign: 'center',
+      height: '100%',
+      borderColor: 'gray',
+      borderBottomWidth: 1,
+      opacity: 0.6,
+    },
+    Row: {
+      flexDirection: 'row',
+      width: anchoCelda * 7,
+      height: 25,
+      //borderColor: 'gray',
+      alignContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+    },
+    Cell: {
+      color: theme.color,
+      //color:'gray',
+      fontFamily: 'lexend-light',
+      fontSize: 11,
+      width: anchoCelda,
+      textAlign: 'center',
+      textAlignVertical: 'center',
+      height: altoCelda,
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderColor: 'gray',
+      opacity: 0.6,
+    },
+    CellActive: {
+      width: anchoCelda,
+      textAlign: 'center',
+      height: altoCelda,
+      borderRightWidth: 1,
+      borderBottomWidth: 1,
+      borderColor: 'orange',
+      backgroundColor: 'orange',
+    },
+  });
+
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
       <HomeMenu />
-
-      <ScrollView style={styles.horario}>
+      <ScrollView>
+      <View style={styles.horario}>
         <View style={styles.headerRow}>
           <View style={styles.headerCell}></View>
           {dias.map((dia, index) => (
@@ -164,69 +237,11 @@ const HorarioScreen = () => {
           </View>
         ))}
         {renderedClasses}
+      </View>
       </ScrollView>
 
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8F8F8',
-    paddingTop: 60 + Constants.statusBarHeight,
-  },
-  horario: {
-    paddingTop: 10,
-    alignSelf: 'center',
-    height: '100%',
-  },
-  headerRow: {
-    flexDirection: 'row',
-    width: anchoCelda * 7,
-    borderColor: 'gray',
-    alignContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  headerCell: {
-    fontFamily: 'lexend-bold',
-    fontSize: 15,
-    width: anchoCelda,
-    textAlign: 'center',
-    height: '100%',
-    borderBottomWidth: 1,
-  },
-  Row: {
-    flexDirection: 'row',
-    width: anchoCelda * 7,
-    height: 25,
-    borderColor: 'gray',
-    alignContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  Cell: {
-    fontFamily: 'lexend-light',
-    fontSize: 11,
-    width: anchoCelda,
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    height: altoCelda,
-    borderRightWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: 'gray',
-    opacity: 0.6,
-  },
-  CellActive: {
-    width: anchoCelda,
-    textAlign: 'center',
-    height: altoCelda,
-    borderRightWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: 'orange',
-    backgroundColor: 'orange',
-  },
-});
 
 export default HorarioScreen;

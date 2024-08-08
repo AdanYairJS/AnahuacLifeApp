@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import themeContext from '../../theme/themeContext';
 
 import adefaImage from '../../../images/eventos/grupos/adefa.png';
 import fesalImage from '../../../images/eventos/grupos/fesal.png';
@@ -11,6 +12,7 @@ import leonesImage from '../../../images/eventos/grupos/leones.png';
 
 const GroupsSection = ({  }) => {
   const navigation = useNavigation();
+  const theme = useContext(themeContext);
 
   const secciones = [
     { id : 5, nombre: 'adefa', texto: 'ADEFA', imagen: require('../../../images/eventos/grupos/adefa.png') },
@@ -20,6 +22,40 @@ const GroupsSection = ({  }) => {
     { id : 9, nombre: 'leones', texto: 'LEONES', imagen: leonesImage },
     { id : 10, nombre: 'espaciocultural', texto: 'Espacio Cultural', imagen: espacioculturalImage },
   ];
+
+  const styles = StyleSheet.create({
+    container: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      marginBottom: 30,
+    },
+    icono: {
+      backgroundColor: theme.backgroundColor,
+      width: 100,
+      height: 100,
+      margin: 15,
+      borderRadius: 50,
+      //borderWidth: 1,
+      //borderColor: '#FD5900',
+      elevation: 4,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      overflow: 'hidden',
+      // backgroundColor: 'White',
+    },
+    imagen: {
+      width: '100%',
+      height: '100%',
+      resizeMode: 'cover',
+      backgroundColor: theme.backgroundCard,
+    },
+  });
 
   return (
     <View style={styles.container}>
@@ -31,38 +67,5 @@ const GroupsSection = ({  }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    marginBottom: 30,
-  },
-  icono: {
-    width: 100,
-    height: 100,
-    margin: 15,
-    borderRadius: 50,
-    //borderWidth: 1,
-    //borderColor: '#FD5900',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    overflow: 'hidden',
-    // backgroundColor: 'White',
-  },
-  imagen: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-    backgroundColor: 'white',
-  },
-});
 
 export default GroupsSection;

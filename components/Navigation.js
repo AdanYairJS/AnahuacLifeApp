@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Animated, Easing, Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import themeContext from "./theme/themeContext.js";
 
 //screens
 import HomeScreen from './screens/HomeScreen';
@@ -279,6 +280,7 @@ function CuckooStack() {
 }
 
 export default function Navigation() {
+    const theme = useContext(themeContext);
     return (
         <NavigationContainer>
             <Tab.Navigator
@@ -299,7 +301,7 @@ export default function Navigation() {
                         //     marginTop: Platform.OS === 'ios' ? 5 : 0,
                         // }),
                         tabBarStyle: {
-                            backgroundColor: '#FFFFFF', // Color de fondo
+                            backgroundColor: theme.backgroundTabBar, // Color de fondo
                             height: Platform.OS === 'ios' ? 75 : 60, // Altura del menú
                             borderTopWidth: 0, //Borde superior
                             display: 'flex',
@@ -378,7 +380,7 @@ export default function Navigation() {
                     component={CuckooStack}
                     options={{
                         tabBarLabel: 'Comida',
-                        tabBarBadge: 1,
+                        //tabBarBadge: 1,
                         tabBarBadgeStyle: {
                             backgroundColor: 'black',
                         },
@@ -391,7 +393,7 @@ export default function Navigation() {
                     options={{
                         tabBarLabel: 'Eventos',
                         headerShown: false,
-                        tabBarBadge: 13,
+                        //tabBarBadge: 13,
                         tabBarBadgeStyle: {
                             backgroundColor: 'black',
                         }
