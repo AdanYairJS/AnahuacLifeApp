@@ -34,14 +34,14 @@ const CuckooTarjeta = ({ id_platillo, nombre, imagen, precio, descripcion}) => {
         height: '30%',
     },
     activityName: {
-      color: theme.color,
+      color: theme.colorCuckoo,
       fontSize: 15,
       fontFamily: 'lexend-medium',
       fontWeight: 'bold',
       marginBottom: 5,
     },
     activityDate: {
-      color: theme.color,
+      color: theme.colorCuckoo,
       fontFamily: 'lexend-regular',
       fontSize: 14,
       marginBottom: 5,

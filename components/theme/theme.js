@@ -11,14 +11,12 @@ const theme = {
     },
     dark: {
         theme: 'dark',
-        color: 'white',
-        // backgroundColor: '#303134',
-        // backgroundCard: '#202124',
+        color: '#fff',
         backgroundColor: '#202124',
         backgroundCard: '#303134',
         shadowColor: '#000000',
         backgroundTabBar: '#000',
-        backgroundCardCuckoo: '#000',
+        backgroundCardCuckoo: 'white',
         colorCuckoo: '#000'
     }
 }
