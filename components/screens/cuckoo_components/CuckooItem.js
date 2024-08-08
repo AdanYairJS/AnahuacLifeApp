@@ -23,7 +23,7 @@ export default function CuckooScreen({navigation , route}) {
   const [sabores, setSabores] = useState([]);
 
   let getSabores = (id_platillo) => {
-    fetch('http://${EXPO_ip}:${EXPO_puerto}/sabores'
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/sabores`
     ,{
       method: 'POST',
       headers: {
@@ -58,7 +58,7 @@ export default function CuckooScreen({navigation , route}) {
   const [extras, setExtras] = useState([]);
 
   let getExtras = (id_platillo) => {
-    fetch('http://${EXPO_ip}:${EXPO_puerto}/extras'
+    fetch(`http://${EXPO_ip}:${EXPO_puerto}/extras`
     ,{
       method: 'POST',
       headers: {
