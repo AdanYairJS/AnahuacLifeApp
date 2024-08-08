@@ -56,12 +56,23 @@ const CuckooTarjeta = ({ id_platillo, nombre, imagen, precio, descripcion}) => {
     },
   });
 
+  function replaceVowelSequences(str) {
+    return str
+        .replace(/a\+/g, 'á')
+        .replace(/e\+/g, 'é')
+        .replace(/i\+/g, 'í')
+        .replace(/o\+/g, 'ó')
+        .replace(/u\+/g, 'ú')
+        .replace(/n\+/g, 'ñ');
+  }
+
   return (
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("CuckooItem",{id_platillo,nombre,precio,imagen, descripcion})}>
       <Image source={{uri: imagen}} style={styles.image}/>
       <View style={styles.textContainer}>
         {/* <Text style={styles.activityName}>{utf8.decode(nombre)}</Text> */}
-        <Text style={styles.activityName}>{nombre}</Text>
+        {/* <Text style={styles.activityName}>{nombre}</Text> */}
+        <Text style={styles.activityName}>{replaceVowelSequences(nombre)}</Text>
         <Text style={styles.activityDate}>${precio.toFixed(2)}</Text>
       </View>
     </TouchableOpacity>

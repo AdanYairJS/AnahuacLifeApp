@@ -58,13 +58,23 @@ const Header = ({text,imagen}) => {
     },
   });
 
+  function replaceVowelSequences(str) {
+    return str
+        .replace(/a\+/g, 'á')
+        .replace(/e\+/g, 'é')
+        .replace(/i\+/g, 'í')
+        .replace(/o\+/g, 'ó')
+        .replace(/u\+/g, 'ú');
+  }
+
   return (
     <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.pop()} style={styles.chevron}>
           <ArrowIcon name="left" size={26} color='#FD5900' />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
-          <Text style={styles.groupName}>{text}</Text>
+          {/* <Text style={styles.groupName}>{text}</Text> */}
+          <Text style={styles.groupName}>{replaceVowelSequences(text)}</Text>
         </View>
         {imagen && <Image source={imagen} style={styles.logo} />}
        {/* <Image source={imagen} style={styles.logo} /> */}

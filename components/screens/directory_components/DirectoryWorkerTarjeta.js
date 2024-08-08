@@ -8,6 +8,8 @@ import themeContext from '../../theme/themeContext';
 
 // const path = require('path');
 
+
+
 const DirectoryWorkerTarjeta = ({ nombre, puesto, correo, imagen }) => {
   const navigation = useNavigation();
   const theme = useContext(themeContext);
@@ -93,14 +95,26 @@ const DirectoryWorkerTarjeta = ({ nombre, puesto, correo, imagen }) => {
     }
   });
 
+  function replaceVowelSequences(str) {
+    return str
+        .replace(/a\+/g, 'á')
+        .replace(/e\+/g, 'é')
+        .replace(/i\+/g, 'í')
+        .replace(/o\+/g, 'ó')
+        .replace(/u\+/g, 'ú')
+        .replace(/n\+/g, 'ñ');
+  }
+
   return (
     <View style={styles.cardContainer}>
       <Image source={{uri: imagen}} style={styles.image}/>
       <View style={styles.textContainer}>
         {/* <Text style={styles.name}>{utf8.decode(nombre)}</Text> */}
-        <Text style={styles.name}>{nombre}</Text>
+        {/* <Text style={styles.name}>{nombre}</Text> */}
+        <Text style={styles.name}>{replaceVowelSequences(nombre)}</Text>
         {/* {puesto && <Text style={styles.job}>{utf8.decode(puesto)}</Text>} */}
-        {puesto && <Text style={styles.job}>{puesto}</Text>}
+        {/* {puesto && <Text style={styles.job}>{puesto}</Text>} */}
+        {puesto && <Text style={styles.job}>{replaceVowelSequences(puesto)}</Text>}
         <EmailLink email={correo}>{correo}</EmailLink>
       </View>
     </View>

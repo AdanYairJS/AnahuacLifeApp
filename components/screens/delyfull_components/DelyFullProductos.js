@@ -50,12 +50,23 @@ const DelyFullProductos = ({id_menu}) => {
     getSubsecciones(4);
   },[]);
 
+  function replaceVowelSequences(str) {
+    return str
+        .replace(/a\+/g, 'á')
+        .replace(/e\+/g, 'é')
+        .replace(/i\+/g, 'í')
+        .replace(/o\+/g, 'ó')
+        .replace(/u\+/g, 'ú')
+        .replace(/n\+/g, 'ñ');
+  }
+
   return (
     <View style={styles.container}>
       {subsecciones.map((subseccion, index) => (      
         <View key={index} style= {styles.container}>
           {/* <Text style={styles.titulo_seccion}>{utf8.decode(subseccion.nombre_subseccion)}</Text> */}
-          <Text style={styles.titulo_seccion}>{subseccion.nombre_subseccion}</Text>
+          <Text style={styles.titulo_seccion}>{replaceVowelSequences(subseccion.nombre_subseccion)}</Text>
+          {/* <Text style={styles.titulo_seccion}>{subseccion.nombre_subseccion}</Text> */}
           <DelyFullSubseccion key={subseccion.id_subseccion} id_subseccion={subseccion.id_subseccion}/>     
         </View>  
       ))}

@@ -197,6 +197,15 @@ const DirectoryWorker = ({navigation , route}) => {
     },  
   });
 
+  function replaceVowelSequences(str) {
+    return str
+        .replace(/a\+/g, 'á')
+        .replace(/e\+/g, 'é')
+        .replace(/i\+/g, 'í')
+        .replace(/o\+/g, 'ó')
+        .replace(/u\+/g, 'ú');
+  }
+
   return (
     <ScrollView style={styles.contendor_scroll} showsHorizontalScrollIndicator={false}>
       <Text style={styles.encabezado}>INFORMACIÓN</Text>
@@ -232,7 +241,8 @@ const DirectoryWorker = ({navigation , route}) => {
           <View style={styles.contenedor_tramites}>
               {tramites.map((tramite, index) => (
               // <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {utf8.decode(tramite.nombre)}</Text>
-              <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {tramite.nombre}</Text>
+              // <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {tramite.nombre}</Text>
+              <Text style={[styles.texto,{textAlign:'left'}]} key={index}>• {replaceVowelSequences(tramite.nombre)}</Text>
               ))}
           </View>
         </View>

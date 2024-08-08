@@ -47,11 +47,20 @@ const DirectoryWorkerTarjeta = ({nombre, id_depto, correo, hora_ap1, hora_ci1, i
     }
   });
 
+  function replaceVowelSequences(str) {
+    return str
+        .replace(/a\+/g, 'á')
+        .replace(/e\+/g, 'é')
+        .replace(/i\+/g, 'í')
+        .replace(/o\+/g, 'ó')
+        .replace(/u\+/g, 'ú');
+}
+
   return(
     <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate("DirectoryWorkers",{id_depto, correo, nombre, hora_ap1, hora_ci1, id_lugar, nombre_lugar})}>
       <View style={styles.textContainer}>
         {/* <Text style={styles.name}>{utf8.decode(nombre)}</Text> */}
-        <Text style={styles.name}>{nombre}</Text>
+        <Text style={styles.name}>{ replaceVowelSequences(nombre)}</Text>
       </View>
       <ArrowIcon name="right" size={26} color="#FD5900" style={styles.image}/>
     </TouchableOpacity>
